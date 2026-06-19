@@ -786,12 +786,14 @@ a:focus-visible {
   align-items: stretch;
   border: 1px solid rgba(54, 49, 41, 0.13);
   border-radius: 10px;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.28), transparent 25%),
-    radial-gradient(circle at 86% 92%, var(--card-shadow-wash), transparent 34%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 38%, var(--card-edge-wash)),
-    var(--card-bg),
+  background-color: var(--card-bg);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.13), transparent 25%),
+    radial-gradient(circle at 86% 92%, var(--card-shadow-wash), transparent 38%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), transparent 36%, var(--card-edge-wash)),
+    linear-gradient(180deg, var(--card-top-wash), transparent 48%, var(--card-bottom-wash)),
     url("/assets/paper-grain.png");
+  background-blend-mode: normal, normal, normal, normal, multiply;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.26),
     inset 0 -1px 0 rgba(45, 43, 35, 0.07),
@@ -849,51 +851,69 @@ a:focus-visible {
 }
 
 .tone-mint {
-  --card-bg: #d8e7d2;
-  --tab-bg: #a7bd9a;
-  --card-rule: rgba(73, 101, 72, 0.15);
-  --card-edge-wash: rgba(104, 134, 92, 0.12);
-  --card-shadow-wash: rgba(102, 130, 89, 0.16);
+  --card-bg: #c9dfc2;
+  --tab-bg: #94ad86;
+  --card-rule: rgba(65, 91, 63, 0.2);
+  --card-edge-wash: rgba(83, 118, 76, 0.18);
+  --card-shadow-wash: rgba(83, 113, 76, 0.22);
+  --card-top-wash: rgba(246, 252, 241, 0.2);
+  --card-bottom-wash: rgba(87, 116, 78, 0.08);
+  --card-visual-wash: rgba(239, 248, 232, 0.28);
 }
 
 .tone-lavender {
-  --card-bg: #ddd9e8;
-  --tab-bg: #b7aecb;
-  --card-rule: rgba(86, 77, 112, 0.15);
-  --card-edge-wash: rgba(111, 99, 145, 0.1);
-  --card-shadow-wash: rgba(101, 91, 132, 0.15);
+  --card-bg: #d0cadf;
+  --tab-bg: #a79abc;
+  --card-rule: rgba(79, 69, 105, 0.19);
+  --card-edge-wash: rgba(94, 82, 126, 0.16);
+  --card-shadow-wash: rgba(91, 82, 121, 0.2);
+  --card-top-wash: rgba(248, 246, 252, 0.19);
+  --card-bottom-wash: rgba(89, 78, 117, 0.07);
+  --card-visual-wash: rgba(244, 241, 250, 0.27);
 }
 
 .tone-sage {
-  --card-bg: #d4dfc9;
-  --tab-bg: #9fb38e;
-  --card-rule: rgba(73, 88, 58, 0.16);
-  --card-edge-wash: rgba(92, 111, 71, 0.12);
-  --card-shadow-wash: rgba(78, 100, 64, 0.16);
+  --card-bg: #c8d6b8;
+  --tab-bg: #8ea47c;
+  --card-rule: rgba(67, 82, 53, 0.2);
+  --card-edge-wash: rgba(82, 103, 63, 0.18);
+  --card-shadow-wash: rgba(75, 96, 60, 0.22);
+  --card-top-wash: rgba(247, 250, 239, 0.19);
+  --card-bottom-wash: rgba(77, 96, 58, 0.08);
+  --card-visual-wash: rgba(240, 246, 231, 0.28);
 }
 
 .tone-butter {
-  --card-bg: #e4d49c;
-  --tab-bg: #c1a758;
-  --card-rule: rgba(119, 92, 38, 0.17);
-  --card-edge-wash: rgba(148, 115, 49, 0.13);
-  --card-shadow-wash: rgba(139, 111, 44, 0.17);
+  --card-bg: #ddc678;
+  --tab-bg: #b19238;
+  --card-rule: rgba(116, 88, 32, 0.22);
+  --card-edge-wash: rgba(139, 105, 38, 0.2);
+  --card-shadow-wash: rgba(128, 101, 38, 0.23);
+  --card-top-wash: rgba(253, 247, 218, 0.18);
+  --card-bottom-wash: rgba(121, 91, 31, 0.08);
+  --card-visual-wash: rgba(250, 242, 205, 0.28);
 }
 
 .tone-rose {
-  --card-bg: #e4cbc4;
-  --tab-bg: #c9958c;
-  --card-rule: rgba(123, 74, 66, 0.15);
-  --card-edge-wash: rgba(151, 89, 78, 0.11);
-  --card-shadow-wash: rgba(144, 89, 78, 0.16);
+  --card-bg: #dcbbb2;
+  --tab-bg: #bc8178;
+  --card-rule: rgba(116, 68, 60, 0.2);
+  --card-edge-wash: rgba(140, 80, 70, 0.17);
+  --card-shadow-wash: rgba(133, 78, 68, 0.21);
+  --card-top-wash: rgba(253, 245, 242, 0.18);
+  --card-bottom-wash: rgba(120, 68, 59, 0.07);
+  --card-visual-wash: rgba(249, 236, 232, 0.28);
 }
 
 .tone-sky {
-  --card-bg: #cde0e2;
-  --tab-bg: #95bac0;
-  --card-rule: rgba(59, 96, 104, 0.15);
-  --card-edge-wash: rgba(77, 121, 130, 0.11);
-  --card-shadow-wash: rgba(67, 110, 119, 0.16);
+  --card-bg: #bdd7dc;
+  --tab-bg: #82adb5;
+  --card-rule: rgba(54, 91, 99, 0.2);
+  --card-edge-wash: rgba(66, 111, 121, 0.17);
+  --card-shadow-wash: rgba(64, 103, 112, 0.22);
+  --card-top-wash: rgba(239, 249, 251, 0.19);
+  --card-bottom-wash: rgba(62, 99, 108, 0.08);
+  --card-visual-wash: rgba(232, 246, 249, 0.28);
 }
 
 .card-token {
@@ -901,7 +921,9 @@ a:focus-visible {
   padding: 7px 10px;
   border: 1px solid rgba(54, 49, 41, 0.1);
   border-radius: 4px;
-  background: rgba(255, 253, 246, 0.44);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent),
+    var(--card-visual-wash);
   color: rgba(50, 50, 44, 0.6);
   font-size: 0.68rem;
   font-weight: 760;
@@ -945,8 +967,9 @@ a:focus-visible {
   content: "";
   position: absolute;
   inset: 18px 12px;
-  border: 1px dashed rgba(54, 49, 41, 0.08);
+  border: 1px dashed rgba(54, 49, 41, 0.1);
   border-radius: 6px;
+  background: var(--card-visual-wash);
   pointer-events: none;
 }
 
