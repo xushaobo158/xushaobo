@@ -43,8 +43,6 @@ const copy = {
       desc:
         "我关注产品如何被理解、被使用，也关注界面如何在第一眼建立信任与兴趣。希望把复杂问题整理成清晰路径，再用有温度的视觉语言表达出来。",
       photo: "照片位置",
-      mapTitle: "设计师能力地图",
-      mapDesc: "视觉表达、交互结构、产品判断与叙事呈现之间的组合能力。",
     },
     resume: {
       cardTitle: "在线简历",
@@ -141,9 +139,6 @@ const copy = {
       desc:
         "I care about how products are understood and used, and how interfaces build trust and curiosity at first glance. I turn complex problems into clear paths, then express them through calm and tactile visuals.",
       photo: "Photo Slot",
-      mapTitle: "Designer Capability Map",
-      mapDesc:
-        "A practical mix of visual expression, interaction structure, product judgement, and storytelling.",
     },
     resume: {
       cardTitle: "Resume",
@@ -435,7 +430,7 @@ function App() {
     }
 
     if (route === "/about") {
-      return <AboutPage language={language} t={t} go={go} />;
+      return <AboutPage t={t} go={go} />;
     }
 
     if (route === "/resume") {
@@ -807,12 +802,7 @@ function BackButton({ label, onClick }) {
   );
 }
 
-function AboutPage({ language, t, go }) {
-  const abilities =
-    language === "zh"
-      ? ["视觉表现", "交互结构", "产品逻辑", "信息叙事"]
-      : ["Visual craft", "Interaction", "Product logic", "Narrative"];
-
+function AboutPage({ t, go }) {
   return (
     <section className="page-shell about-page">
       <BackButton label={t.back} onClick={() => go("/")} />
@@ -826,21 +816,6 @@ function AboutPage({ language, t, go }) {
           <img src="/assets/profile-placeholder.png" alt="" />
           <span>{t.about.photo}</span>
         </aside>
-      </div>
-
-      <div className="ability-paper" data-reveal>
-        <div>
-          <span>MAP / 04</span>
-          <h2>{t.about.mapTitle}</h2>
-          <p>{t.about.mapDesc}</p>
-        </div>
-        <div className="ability-map">
-          {abilities.map((ability, index) => (
-            <span style={{ "--delay": `${index * 90}ms` }} key={ability}>
-              {ability}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );
