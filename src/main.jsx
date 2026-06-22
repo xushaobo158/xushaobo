@@ -198,81 +198,81 @@ const copy = {
 const projectPageContent = {
   'social-app': {
     zh: {
-      eyebrow: 'C 端社交产品 / 产品体验设计',
+      eyebrow: 'C 端社交 APP / 产品体验设计优化',
       title: '不夜星球社交 APP 产品体验设计优化',
       intro:
-        '围绕社交产品的核心使用路径，对首页浏览、关系建立、内容互动与留存体验进行重新梳理。当前先完整复刻案例页结构，后续再逐步替换为真实项目过程与成果。',
+        '基于“发现、判断、互动、承接”链路，围绕兴趣社交产品中的发现对象/房间困难、互动判断成本高、陌生人破冰难、直播间参与路径复杂等问题，重构用户从发现到互动的核心体验链路。',
       cta: '查看完整原型',
-      tags: ['UI/UX', '用户体验', '社交产品', '前端原型'],
+      tags: ['vibe coding', '用户体验', 'UIUX', '前端原型'],
       summary: [
-        { label: '角色', value: '产品体验设计' },
-        { label: '周期', value: '待补充' },
-        { label: '技能 / 工具', value: 'Figma / 原型 / 前端验证' },
+        { label: '项目角色', value: '体验设计师' },
+        { label: '项目时间', value: '2024.03-2024.08' },
+        { label: '设计工具', value: 'codex / figma' },
       ],
       sections: [
         {
           title: '项目概览',
           text:
-            '不夜星球是一款以兴趣破冰与轻社交连接为核心的 C 端产品。项目的目标，是让用户在浏览、表达与建立连接的过程中更快进入状态，而不是在复杂入口和冗长路径里消耗耐心。',
+            '不夜星球是一款面向年轻用户的兴趣社交产品，用户可通过兴趣标签、语音房、直播互动和消息聊天建立社交关系。随着功能模块增多，用户在进入产品后常出现找不到合适互动对象、进入房间前判断成本高、陌生人破冰沟通障碍等问题。',
           noteLabel: '项目目标',
-          noteText: '将“看见内容”顺畅过渡到“发起互动”和“建立连接”，让新用户更容易完成第一次有效互动。',
-          bullets: ['项目背景待补充', '目标用户待补充', '业务目标待补充'],
+          noteText: '围绕“发现内容—判断对象—发起对话—消息承接”的核心链路，降低选择压力与破冰成本，让用户更容易完成首次有效互动。',
+          bullets: ['兴趣社交产品体验重构', '首页、广场、消息、直播间关键路径优化', '从发现到互动的完整链路梳理'],
         },
         {
-          title: '我的角色',
+          title: '问题背景',
           text:
-            '在这个项目中，我主要负责产品体验梳理、交互方案设计、关键页面高保真输出，以及用前端原型辅助方案验证与沟通。',
-          noteLabel: '职责范围',
-          noteText: '负责体验诊断、流程重构、页面策略与核心界面呈现，后续可继续补充与产品、开发的协作方式。',
-          bullets: ['体验问题梳理', '交互方案设计', '高保真界面输出'],
+            '从功能丰富到体验聚焦，兴趣社交产品的核心矛盾集中在三个层面：内容入口多，但用户不知道从哪里开始；可互动对象多，但判断依据不足；可以聊天，但陌生人破冰成本高。',
+          noteLabel: '用户社交路径断点',
+          noteText: '用户从“发现内容”到“判断对象”，再到“发起对话”的过程中缺少清晰提示和足够判断信息，导致聊不起来、留不下来。',
+          bullets: ['矛盾一：内容入口多，但起点不清晰', '矛盾二：对象很多，但判断成本高', '矛盾三：可以聊天，但破冰压力大'],
         },
         {
           title: '用户研究',
           text:
-            '这一部分后续用于补充用户访谈、行为观察、竞品参考或数据分析。目前先保留与参考站相同的结构，用于承接研究洞察。',
-          noteLabel: '研究方式',
-          noteText: '可补充访谈、可用性走查、路径分析与埋点观察等内容。',
-          bullets: ['研究对象待补充', '研究方法待补充', '关键结论待补充'],
+            '通过 200+ 问卷、半结构化访谈、竞品体验走查、任务走查和用户反馈归纳，验证用户对同兴趣社交的需求兴趣，同时定位当前社交软件聚焦性不足、路径泛化导致体验不佳的问题。',
+          noteLabel: '研究维度',
+          noteText: '研究问题围绕“用户为什么进入产品、如何寻找感兴趣的人或房间、如何判断是否互动、为什么放弃聊天”展开。',
+          bullets: ['半结构化访谈：了解用户使用兴趣社交产品的动机和痛点', '竞品体验走查：分析 Soul、TT语音、直播类产品的社交路径', '任务走查：模拟从首页到房间、进入互动、发起消息的完整路径'],
         },
         {
-          title: '设计洞察',
+          title: '用户分层与旅程',
           text:
-            '基于前期观察，这一页适合提炼为几个影响体验效率和情绪感受的核心问题，例如路径分散、反馈模糊、互动入口不聚焦，以及新用户不知道下一步该做什么。',
-          noteLabel: '核心洞察',
-          noteText: '用户需要的不是更多信息，而是更清晰的下一步动作提示与更自然的关系建立路径。',
-          bullets: ['关键痛点待补充', '行为模式待补充', '设计切入点待补充'],
+            '基于不同社交动机，将用户分为陪伴型、兴趣型、游戏型和娱乐型四类，并梳理他们在“开始进入首页—选择兴趣标签/浏览推荐—查看用户或房间卡片—判断兴趣与在线状态—点击打招呼/进入房间—系统提供破冰话题—消息页承接对话”的旅程。',
+          noteLabel: '用户目标',
+          noteText: '找到一个感兴趣的人或房间，并完成首次互动。核心体验需要降低选择纠结，提升互动与破冰能力。',
+          bullets: ['陪伴型用户：关注在线状态、回复速度和即时回应', '兴趣型用户：关注兴趣标签、共同话题和动态内容', '游戏/娱乐型用户：关注房间氛围、直播热度和互动活动'],
         },
         {
           title: '设计策略',
           text:
-            '这里后续会放信息结构重组、互动策略、页面层级与视觉节奏的设计思路。当前作为项目详情页骨架，先保留完整章节顺序与展示位。',
-          noteLabel: '策略方向',
-          noteText: '聚焦“更快理解、更愿互动、更容易连接”三件事，把复杂路径收束成少数关键决策点。',
-          bullets: ['结构优化待补充', '交互策略待补充', '视觉语言待补充'],
+            '设计策略围绕“如何让兴趣社交用户更快找到合适的人/房间，并更低压力地完成首次互动？”展开，将分散路径收束为更明确的发现、判断、破冰和承接机制。',
+          noteLabel: '四个策略',
+          noteText: '重构发现路径、增强判断信息、降低破冰压力、强化关系承接。',
+          bullets: ['策略 1：重构发现路径，让首页从功能入口集合转向社交发现入口', '策略 2：增强判断信息，在用户卡片和房间卡片中补足在线状态、兴趣标签和共同兴趣', '策略 3 & 4：用破冰引导和消息承接，让轻互动继续转化为聊天、关注或进入房间'],
         },
         {
-          title: '最终方案',
+          title: '产品原型',
           text:
-            '最终方案部分适合展示首页、内容流、个人主页、关系建立与互动反馈等关键界面，并串起用户从浏览到建立连接的完整路径。',
-          noteLabel: '展示内容',
-          noteText: '后续可补充首页改版、卡片设计、互动弹层、个人主页与消息路径等高保真页面。',
-          bullets: ['关键界面待补充', '前后对比待补充', '页面说明待补充'],
+            '低保真原型阶段主要用于验证用户从“发现内容”到“发起互动”再到“消息承接”的核心路径。本阶段不展开完整视觉风格，而是聚焦首页信息层级、广场探索路径、用户/房间卡片判断信息、破冰流程和消息承接逻辑。',
+          noteLabel: 'Function Overview',
+          noteText: '核心功能包括：首页推荐、兴趣标签、用户卡片、房间卡片、破冰引导、消息承接和关系入口。',
+          bullets: ['首页推荐：前置高匹配用户和房间入口', '卡片判断：展示兴趣、在线状态、共同标签和互动入口', '消息承接：将打招呼、正式聊天、关注和房间关系串起来'],
         },
         {
-          title: '可用性测试',
+          title: '组织测试与方案改进',
           text:
-            '这里用于承接方案验证过程，例如原型走查、关键任务测试、用户反馈和迭代修改记录，帮助案例页形成闭环。',
-          noteLabel: '验证方式',
-          noteText: '建议后续补充关键任务测试、点击路径验证与定性反馈。',
-          bullets: ['测试目标待补充', '测试反馈待补充', '迭代结果待补充'],
+            '组织 6 名有兴趣社交或直播类产品使用经验的用户参与测试，围绕“发现人/房间—判断是否合适—发起互动—消息承接”四个任务进行走查。测试暴露出首页与广场分工不明确、卡片判断信息不足、破冰流程缺少上下文等问题。',
+          noteLabel: '迭代重点',
+          noteText: '基于首轮用户测试反馈，二轮方案重点聚焦核心社交路径的清晰度。',
+          bullets: ['首页发现效率、卡片判断充分度、破冰引导清晰度、消息承接清晰度四项评分', '方案改进方向：路径收敛、推荐前置、关系承接', '通过首页推荐前置、广场探索分工、卡片信息补充和破冰引导降低理解成本'],
         },
         {
-          title: '项目反思',
+          title: '成果总结',
           text:
-            '最后一部分用于沉淀你在这个项目中关于产品节奏、社交行为、体验细节与跨团队协作的理解，也方便后续加入结果数据。',
-          noteLabel: '复盘方向',
-          noteText: '可以从设计价值、沟通方式、节奏控制和后续优化空间几个方向补充。',
-          bullets: ['结果数据待补充', '团队协作待补充', '复盘总结待补充'],
+            '经过两轮低保真原型任务走查，用户对“发现人/房间—判断是否合适—发起互动—消息承接”的路径理解评分由 3.15/5 提升至 4.18/5；点击前判断效率提升约 20%；三周迭代中共有 30+ 人次参与测试、访谈或提出建议。',
+          noteLabel: '结果',
+          noteText: '从“功能入口堆叠”转向“核心社交路径聚焦”，让用户更快理解下一步、更容易判断对象、更自然地完成破冰。',
+          bullets: ['路径理解评分：3.15 → 4.18', '点击前判断效率提升：+20%', '测试、访谈与建议参与：30+ 人次'],
         },
       ],
     },
@@ -858,450 +858,6 @@ function InProgressPage() {
   );
 }
 
-const consumerSocialCase = {
-  eyebrow: 'vibe coding / 用户体验 / UIUX / 前端原型',
-  title: '不夜星球社交APP产品体验设计优化',
-  subtitle: '——基于“发现、判断、互动、承接”链路的兴趣社交产品体验重构',
-  intro:
-    '围绕兴趣社交产品中“发现对象/房间困难、互动判断成本高、陌生人破冰难、直播间参与路径复杂”这些问题，重构用户从发现到互动的核心体验链路。',
-  meta: [
-    { label: '项目角色', value: '体验设计师' },
-    { label: '项目时间', value: '2024.03-2024.08' },
-    { label: '设计工具', value: 'codex / figma' },
-  ],
-  overview: [
-    '不夜星球是一款面向年轻用户的兴趣社交产品，用户可通过兴趣标签、语音房、直播互动和消息聊天建立社交关系。',
-    '随着功能模块增多，用户在进入产品后常常出现找不到合适互动对象、进入房间前判断成本高、陌生人破冰沟通障碍等问题。因此本项目围绕核心社交链路进行体验重构。',
-    '我的角色包括用户访谈与需求整理、竞品机制分析、信息架构梳理、核心流程设计：首页、广场、消息、直播间关键页面重设计；组件库搭建；设计交付与改版迭代。',
-  ],
-  problemTags: ['选择纠结', '社交焦虑', '破冰成本'],
-  frictionSteps: ['发现内容', '判断对象', '发起对话', '聊不起'],
-  conflicts: [
-    '内容入口多，但用户不知道从哪里开始',
-    '可互动对象多，但判断依据不足',
-    '可以聊天，但陌生人破冰成本高',
-  ],
-  researchMethods: [
-    { title: '半结构化访谈', text: '了解用户使用兴趣社交产品的动机和痛点。' },
-    { title: '竞品体验走查', text: '分析 Soul、TT语音、直播类产品的社交路径。' },
-    { title: '任务走查', text: '模拟用户从首页到房间、进入互动、发起消息的完整路径。' },
-    { title: '用户反馈归纳', text: '整理发现效率、匹配判断、破冰体验、直播参与等问题。' },
-  ],
-  researchQuestions: [
-    '用户为什么进入产品',
-    '用户如何寻找感兴趣的人或房间',
-    '用户如何判断是否互动',
-    '用户为什么放弃聊天',
-  ],
-  segments: [
-    {
-      title: '陪伴型用户',
-      text: '动机：无聊、想找人聊天、获得即时回应。关注点：在线状态、回复速度、对方是否愿意聊。',
-    },
-    {
-      title: '兴趣型用户',
-      text: '动机：找同好、聊共同兴趣。关注点：兴趣标签、话题、动态内容。',
-    },
-    {
-      title: '游戏型用户',
-      text: '动机：找搭子、开黑、语音房互动。关注点：游戏类型、房间人数、房主状态。',
-    },
-    {
-      title: '娱乐型用户',
-      text: '动机：看直播、参与活动、互动、围观热闹。关注点：直播热度、主播状态、活动奖励。',
-    },
-  ],
-  flow: [
-    '开始进入首页',
-    '选择兴趣标签/浏览推荐',
-    '查看用户卡片或房间卡片',
-    '判断兴趣、在线状态、房间氛围',
-    '点击打招呼/进入房间',
-    '系统提供破冰话题或互动引导',
-    '消息页承接对话',
-    '关注、继续聊天或加入房间',
-  ],
-  strategies: [
-    {
-      number: '策略 1',
-      title: '重构发现路径',
-      text:
-        '将首页从“功能入口集合”调整为“社交发现入口”。首页优先展示推荐用户、推荐房间和兴趣圈标签，帮助目标不明确的用户快速进入互动场景。',
-      blocks: ['旧逻辑路径', '新逻辑路径', '最终效果'],
-    },
-    {
-      number: '策略 2',
-      title: '增强判断信息',
-      text:
-        '用户在点击前需要判断“这个人是否适合聊”“这个房间是否值得进”。因此，用户卡片补充在线状态、兴趣标签、共同兴趣和打招呼入口，减少进入后的无效试错。',
-      blocks: ['用户想找人 / 房间', '目标不明确', '目标明确', '首页推荐', '广场探索'],
-    },
-    {
-      number: '策略 3',
-      title: '降低破冰压力',
-      text:
-        '打招呼前增加轻量破冰引导，不直接把用户推入空聊天。通过共同兴趣、推荐话题和快捷问候，帮助双方启动对话更自然。',
-      blocks: ['用户卡片', '点击打招呼', '破冰弹窗', '发送问候', '消息页承接'],
-    },
-    {
-      number: '策略 4',
-      title: '强化关系承接',
-      text:
-        '消息页不再只是消息列表，而是承担社交关系的入口。做好好友消息、打招呼、互动通知和系统消息分类展示，让一次轻互动继续转化为聊天、关注或进入房间。',
-      blocks: ['打招呼', '对方回复', '正式聊天', '关注 / 进入房间 / 建立关系'],
-    },
-  ],
-  functions: ['首页推荐', '兴趣标签', '用户卡片', '房间卡片', '破冰引导', '消息承接', '关系入口'],
-  testBars: [
-    { label: '首页发现效率', value: 62 },
-    { label: '卡片判断充分度', value: 72 },
-    { label: '破冰引导清晰度', value: 56 },
-    { label: '消息承接清晰度', value: 50 },
-  ],
-  outcomes: [
-    {
-      text:
-        '经过两轮低保真原型任务走查，用户对“发现人/房间—判断是否合适—发起互动—消息承接”的路径理解评分由 3.15/5 提升至 4.18/5。',
-      value: '3.15→4.18',
-    },
-    { text: '点击前判断效率提升', value: '+20%' },
-    {
-      text:
-        '三周迭代体验人数从最初 5-6 人，到最后主动参与的 12+ 人次，共有30+人次参与测试、访谈或提出建议。',
-      value: '30+',
-    },
-  ],
-};
-
-function CaseBlob({ className = '' }) {
-  return <span className={`case-blob ${className}`} aria-hidden="true" />;
-}
-
-function CasePhone({ className = '' }) {
-  return (
-    <div className={`case-phone ${className}`} aria-hidden="true">
-      <span />
-      <span />
-      <span />
-    </div>
-  );
-}
-
-function HeroDiagram() {
-  return (
-    <div className="case-hero-diagram" aria-hidden="true">
-      <CasePhone />
-      <CaseBlob className="case-blob-left" />
-      <CaseBlob className="case-blob-top" />
-      <CaseBlob className="case-blob-right" />
-      <CaseBlob className="case-blob-bottom" />
-    </div>
-  );
-}
-
-function ProblemDiagram({ data }) {
-  return (
-    <div className="case-problem-grid">
-      <div className="case-problem-visual" aria-hidden="true">
-        <CasePhone />
-        <div className="case-friction-chain">
-          {data.frictionSteps.map((step, index) => (
-            <React.Fragment key={step}>
-              <span>{step}</span>
-              {index < data.frictionSteps.length - 1 ? <i /> : null}
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
-      <div className="case-problem-copy">
-        <div className="case-mini-tags">
-          {data.problemTags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
-        <h3>问题背景</h3>
-        <p>从功能丰富到体验聚焦：兴趣社交产品的核心体验矛盾</p>
-        {data.conflicts.map((item, index) => (
-          <div key={item} className="case-conflict">
-            <strong>矛盾{['一', '二', '三'][index]}：</strong>
-            <span>{item}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ResearchBlock({ data }) {
-  return (
-    <section className="case-section">
-      <h2>用户研究方法</h2>
-      <div className="case-research-top">
-        <strong>200+问卷显示用户对同兴趣社交需求感兴趣，但当前社交软件聚焦性过于泛导致体验不佳</strong>
-        <div className="case-survey-card">
-          <div>
-            <span>研究对象</span>
-            <strong>18-30 岁年轻用户</strong>
-          </div>
-          <p>在兴趣社交产品中，你最容易在哪一步放弃互动？</p>
-          <ul>
-            <li>A. 找不到合适的人或房间</li>
-            <li>B. 不确定对方 / 房间是否合适</li>
-            <li>C. 想互动，但不知道怎么开口</li>
-          </ul>
-          <div className="case-donut" aria-hidden="true" />
-        </div>
-      </div>
-      <div className="case-methods">
-        {data.researchMethods.map((method) => (
-          <article key={method.title}>
-            <p>{method.text}</p>
-            <strong>{method.title}</strong>
-          </article>
-        ))}
-      </div>
-      <div className="case-dimensions">
-        <div>
-          {data.researchQuestions.map((question) => (
-            <span key={question}>{question}</span>
-          ))}
-        </div>
-        <p>通过研究提炼用户诉求问题</p>
-        <strong>Research dimensions</strong>
-      </div>
-    </section>
-  );
-}
-
-function SegmentBlock({ data }) {
-  return (
-    <section className="case-section">
-      <div className="case-heading-row">
-        <h2>用户分层与核心场景</h2>
-        <strong>谁在<br />使用</strong>
-      </div>
-      <div className="case-segments">
-        {data.segments.map((segment) => (
-          <article key={segment.title}>
-            <h3>{segment.title}</h3>
-            <p>{segment.text}</p>
-          </article>
-        ))}
-      </div>
-      <p className="case-caption">不同社交动机下的行为差异</p>
-    </section>
-  );
-}
-
-function FlowBlock({ data }) {
-  return (
-    <section className="case-section">
-      <h2>用户旅程</h2>
-      <p className="case-section-lead">探索一种降低选择纠结，提升互动与破冰能力的新型机制</p>
-      <div className="case-flow-title">
-        <strong>Flows</strong>
-        <p>用户旅程基本形态<br />用户目标：找到一个感兴趣的人或房间，并完成首次互动。</p>
-      </div>
-      <div className="case-flow-map">
-        {data.flow.map((item) => (
-          <span key={item}>{item}</span>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function StrategyBlock({ data }) {
-  return (
-    <section className="case-section">
-      <h2>设计策略</h2>
-      <h3 className="case-big-question">如何让兴趣社交用户更快找到合适的人 / 房间，并更低压力地完成首次互动？</h3>
-      <div className="case-strategy-list">
-        {data.strategies.map((strategy) => (
-          <article key={strategy.number} className="case-strategy">
-            <div className="case-strategy-copy">
-              <strong>{strategy.number}：</strong>
-              <h3>{strategy.title}</h3>
-              <p>{strategy.text}</p>
-            </div>
-            <div className="case-strategy-board">
-              {strategy.blocks.map((block) => (
-                <span key={block}>{block}</span>
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function PrototypeBlock({ data }) {
-  return (
-    <section className="case-section">
-      <h2>产品原型</h2>
-      <p>
-        低保真原型阶段主要用于验证用户从“发现内容”到“发起互动”再到“消息承接”的核心路径。本阶段不展开完整视觉风格和高保真化页面，而是聚焦首页信息层级、广场探索路径、用户/房间卡片判断信息、破冰流程和消息承接逻辑，优先验证页面结构、入口优先级和关键操作流程是否清晰。
-      </p>
-      <h3 className="case-function-title">Function Overview</h3>
-      <div className="case-function-overview">
-        {data.functions.map((item, index) => (
-          <span key={item} style={{ '--offset': `${index % 2 === 0 ? 0 : 34}px` }}>
-            {item}
-          </span>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function TestBlock({ data }) {
-  return (
-    <section className="case-section">
-      <h2>组织测试：暴露核心路径中理解成本问题，推动后续方案迭代</h2>
-      <p>
-        本阶段邀请 6 名有兴趣社交或直播类产品使用经验的用户参与，围绕“发现人/房间—判断是否合适—发起互动—消息承接”四个任务进行走查。测试结束后，用户对首页发现效率、卡片判断充分度、破冰引导清晰度和消息承接清晰度进行 5 分制评分，最终分数为 6 名用户评分的平均值，并结合测试过程中的观察记录和简短访谈反馈进行归纳。
-      </p>
-      <div className="case-bar-chart">
-        {data.testBars.map((bar) => (
-          <div key={bar.label}>
-            <span>{bar.label}</span>
-            <i style={{ width: `${bar.value}%` }} />
-          </div>
-        ))}
-      </div>
-      <h3>原型测试结果</h3>
-      <p>
-        首轮用户测试显示，在完成“发现内容—判断是否合适—发起互动—消息承接”的过程中仍存在路径、主操作暗示和关系承接不清。首页与广场分工不明确；用户/房间卡片判断信息不足；以及破冰流程缺少明确上下文。基于测试反馈，后续迭代重点聚焦在首页路径聚焦、广场分类强化、卡片信息补充和破冰机制优化四个方向。
-      </p>
-    </section>
-  );
-}
-
-function ImprovementBlock() {
-  return (
-    <section className="case-section">
-      <h2>方案改进</h2>
-      <div className="case-before-after">
-        <div className="case-before-copy">
-          <p>首轮方案主要围绕核心功能搭建，但用户在“发现对象—判断是否合适—发起互动”的过程中仍存在路径分散、首页入口过分平铺、卡片判断信息不足的问题。</p>
-          <span>路径分散</span>
-          <span>体验断点</span>
-          <span>破冰困难</span>
-        </div>
-        <div className="case-before-after-visual" aria-hidden="true">
-          <strong>Before</strong>
-          <i />
-          <strong>After</strong>
-          <CaseBlob />
-          <CaseBlob />
-          <CaseBlob />
-          <CaseBlob />
-        </div>
-        <div className="case-after-copy">
-          <h3>基于首轮用户测试反馈，二轮方案重点聚焦核心社交路径的清晰度</h3>
-          <p>二轮方案围绕核心社交路径进行收敛优化，通过首页推荐前置、广场探索分工、卡片信息补充和破冰引导设计，让用户更清晰地完成从发现到互动的过程。</p>
-          <div>
-            <span>路径收敛</span>
-            <span>推荐前置</span>
-            <span>关系承接</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ShowcaseBlock() {
-  return (
-    <section className="case-section">
-      <h2>项目展示</h2>
-      <div className="case-showcase">
-        <div className="case-showcase-large" aria-hidden="true">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CasePhone key={index} />
-          ))}
-        </div>
-        <div aria-hidden="true" />
-        <div aria-hidden="true" />
-      </div>
-    </section>
-  );
-}
-
-function OutcomeBlock({ data }) {
-  return (
-    <section className="case-section">
-      <h2>成果总结</h2>
-      <div className="case-outcomes">
-        {data.outcomes.map((outcome) => (
-          <article key={outcome.value}>
-            <p>{outcome.text}</p>
-            <strong>{outcome.value}</strong>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function ConsumerSocialProject({ nextCard }) {
-  const data = consumerSocialCase;
-
-  return (
-    <section className="project-page case-study-page section-shell" id="project-detail">
-      <div className="detail-rail">
-        <DetailBackLink />
-      </div>
-      <article className="case-study-sheet">
-        <header className="case-study-hero">
-          <p className="case-eyebrow">{data.eyebrow}</p>
-          <h1>{data.title}</h1>
-          <h2>{data.subtitle}</h2>
-          <p>{data.intro}</p>
-          <HeroDiagram />
-          <div className="case-meta-grid">
-            {data.meta.map((item) => (
-              <div key={item.label}>
-                <span>{item.label}：</span>
-                <strong>{item.value}</strong>
-              </div>
-            ))}
-          </div>
-        </header>
-
-        <section className="case-section">
-          <h2>项目概述</h2>
-          {data.overview.map((item) => (
-            <p key={item}>{item}</p>
-          ))}
-          <ProblemDiagram data={data} />
-        </section>
-
-        <ResearchBlock data={data} />
-        <SegmentBlock data={data} />
-        <FlowBlock data={data} />
-        <StrategyBlock data={data} />
-        <PrototypeBlock data={data} />
-        <TestBlock data={data} />
-        <ImprovementBlock />
-        <ShowcaseBlock />
-        <OutcomeBlock data={data} />
-      </article>
-
-      {nextCard ? (
-        <footer className="project-next">
-          <a href={nextCard.href}>
-            <span>Next Project</span>
-            <strong>{nextCard.title}</strong>
-            <ArrowUpRight size={18} strokeWidth={1.7} />
-          </a>
-        </footer>
-      ) : null}
-    </section>
-  );
-}
-
 function ProjectDetail({ t, lang, slug }) {
   const project = projectPageContent[slug]?.[lang] ?? projectPageContent[slug]?.zh;
   const card = t.cards.find((item) => item.href === `/projects/${slug}`);
@@ -1309,10 +865,6 @@ function ProjectDetail({ t, lang, slug }) {
   const currentIndex = projectSlugs.indexOf(slug);
   const nextSlug = currentIndex >= 0 ? projectSlugs[(currentIndex + 1) % projectSlugs.length] : projectSlugs[0];
   const nextCard = t.cards.find((item) => item.href === `/projects/${nextSlug}`);
-
-  if (slug === 'social-app') {
-    return <ConsumerSocialProject nextCard={nextCard} />;
-  }
 
   if (!project || !card) return null;
 
