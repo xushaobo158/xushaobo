@@ -62,28 +62,28 @@ const copy = {
         title: '不夜星球社交APP产品体验设计优化',
         subtitle: '围绕用户核心路径，优化产品结构与社交互动细节',
         meta: 'APP / UX / 产品设计',
-        image: '/assets/cover-social-app.png',
+        image: '/assets/cover-social-app.jpg',
         href: '/projects/social-app',
       },
       {
         title: '文件生成后台工具系统设计',
         subtitle: '从业务流程出发，重构信息架构与操作流程',
         meta: 'B端系统 / UX / 界面设计',
-        image: '/assets/cover-backend-tool.png',
+        image: '/assets/cover-backend-tool.jpg',
         href: '/projects/file-tool',
       },
       {
         title: '网站视觉优化改版设计',
         subtitle: '强化信息层级与视觉一致性，提升品牌展示和用户感知',
         meta: '网页 / 视觉设计 / UI设计',
-        image: '/assets/cover-web-redesign.png',
+        image: '/assets/cover-web-redesign.jpg',
         href: '/projects/web-redesign',
       },
       {
         title: '作品开发中',
         subtitle: '更多项目正在整理与完善，保持更新',
         meta: 'More works / 敬请期待',
-        image: '/assets/cover-wip.png',
+        image: '/assets/cover-wip.jpg',
         href: '/projects/in-progress',
         muted: true,
       },
@@ -156,28 +156,28 @@ const copy = {
         title: 'Sleepless Planet Social App Experience Optimization',
         subtitle: 'Optimizing core user paths, product structure, and social interaction details.',
         meta: 'App / UX / Product Design',
-        image: '/assets/cover-social-app.png',
+        image: '/assets/cover-social-app.jpg',
         href: '/projects/social-app',
       },
       {
         title: 'File Generation Back-office Tool System Design',
         subtitle: 'Restructuring information architecture and workflows from business processes.',
         meta: 'B2B System / UX / UI Design',
-        image: '/assets/cover-backend-tool.png',
+        image: '/assets/cover-backend-tool.jpg',
         href: '/projects/file-tool',
       },
       {
         title: 'Website Visual Optimization Redesign',
         subtitle: 'Improving information hierarchy, visual consistency, and brand perception.',
         meta: 'Website / Visual Design / UI',
-        image: '/assets/cover-web-redesign.png',
+        image: '/assets/cover-web-redesign.jpg',
         href: '/projects/web-redesign',
       },
       {
         title: 'Works in Development',
         subtitle: 'More projects are being organized and refined for publication.',
         meta: 'More works / Coming soon',
-        image: '/assets/cover-wip.png',
+        image: '/assets/cover-wip.jpg',
         href: '/projects/in-progress',
         muted: true,
       },
@@ -693,7 +693,7 @@ function Hero({ t }) {
         onMouseMove={(event) => showCursorNote(event, '点一下试试？')}
         onMouseLeave={() => setCursorNote((current) => ({ ...current, active: false }))}
       >
-        <img src="/assets/hero-illustration.png" alt="" />
+        <img src="/assets/hero-illustration.jpg" alt="" fetchPriority="high" decoding="async" />
       </a>
       <div
         aria-hidden="true"
@@ -721,7 +721,7 @@ function Hero({ t }) {
             onClick={(event) => event.stopPropagation()}
           >
             <div className="idea-card-visual" aria-hidden="true">
-              <img src="/assets/hero-illustration.png" alt="" />
+              <img src="/assets/hero-illustration.jpg" alt="" loading="lazy" decoding="async" />
               <div className="idea-card-laptop">
                 <span className="idea-card-screen" />
                 <span className="idea-card-base" />
@@ -761,13 +761,13 @@ function About({ t }) {
       </div>
       <div className="about-gallery" aria-hidden="true">
         <figure className="about-photo about-photo-1">
-          <img src="/assets/about-photo-main.jpg" alt="" />
+          <img src="/assets/about-photo-main.jpg" alt="" loading="lazy" decoding="async" />
         </figure>
         <figure className="about-photo about-photo-2">
-          <img src="/assets/about-photo-2-newer.jpg" alt="" />
+          <img src="/assets/about-photo-2-newer.jpg" alt="" loading="lazy" decoding="async" />
         </figure>
         <figure className="about-photo about-photo-3">
-          <img src="/assets/about-photo-3-new.jpg" alt="" />
+          <img src="/assets/about-photo-3-new.jpg" alt="" loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -850,7 +850,7 @@ function InProgressPage() {
 
         <div className="in-progress-visual" aria-hidden="true">
           <div className="in-progress-miner-wrap">
-            <img src="/assets/in-progress-miner.png" alt="" className="in-progress-scene" />
+            <img src="/assets/in-progress-miner.jpg" alt="" className="in-progress-scene" loading="lazy" decoding="async" />
           </div>
           <p className="in-progress-caption">项目开发中</p>
         </div>
@@ -1228,7 +1228,7 @@ function ProjectDetail({ t, lang, slug }) {
                 <SocialHeroMock />
               ) : (
                 <div className="project-cover">
-                  <img src={card.image} alt="" />
+                  <img src={card.image} alt="" loading="lazy" decoding="async" />
                 </div>
               )}
 
@@ -1261,7 +1261,7 @@ function ProjectDetail({ t, lang, slug }) {
                     ))}
                   </ul>
                   <div className="project-media-card" aria-hidden="true">
-                    <img src={card.image} alt="" />
+                    <img src={card.image} alt="" loading="lazy" decoding="async" />
                   </div>
                   <div className="project-placeholder-grid" aria-hidden="true">
                     <div className="project-placeholder-card">
@@ -1297,7 +1297,13 @@ function WorkCard({ card, index }) {
   return (
     <a className={`work-card ${card.muted ? 'is-muted' : ''}`} href={card.href}>
       <div className="work-image">
-        <img src={card.image} alt="" loading="eager" />
+        <img
+          src={card.image}
+          alt=""
+          loading={index === 0 ? 'eager' : 'lazy'}
+          fetchPriority={index === 0 ? 'high' : 'auto'}
+          decoding="async"
+        />
       </div>
       <div className="work-content">
         <div>
