@@ -376,11 +376,11 @@ img {
 }
 
 .hero h1 {
-  max-width: 860px;
+  max-width: 920px;
   margin: 0;
-  font-size: 5.8rem;
+  font-size: 6.4rem;
   font-weight: 900;
-  line-height: 0.94;
+  line-height: 0.92;
 }
 
 .hero-text {
@@ -2953,7 +2953,7 @@ img {
   }
 
   .hero h1 {
-    font-size: 4.4rem;
+    font-size: 4.9rem;
   }
 
   .hero > .circle-badge {
@@ -3262,7 +3262,7 @@ img {
   }
 
   .hero h1 {
-    font-size: 2.9rem;
+    font-size: 3.35rem;
     line-height: 1;
   }
 
