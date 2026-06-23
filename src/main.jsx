@@ -1294,8 +1294,14 @@ function ProjectDetail({ t, lang, slug }) {
 }
 
 function WorkCard({ card, index }) {
+  const metaItems = card.meta
+    .split('/')
+    .map((item) => item.trim())
+    .filter(Boolean);
+  const imageRight = index >= 2;
+
   return (
-    <a className={`work-card ${card.muted ? 'is-muted' : ''}`} href={card.href}>
+    <a className={`work-card ${card.muted ? 'is-muted' : ''} ${imageRight ? 'is-image-right' : ''}`} href={card.href}>
       <div className="work-image">
         <img
           src={card.image}
@@ -1306,13 +1312,24 @@ function WorkCard({ card, index }) {
         />
       </div>
       <div className="work-content">
-        <div>
+        <div className="work-copy-top">
+          <span className="work-index">{String(index + 1).padStart(2, '0')}</span>
+          <p className="work-summary">{card.subtitle}</p>
+        </div>
+        <div className="work-title-block">
           <h3>{card.title}</h3>
-          <p>{card.subtitle}</p>
         </div>
         <div className="work-footer">
-          <span>{card.meta}</span>
-          <ArrowUpRight size={21} strokeWidth={1.6} />
+          <div className="work-meta-list">
+            {metaItems.map((item) => (
+              <span key={item} className="work-meta-item">
+                {item}
+              </span>
+            ))}
+          </div>
+          <span className="work-open" aria-hidden="true">
+            <ArrowUpRight size={22} strokeWidth={1.6} />
+          </span>
         </div>
       </div>
     </a>
