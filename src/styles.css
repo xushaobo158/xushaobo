@@ -354,7 +354,7 @@ img {
 .hero {
   position: relative;
   display: grid;
-  min-height: 760px;
+  min-height: max(760px, calc(100vh - 28px));
   grid-template-columns: minmax(0, 0.92fr) minmax(620px, 1.08fr);
   align-items: center;
   gap: 38px;
@@ -3225,7 +3225,7 @@ img {
   }
 
   .hero {
-    min-height: 790px;
+    min-height: max(790px, calc(100vh - 16px));
     grid-template-columns: 1fr;
     align-items: start;
     padding: 138px 22px 84px;
