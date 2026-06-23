@@ -661,6 +661,38 @@ function CircularBadge({ label, onMouseEnter, onMouseMove, onMouseLeave, onClick
   );
 }
 
+function PhotoWall({ className = '', eager = false }) {
+  return (
+    <div className={className} aria-hidden="true">
+      <figure className="about-photo about-photo-1">
+        <img
+          src="/assets/about-photo-main.jpg"
+          alt=""
+          loading={eager ? 'eager' : 'lazy'}
+          fetchPriority={eager ? 'high' : 'auto'}
+          decoding="async"
+        />
+      </figure>
+      <figure className="about-photo about-photo-2">
+        <img
+          src="/assets/about-photo-2-newer.jpg"
+          alt=""
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+      </figure>
+      <figure className="about-photo about-photo-3">
+        <img
+          src="/assets/about-photo-3-new.jpg"
+          alt=""
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+      </figure>
+    </div>
+  );
+}
+
 function Hero({ t }) {
   const [cursorNote, setCursorNote] = useState({ active: false, x: 0, y: 0, text: '', icon: 'none' });
   const [ideaCardOpen, setIdeaCardOpen] = useState(false);
@@ -693,7 +725,7 @@ function Hero({ t }) {
         onMouseMove={(event) => showCursorNote(event, '点一下试试？')}
         onMouseLeave={() => setCursorNote((current) => ({ ...current, active: false }))}
       >
-        <img src="/assets/hero-illustration.jpg" alt="" fetchPriority="high" decoding="async" />
+        <PhotoWall className="about-gallery hero-photo-wall" eager />
       </a>
       <div
         aria-hidden="true"
@@ -759,17 +791,7 @@ function About({ t }) {
           ))}
         </div>
       </div>
-      <div className="about-gallery" aria-hidden="true">
-        <figure className="about-photo about-photo-1">
-          <img src="/assets/about-photo-main.jpg" alt="" loading="lazy" decoding="async" />
-        </figure>
-        <figure className="about-photo about-photo-2">
-          <img src="/assets/about-photo-2-newer.jpg" alt="" loading="lazy" decoding="async" />
-        </figure>
-        <figure className="about-photo about-photo-3">
-          <img src="/assets/about-photo-3-new.jpg" alt="" loading="lazy" decoding="async" />
-        </figure>
-      </div>
+      <PhotoWall className="about-gallery" />
     </section>
   );
 }
