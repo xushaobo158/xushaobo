@@ -5,7 +5,7 @@ import './styles.css';
 
 const copy = {
   zh: {
-    nav: ['作品', '关于', '简历', '联系'],
+    nav: ['作品', '简历', '联系'],
     heroName: '徐少柏 / Xushaobo',
     heroIntro:
       'Hi，我是徐少柏，一名拥有交互设计背景的产品体验设计师，擅长结合产品思维、vibe coding工作流与高保真原型，将复杂需求快速转化为清晰、可落地的交互体验。',
@@ -99,7 +99,7 @@ const copy = {
     marquee: 'LET US BUILD SOMETHING GREAT TOGETHER',
   },
   en: {
-    nav: ['Work', 'About', 'Resume', 'Contact'],
+    nav: ['Work', 'Resume', 'Contact'],
     heroName: 'Xu Shaobo / Xushaobo',
     heroIntro:
       'Designing user experiences and interfaces for internet products, with attention to user needs, product structure, and every interaction detail.',
@@ -506,69 +506,11 @@ const projectPageContent = {
   },
 };
 
-function Loader() {
-  const [count, setCount] = useState(0);
-  const [hidden, setHidden] = useState(false);
-  const stickers = [
-    { label: 'PORTFOLIO', tone: 'cream' },
-    { label: 'UI / UX', tone: 'peach' },
-    { label: 'CASE STUDY', tone: 'paper' },
-    { label: 'XUSHAOBO', tone: 'ink' },
-  ];
-  const status =
-    count < 28
-      ? 'Booting interface assets'
-      : count < 56
-        ? 'Loading interaction modules'
-        : count < 84
-          ? 'Rendering visual systems'
-          : 'Entering portfolio world';
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setCount((value) => {
-        if (value >= 100) {
-          window.clearInterval(timer);
-          window.setTimeout(() => setHidden(true), 420);
-          return 100;
-        }
-        return Math.min(100, value + 4);
-      });
-    }, 48);
-    return () => window.clearInterval(timer);
-  }, []);
-
-  return (
-    <div className={`loader ${hidden ? 'loader-hidden' : ''}`} aria-hidden={hidden}>
-      <div className="loader-noise" aria-hidden="true" />
-      <div className="loader-stage">
-        <div className="loader-stickers" aria-hidden="true">
-          {stickers.map((sticker, index) => (
-            <span
-              key={sticker.label}
-              className={`loader-sticker loader-sticker-${sticker.tone} ${count >= index * 18 + 8 ? 'is-visible' : ''}`}
-            >
-              {sticker.label}
-            </span>
-          ))}
-        </div>
-        <div className="loader-panel">
-          <p className="loader-kicker">LOADING THE PORTFOLIO</p>
-          <strong>{count}%</strong>
-          <div className="loader-bar" aria-hidden="true">
-            <i style={{ width: `${count}%` }} />
-          </div>
-          <p className="loader-status">{status}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Header({ lang, setLang, t, theme, setTheme }) {
-  const pathname = window.location.pathname;
-  const onDetailPage = pathname.startsWith('/about') || pathname.startsWith('/resume') || pathname.startsWith('/projects/');
-  const navTargets = onDetailPage ? ['/#work', '/about', '/resume', '/#contact'] : ['#work', '/about', '/resume', '#contact'];
+  const rawPathname = window.location.pathname;
+  const pathname = rawPathname.startsWith('/about') ? '/' : rawPathname;
+  const onDetailPage = pathname.startsWith('/resume') || pathname.startsWith('/projects/');
+  const navTargets = onDetailPage ? ['/#work', '/resume', '/#contact'] : ['#work', '/resume', '#contact'];
   const homeTarget = onDetailPage ? '/' : '#top';
 
   return (
@@ -717,16 +659,9 @@ function Hero({ t }) {
           <ArrowUpRight size={18} strokeWidth={1.75} />
         </a>
       </div>
-      <a
-        className="hero-visual"
-        href="/about"
-        aria-label={t.aboutTitle}
-        onMouseEnter={(event) => showCursorNote(event, '点一下试试？')}
-        onMouseMove={(event) => showCursorNote(event, '点一下试试？')}
-        onMouseLeave={() => setCursorNote((current) => ({ ...current, active: false }))}
-      >
+      <div className="hero-visual" aria-hidden="true">
         <PhotoWall className="about-gallery hero-photo-wall" eager />
-      </a>
+      </div>
       <div
         aria-hidden="true"
         className={`hero-cursor-note ${cursorNote.active ? 'is-visible' : ''}`}
@@ -771,27 +706,6 @@ function Hero({ t }) {
         <ArrowDown size={15} strokeWidth={1.5} />
         <span>{t.scroll}</span>
       </a>
-    </section>
-  );
-}
-
-function About({ t }) {
-  return (
-    <section className="about section-shell" id="about">
-      <div className="detail-rail">
-        <DetailBackLink />
-      </div>
-      <div className="about-copy">
-        <p className="about-eyebrow">{t.aboutEyebrow}</p>
-        <h2>{t.aboutTitle}</h2>
-        <p className="about-lead">{t.aboutLead}</p>
-        <div className="about-meta">
-          {t.aboutMeta.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-      </div>
-      <PhotoWall className="about-gallery" />
     </section>
   );
 }
@@ -1441,8 +1355,8 @@ function App() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
   const t = copy[lang];
-  const pathname = window.location.pathname;
-  const isAboutPage = pathname.startsWith('/about');
+  const rawPathname = window.location.pathname;
+  const pathname = rawPathname.startsWith('/about') ? '/' : rawPathname;
   const isResumePage = pathname.startsWith('/resume');
   const projectSlug = pathname.startsWith('/projects/') ? pathname.replace('/projects/', '').split('/')[0] : '';
   const isProjectPage = Boolean(projectSlug);
@@ -1452,15 +1366,18 @@ function App() {
     window.localStorage.setItem('xushaobo-theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    if (rawPathname.startsWith('/about')) {
+      window.history.replaceState({}, '', '/');
+    }
+  }, [rawPathname]);
+
   return (
     <>
-      <Loader />
       <div className="grid-background" aria-hidden="true" />
       <Header lang={lang} setLang={setLang} t={t} theme={theme} setTheme={setTheme} />
-      <main className={isAboutPage || isResumePage || isProjectPage ? 'page-main' : ''}>
-        {isAboutPage ? (
-          <About t={t} />
-        ) : isResumePage ? (
+      <main className={isResumePage || isProjectPage ? 'page-main' : ''}>
+        {isResumePage ? (
           <Resume />
         ) : projectSlug === 'in-progress' ? (
           <InProgressPage />
