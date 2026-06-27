@@ -1230,18 +1230,6 @@ img {
   text-align: center;
 }
 
-.scroll-cue {
-  position: absolute;
-  bottom: 62px;
-  left: 56px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  writing-mode: vertical-rl;
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-}
 
 .work {
   position: relative;

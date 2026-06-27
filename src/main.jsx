@@ -754,10 +754,6 @@ function Hero({ t }) {
           </div>
         </div>
       ) : null}
-      <a className="scroll-cue" href="#work">
-        <ArrowDown size={15} strokeWidth={1.5} />
-        <span>{t.scroll}</span>
-      </a>
     </section>
   );
 }
