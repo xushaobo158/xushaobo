@@ -47,8 +47,8 @@ const copy = {
     resumeProfile: [
       { label: '姓名', value: '徐少柏 / Xushaobo' },
       { label: '方向', value: '用户体验设计 / UIUX 设计' },
-      { label: '目标', value: '互联网产品公司' },
-      { label: '联系方式', value: '3121353738@qq.com / 15930186021' },
+      { label: '邮箱', value: '3121353738@qq.com' },
+      { label: '电话', value: '15930186021' },
     ],
     cards: [
       {
@@ -134,8 +134,8 @@ const copy = {
     resumeProfile: [
       { label: 'Name', value: 'Xu Shaobo / Xushaobo' },
       { label: 'Focus', value: 'Product Experience Design / UIUX Design' },
-      { label: 'Target', value: 'Internet product companies' },
-      { label: 'Contact', value: '3121353738@qq.com / 15930186021' },
+      { label: 'Email', value: '3121353738@qq.com' },
+      { label: 'Phone', value: '15930186021' },
     ],
     cards: [
       {
