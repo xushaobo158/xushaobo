@@ -64,35 +64,6 @@ const copy = {
           },
         ],
       },
-      {
-        title: '项目经历',
-        entries: [
-          {
-            org: '经纬恒润官网视觉迭代设计',
-            role: '视觉体验 / 用户体验',
-            date: '2026.03-2026.05',
-            details: [],
-          },
-          {
-            org: '文件配置自动化管理平台改版设计',
-            role: '交互设计 / 原型开发',
-            date: '2025.11-2026.05',
-            details: [],
-          },
-          {
-            org: '“冰川智界”车载 HMI 视觉优化设计',
-            role: '用户体验 / 视觉优化',
-            date: '2024.11-2025.05',
-            details: [],
-          },
-          {
-            org: '不夜星球社交 APP 产品体验优化',
-            role: '用户体验 / 产品设计',
-            date: '2024.03-2024.08',
-            details: [],
-          },
-        ],
-      },
     ],
     homeResumeDownload: '下载 PDF 简历',
     resumeProfile: [
@@ -211,35 +182,6 @@ const copy = {
               'Ran competitive research and user interviews to extract pain points, personas, and experience findings.',
               'Participated in iOS/Android design system work and iterative UX optimization around livestreaming and messaging flows.',
             ],
-          },
-        ],
-      },
-      {
-        title: 'Projects',
-        entries: [
-          {
-            org: 'HI Raintech Official Website Visual Refresh',
-            role: 'Visual Experience / UX',
-            date: '2026.03-2026.05',
-            details: ['Refined the homepage and six business pages with high-fidelity visual updates and responsive delivery.'],
-          },
-          {
-            org: 'File Configuration Automation Platform Redesign',
-            role: 'Interaction Design / Prototype Development',
-            date: '2025.11-2026.05',
-            details: ['Reworked the full file-generation workflow, consolidated high-frequency entry points, and optimized four core pages.'],
-          },
-          {
-            org: '"Glacier Intelligence" In-car HMI Optimization',
-            role: 'UX / Visual Optimization',
-            date: '2024.11-2025.05',
-            details: ['Completed user research, driving-scenario analysis, and 30+ in-car interface screens for a full interaction proposal.'],
-          },
-          {
-            org: 'Sleepless Planet Social App Optimization',
-            role: 'UX / Product Design',
-            date: '2024.03-2024.08',
-            details: ['Restructured the core social journey and improved room-card, user-tag, recommendation, and ice-breaking modules, improving decision efficiency by around 20%.'],
           },
         ],
       },
