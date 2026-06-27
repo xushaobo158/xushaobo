@@ -827,6 +827,19 @@ img {
   transform: none;
 }
 
+.hero-photo-wall.is-single {
+  width: min(100%, 360px);
+  min-height: 430px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-self: center;
+}
+
+.hero-photo-wall.is-single .about-photo-3 {
+  min-height: 430px;
+  transform: rotate(-1deg);
+}
+
 .hero-visual:hover .hero-photo-wall .about-photo img,
 .hero-visual:focus-within .hero-photo-wall .about-photo img {
   transform: scale(1.03);
@@ -845,6 +858,11 @@ img {
 .hero-visual:hover .hero-photo-wall .about-photo-3,
 .hero-visual:focus-within .hero-photo-wall .about-photo-3 {
   transform: translateY(-18px) rotate(-0.8deg);
+}
+
+.hero-visual:hover .hero-photo-wall.is-single .about-photo-3,
+.hero-visual:focus-within .hero-photo-wall.is-single .about-photo-3 {
+  transform: translateY(-10px) rotate(-0.8deg);
 }
 
 .about-photo {

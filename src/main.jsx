@@ -637,26 +637,30 @@ function CircularBadge({ label, onMouseEnter, onMouseMove, onMouseLeave, onClick
   );
 }
 
-function PhotoWall({ className = '', eager = false }) {
+function PhotoWall({ className = '', eager = false, single = false }) {
   return (
     <div className={className} aria-hidden="true">
-      <figure className="about-photo about-photo-1">
-        <img
-          src="/assets/about-photo-main.webp"
-          alt=""
-          loading={eager ? 'eager' : 'lazy'}
-          fetchPriority={eager ? 'high' : 'auto'}
-          decoding="async"
-        />
-      </figure>
-      <figure className="about-photo about-photo-2">
-        <img
-          src="/assets/about-photo-2-newer.webp"
-          alt=""
-          loading={eager ? 'eager' : 'lazy'}
-          decoding="async"
-        />
-      </figure>
+      {!single ? (
+        <figure className="about-photo about-photo-1">
+          <img
+            src="/assets/about-photo-main.webp"
+            alt=""
+            loading={eager ? 'eager' : 'lazy'}
+            fetchPriority={eager ? 'high' : 'auto'}
+            decoding="async"
+          />
+        </figure>
+      ) : null}
+      {!single ? (
+        <figure className="about-photo about-photo-2">
+          <img
+            src="/assets/about-photo-2-newer.webp"
+            alt=""
+            loading={eager ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+        </figure>
+      ) : null}
       <figure className="about-photo about-photo-3">
         <img
           src="/assets/about-photo-3-new.webp"
@@ -694,7 +698,7 @@ function Hero({ t }) {
         </a>
       </div>
       <div className="hero-visual" aria-hidden="true">
-        <PhotoWall className="about-gallery hero-photo-wall" eager />
+        <PhotoWall className="about-gallery hero-photo-wall is-single" eager single />
       </div>
       <div
         aria-hidden="true"
