@@ -554,9 +554,20 @@ img {
   gap: 18px;
 }
 
+.home-resume-entry-head.is-compact-head {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.35fr) minmax(180px, 1fr) auto;
+  align-items: baseline;
+  gap: 18px;
+}
+
 .home-resume-entry-head > div {
   display: grid;
   gap: 4px;
+}
+
+.home-resume-entry-head.is-compact-head > div {
+  display: contents;
 }
 
 .home-resume-entry-org {
@@ -577,6 +588,7 @@ img {
 .home-resume-entry-date {
   flex: 0 0 auto;
   white-space: nowrap;
+  text-align: right;
 }
 
 .home-resume-entry-details {
@@ -3319,8 +3331,19 @@ img {
     gap: 6px;
   }
 
+  .home-resume-entry-head.is-compact-head {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .home-resume-entry-head.is-compact-head > div {
+    display: grid;
+    gap: 4px;
+  }
+
   .home-resume-entry-date {
     white-space: normal;
+    text-align: left;
   }
 
   .hero h1 {

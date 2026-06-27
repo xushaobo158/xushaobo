@@ -31,10 +31,11 @@ const copy = {
       },
       {
         title: '教育经历',
+        compactHead: true,
         entries: [
           {
-            org: '东北林业大学（211）',
-            role: '设计学（前15%） / 硕士',
+            org: '东北林业大学（211）硕士',
+            role: '设计学（前15%）',
             date: '2024.09-2027.06',
             details: [
               '主修课程：用户体验设计、交互设计、用户研究与统计分析、人工工程学、产品与服务系统、生态与可持续设计、设计管理与战略。',
@@ -42,8 +43,8 @@ const copy = {
             ],
           },
           {
-            org: '绥化学院',
-            role: '环境设计（前10%） / 学士',
+            org: '绥化学院 学士',
+            role: '环境设计（前10%）',
             date: '2019.09-2023.06',
             details: [
               '主修课程：手绘效果图表现技法、CAD 建筑制图、3DMAX 室内外场景制作、人工工程学、装饰材料与构造、建筑工程制图与识图。',
@@ -848,8 +849,11 @@ function HomeResumeModule({ t }) {
                 {section.entries ? (
                   <div className="home-resume-entry-list">
                     {section.entries.map((entry) => (
-                      <article key={`${entry.org}-${entry.role}`} className="home-resume-entry">
-                        <div className="home-resume-entry-head">
+                      <article
+                        key={`${entry.org}-${entry.role}`}
+                        className={`home-resume-entry ${section.compactHead ? 'is-compact-head' : ''}`}
+                      >
+                        <div className={`home-resume-entry-head ${section.compactHead ? 'is-compact-head' : ''}`}>
                           <div>
                             <strong className="home-resume-entry-org">{entry.org}</strong>
                             <span className="home-resume-entry-role">{entry.role}</span>
