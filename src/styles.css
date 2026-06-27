@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 104px;
 }
 
 body {
@@ -300,6 +301,13 @@ img {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(247, 244, 237, 0.68);
+}
+
+#top,
+#resume-preview,
+#work,
+#contact {
+  scroll-margin-top: 104px;
 }
 
 .detail-rail,
@@ -3199,7 +3207,7 @@ img {
     min-height: max(790px, calc(100vh - 16px));
     grid-template-columns: 1fr;
     align-items: start;
-    padding: 138px 22px 84px;
+    padding: 138px 18px 84px;
   }
 
   .hero-text {
@@ -3233,7 +3241,7 @@ img {
   }
 
   .hero h1 {
-    font-size: 3.35rem;
+    font-size: clamp(2.9rem, 13vw, 3.15rem);
     line-height: 1;
   }
 
@@ -3294,10 +3302,7 @@ img {
   }
 
   .hero > .circle-badge {
-    width: 112px;
-    height: 112px;
-    left: 16px;
-    top: 410px;
+    display: none;
   }
 
   .scroll-cue {
@@ -3326,6 +3331,17 @@ img {
 
   .section-heading p {
     margin-top: 12px;
+  }
+
+  html {
+    scroll-padding-top: 132px;
+  }
+
+  #top,
+  #resume-preview,
+  #work,
+  #contact {
+    scroll-margin-top: 132px;
   }
 
   .work-grid,
