@@ -1472,14 +1472,14 @@ img {
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  padding-bottom: 0;
+  padding-bottom: clamp(32px, 4vw, 72px);
   overflow: hidden;
-  background: #fff;
+  background: #ffffff;
 }
 
 .social-app-return-rail {
   display: flex;
-  width: min(100%, 1750px);
+  width: min(88vw, 1500px);
   min-height: 72px;
   align-items: center;
   margin: 0 auto;
@@ -1488,7 +1488,7 @@ img {
 
 .social-app-image-stack {
   display: grid;
-  width: min(100%, 1750px);
+  width: min(88vw, 1500px);
   margin: 0 auto;
   gap: 0;
 }
@@ -1497,6 +1497,17 @@ img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 700px) {
+  .social-app-return-rail,
+  .social-app-image-stack {
+    width: calc(100% - 24px);
+  }
+
+  .social-app-image-page {
+    padding-bottom: 24px;
+  }
 }
 
 .file-tool-image-page {
