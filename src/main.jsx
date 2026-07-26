@@ -1315,6 +1315,7 @@ function FileToolDashboard() {
 const socialAppCaseImages = [
   '/assets/social-app/01-cover.webp',
   '/assets/social-app/02-overview.webp',
+  '/assets/social-app/03-user-strategy.webp',
 ];
 
 function ProjectDetail({ t, lang, slug }) {
