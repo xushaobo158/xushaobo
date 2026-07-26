@@ -684,7 +684,6 @@ img {
   display: block;
   width: min(100%, 620px);
   transform-origin: center;
-  animation: idle-sway 6.4s ease-in-out infinite;
 }
 
 .hero-visual > img {
