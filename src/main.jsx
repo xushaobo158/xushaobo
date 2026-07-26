@@ -18,7 +18,7 @@ const copy = {
     homeResumeEyebrow: 'RESUME SNAPSHOT',
     homeResumeTitle: '简历速览',
     homeResumeLead: '',
-    homeResumeSideNote: '适合用于产品体验设计 / UIUX 相关岗位投递，也可以通过右侧入口直接下载完整 PDF 简历。',
+    homeResumeSideNote: '点击上方的下载按钮，即可获取我的完整 PDF 简历，进一步了解我的项目经历、设计能力与实践经验。',
     homeResumeTags: ['产品思维', 'Vibe coding', '体验设计', 'AI工具'],
     homeResumeSections: [
       {
@@ -127,7 +127,7 @@ const copy = {
     homeResumeEyebrow: 'RESUME SNAPSHOT',
     homeResumeTitle: 'Resume Snapshot',
     homeResumeLead: '',
-    homeResumeSideNote: 'Useful as a quick hiring snapshot for Product Experience / UIUX roles, with the full PDF resume available on the right.',
+    homeResumeSideNote: 'Click the download button above to get my full PDF resume and learn more about my project experience, design capabilities, and hands-on practice.',
     homeResumeTags: ['Product Thinking', 'Vibe Coding', 'Experience Design', 'AI Tools'],
     homeResumeSections: [
       {
