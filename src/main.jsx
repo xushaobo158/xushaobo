@@ -57,6 +57,12 @@ const copy = {
             details: [],
           },
           {
+            org: '车载中控屏视觉优化设计',
+            role: '导师横向课题项目',
+            date: '2024.11-2025.06',
+            details: [],
+          },
+          {
             org: '北京妙动时光文化传媒有限公司',
             role: '产品设计实习生',
             date: '2024.03-2024.08',
@@ -173,6 +179,12 @@ const copy = {
               'Collaborated on two internal tool modules, producing process maps and 20+ high-fidelity screens.',
               'Supported Beijing Auto Show preparation with large-screen interfaces, showcase visuals, and internal brand logo output.',
             ],
+          },
+          {
+            org: 'In-vehicle Center Display Visual Optimization',
+            role: 'Faculty-sponsored Industry Research Project',
+            date: '2024.11-2025.06',
+            details: [],
           },
           {
             org: 'Beijing Miaodong Time Media',
