@@ -875,6 +875,24 @@ img {
     linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(252, 248, 241, 0.96));
 }
 
+.hero-profile-photo img {
+  display: block;
+  border: 1px solid rgba(73, 68, 61, 0.14);
+  border-radius: 3px;
+  object-position: 50% center;
+}
+
+.hero-profile-photo::after {
+  top: 10px;
+  left: 24px;
+  width: 72px;
+  height: 22px;
+  background: rgba(205, 194, 177, 0.48);
+  border: 1px solid rgba(145, 130, 109, 0.14);
+  box-shadow: 0 4px 9px rgba(31, 27, 21, 0.05);
+  transform: rotate(-7deg);
+}
+
 .about-photo-placeholder-frame {
   position: relative;
   width: 100%;
