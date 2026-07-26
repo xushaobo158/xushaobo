@@ -1320,6 +1320,7 @@ const socialAppCaseImages = [
   '/assets/social-app/05-user-flow-strategy.webp',
   '/assets/social-app/06-user-flow.webp',
   '/assets/social-app/07-project-showcase.webp',
+  '/assets/social-app/08-results-summary.webp',
 ];
 
 function ProjectDetail({ t, lang, slug }) {
