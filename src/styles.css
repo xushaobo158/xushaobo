@@ -1450,6 +1450,37 @@ img {
   overflow: hidden;
 }
 
+.social-app-image-page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-bottom: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.social-app-return-rail {
+  display: flex;
+  width: min(100%, 1750px);
+  min-height: 72px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 16px clamp(16px, 2vw, 28px);
+}
+
+.social-app-image-stack {
+  display: grid;
+  width: min(100%, 1750px);
+  margin: 0 auto;
+  gap: 0;
+}
+
+.social-app-image-stack img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .file-tool-image-page {
   padding-inline: 34px;
 }

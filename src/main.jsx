@@ -1312,15 +1312,37 @@ function FileToolDashboard() {
   );
 }
 
+const socialAppCaseImages = [
+  '/assets/social-app/01-cover.webp',
+];
+
 function ProjectDetail({ t, lang, slug }) {
   const project = projectPageContent[slug]?.[lang] ?? projectPageContent[slug]?.zh;
   const card = t.cards.find((item) => item.href === `/projects/${slug}`);
-  const projectSlugs = ['social-app', 'file-tool', 'web-redesign'];
-  const currentIndex = projectSlugs.indexOf(slug);
-  const nextSlug = currentIndex >= 0 ? projectSlugs[(currentIndex + 1) % projectSlugs.length] : projectSlugs[0];
-  const nextCard = t.cards.find((item) => item.href === `/projects/${nextSlug}`);
 
   if (!project || !card) return null;
+
+  if (slug === 'social-app') {
+    return (
+      <section className="social-app-image-page" id="project-detail">
+        <div className="social-app-return-rail">
+          <DetailBackLink />
+        </div>
+        <div className="social-app-image-stack">
+          {socialAppCaseImages.map((src, index) => (
+            <img
+              src={src}
+              alt={`不夜星球社交 APP 项目展示 ${index + 1}`}
+              decoding="async"
+              fetchPriority={index === 0 ? 'high' : 'auto'}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              key={src}
+            />
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   if (slug === 'file-tool') {
     return (
@@ -1332,8 +1354,13 @@ function ProjectDetail({ t, lang, slug }) {
     );
   }
 
+  const projectSlugs = ['social-app', 'file-tool', 'web-redesign'];
+  const currentIndex = projectSlugs.indexOf(slug);
+  const nextSlug = currentIndex >= 0 ? projectSlugs[(currentIndex + 1) % projectSlugs.length] : projectSlugs[0];
+  const nextCard = t.cards.find((item) => item.href === `/projects/${nextSlug}`);
+
   return (
-    <section className={`project-page section-shell ${slug === 'social-app' ? 'social-detail-page' : ''}`} id="project-detail">
+    <section className="project-page section-shell" id="project-detail">
       <div className="detail-rail">
         <DetailBackLink />
       </div>
@@ -1351,7 +1378,7 @@ function ProjectDetail({ t, lang, slug }) {
             </div>
           </aside>
 
-          <div className={`project-content ${slug === 'social-app' ? 'social-project-content' : ''}`}>
+          <div className="project-content">
             <header className="project-hero">
               <div className="project-copy">
                 <div className="project-title-row">
@@ -1368,13 +1395,9 @@ function ProjectDetail({ t, lang, slug }) {
                 </div>
               </div>
 
-              {slug === 'social-app' ? (
-                <SocialHeroMock />
-              ) : (
-                <div className="project-cover">
-                  <img src={card.image} alt="" loading="lazy" decoding="async" />
-                </div>
-              )}
+              <div className="project-cover">
+                <img src={card.image} alt="" loading="lazy" decoding="async" />
+              </div>
 
               <div className="project-summary">
                 {project.summary.map((item) => (
@@ -1386,40 +1409,36 @@ function ProjectDetail({ t, lang, slug }) {
               </div>
             </header>
 
-            {project.sections.map((section, index) =>
-              slug === 'social-app' ? (
-                <SocialProjectSection key={section.title} section={section} index={index} />
-              ) : (
-                <section key={section.title} id={`project-section-${index + 1}`} className="project-section-block">
-                  <h2>{section.title}</h2>
-                  <p>{section.text}</p>
-                  {section.noteLabel && section.noteText ? (
-                    <div className="project-note">
-                      <strong>{section.noteLabel}:</strong>
-                      <span>{section.noteText}</span>
-                    </div>
-                  ) : null}
-                  <ul>
-                    {section.bullets.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                  <div className="project-media-card" aria-hidden="true">
-                    <img src={card.image} alt="" loading="lazy" decoding="async" />
+            {project.sections.map((section, index) => (
+              <section key={section.title} id={`project-section-${index + 1}`} className="project-section-block">
+                <h2>{section.title}</h2>
+                <p>{section.text}</p>
+                {section.noteLabel && section.noteText ? (
+                  <div className="project-note">
+                    <strong>{section.noteLabel}:</strong>
+                    <span>{section.noteText}</span>
                   </div>
-                  <div className="project-placeholder-grid" aria-hidden="true">
-                    <div className="project-placeholder-card">
-                      <span>01</span>
-                      <strong>Key Screen Placeholder</strong>
-                    </div>
-                    <div className="project-placeholder-card">
-                      <span>02</span>
-                      <strong>Process / Insight Placeholder</strong>
-                    </div>
+                ) : null}
+                <ul>
+                  {section.bullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <div className="project-media-card" aria-hidden="true">
+                  <img src={card.image} alt="" loading="lazy" decoding="async" />
+                </div>
+                <div className="project-placeholder-grid" aria-hidden="true">
+                  <div className="project-placeholder-card">
+                    <span>01</span>
+                    <strong>Key Screen Placeholder</strong>
                   </div>
-                </section>
-              ),
-            )}
+                  <div className="project-placeholder-card">
+                    <span>02</span>
+                    <strong>Process / Insight Placeholder</strong>
+                  </div>
+                </div>
+              </section>
+            ))}
           </div>
         </div>
 
