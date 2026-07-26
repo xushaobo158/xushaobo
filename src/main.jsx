@@ -76,7 +76,7 @@ const copy = {
       { label: '姓名', value: '徐少柏 / Xushaobo' },
       { label: '电话 / 微信', value: '15930186021' },
       { label: '个人邮箱', value: '3121353738@qq.com' },
-      { label: '求职方向', value: '交互设计师 / 用户体验设计师' },
+      { label: '求职方向', value: 'UI/UX设计师 / 用户体验设计师' },
     ],
     cards: [
       {
@@ -203,7 +203,7 @@ const copy = {
       { label: 'Name', value: 'Xu Shaobo / Xushaobo' },
       { label: 'Phone / WeChat', value: '15930186021' },
       { label: 'Email', value: '3121353738@qq.com' },
-      { label: 'Target Role', value: 'Interaction Designer / UX Designer' },
+      { label: 'Target Role', value: 'UI/UX Designer / User Experience Designer' },
     ],
     cards: [
       {
