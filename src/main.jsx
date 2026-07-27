@@ -1364,6 +1364,10 @@ const fileToolCaseImages = [
   '/assets/file-tool/04-interface-problems.webp',
   '/assets/file-tool/05-home-visual.webp',
   '/assets/file-tool/06-interaction-flow.webp',
+  '/assets/file-tool/07-file-configuration.webp',
+  '/assets/file-tool/08-generation-progress.webp',
+  '/assets/file-tool/09-project-showcase.webp',
+  '/assets/file-tool/10-usability-results.webp',
 ];
 
 function ProjectDetail({ t, lang, slug }) {
