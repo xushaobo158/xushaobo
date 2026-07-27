@@ -654,13 +654,18 @@ function PhotoWall({ className = '', eager = false, single = false }) {
     <div className={className} aria-hidden="true">
       {single ? (
         <figure className="about-photo about-photo-3 about-photo-placeholder hero-profile-photo">
-          <img
-            src="/assets/hero-profile-photo.jpg"
-            alt=""
-            loading={eager ? 'eager' : 'lazy'}
-            fetchPriority={eager ? 'high' : 'auto'}
-            decoding="async"
-          />
+          <picture>
+            <source media="(max-width: 700px)" srcSet="/assets/hero-profile-photo-mobile.webp" />
+            <img
+              src="/assets/hero-profile-photo.webp"
+              alt=""
+              width="1600"
+              height="1045"
+              loading={eager ? 'eager' : 'lazy'}
+              fetchPriority={eager ? 'high' : 'auto'}
+              decoding="async"
+            />
+          </picture>
         </figure>
       ) : null}
       {!single ? (
@@ -1347,28 +1352,30 @@ function FileToolDashboard() {
 }
 
 const socialAppCaseImages = [
-  '/assets/social-app/01-cover.webp',
-  '/assets/social-app/02-overview.webp',
-  '/assets/social-app/03-user-strategy.webp',
-  '/assets/social-app/04-research-dimensions.webp',
-  '/assets/social-app/05-user-flow-strategy.webp',
-  '/assets/social-app/06-user-flow.webp',
-  '/assets/social-app/07-project-showcase.webp',
-  '/assets/social-app/08-results-summary.webp',
+  { src: '/assets/social-app/01-cover.webp', width: 1924, height: 1545 },
+  { src: '/assets/social-app/02-overview.webp', width: 1924, height: 4064 },
+  { src: '/assets/social-app/03-user-strategy.webp', width: 1924, height: 2394 },
+  { src: '/assets/social-app/04-research-dimensions.webp', width: 1924, height: 777 },
+  { src: '/assets/social-app/05-user-flow-strategy.webp', width: 1924, height: 10552 },
+  { src: '/assets/social-app/06-user-flow.webp', width: 1924, height: 2824 },
+  { src: '/assets/social-app/07-project-showcase.webp', width: 1924, height: 2393 },
+  { src: '/assets/social-app/08-results-summary.webp', width: 1924, height: 1276 },
 ];
 
 const fileToolCaseImages = [
-  '/assets/file-tool/01-cover.webp',
-  '/assets/file-tool/02-background.webp',
-  '/assets/file-tool/03-audience-goals.webp',
-  '/assets/file-tool/04-interface-problems.webp',
-  '/assets/file-tool/05-home-visual.webp',
-  '/assets/file-tool/06-interaction-flow.webp',
-  '/assets/file-tool/07-file-configuration.webp',
-  '/assets/file-tool/08-generation-progress.webp',
-  '/assets/file-tool/09-project-showcase.webp',
-  '/assets/file-tool/10-usability-results.webp',
+  { src: '/assets/file-tool/01-cover.webp', width: 1920, height: 1711 },
+  { src: '/assets/file-tool/02-background.webp', width: 1920, height: 1180 },
+  { src: '/assets/file-tool/03-audience-goals.webp', width: 1920, height: 1005 },
+  { src: '/assets/file-tool/04-interface-problems.webp', width: 1920, height: 1810 },
+  { src: '/assets/file-tool/05-home-visual.webp', width: 1920, height: 1216 },
+  { src: '/assets/file-tool/06-interaction-flow.webp', width: 1920, height: 2316 },
+  { src: '/assets/file-tool/07-file-configuration.webp', width: 1920, height: 1898 },
+  { src: '/assets/file-tool/08-generation-progress.webp', width: 1920, height: 1573 },
+  { src: '/assets/file-tool/09-project-showcase.webp', width: 1920, height: 1311 },
+  { src: '/assets/file-tool/10-usability-results.webp', width: 1920, height: 1313 },
 ];
+
+const getMobileCaseImage = (src) => src.replace(/\/([^/]+)$/, '/mobile/$1');
 
 function ProjectDetail({ t, lang, slug }) {
   const project = projectPageContent[slug]?.[lang] ?? projectPageContent[slug]?.zh;
@@ -1383,15 +1390,19 @@ function ProjectDetail({ t, lang, slug }) {
           <DetailBackLink />
         </div>
         <div className="social-app-image-stack">
-          {socialAppCaseImages.map((src, index) => (
-            <img
-              src={src}
-              alt={`不夜星球社交 APP 项目展示 ${index + 1}`}
-              decoding="async"
-              fetchPriority={index === 0 ? 'high' : 'auto'}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              key={src}
-            />
+          {socialAppCaseImages.map(({ src, width, height }, index) => (
+            <picture key={src}>
+              <source media="(max-width: 700px)" srcSet={getMobileCaseImage(src)} />
+              <img
+                src={src}
+                alt={`不夜星球社交 APP 项目展示 ${index + 1}`}
+                width={width}
+                height={height}
+                decoding="async"
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+            </picture>
           ))}
         </div>
       </section>
@@ -1409,15 +1420,19 @@ function ProjectDetail({ t, lang, slug }) {
           <DetailBackLink />
         </div>
         <div className="file-tool-image-stack">
-          {fileToolCaseImages.map((src, index) => (
-            <img
-              src={src}
-              alt={`文件生成后台工具系统项目展示 ${index + 1}`}
-              decoding="async"
-              fetchPriority={index === 0 ? 'high' : 'auto'}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              key={src}
-            />
+          {fileToolCaseImages.map(({ src, width, height }, index) => (
+            <picture key={src}>
+              <source media="(max-width: 700px)" srcSet={getMobileCaseImage(src)} />
+              <img
+                src={src}
+                alt={`文件生成后台工具系统项目展示 ${index + 1}`}
+                width={width}
+                height={height}
+                decoding="async"
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+            </picture>
           ))}
         </div>
       </section>
