@@ -1515,7 +1515,30 @@ img {
 }
 
 .file-tool-image-page {
-  padding-inline: 34px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 0 clamp(28px, 4vw, 64px);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.file-tool-image-page .file-tool-return-rail {
+  width: 100%;
+  padding-inline: clamp(16px, 2vw, 28px);
+}
+
+.file-tool-image-stack {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  gap: 0;
+}
+
+.file-tool-image-stack img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .file-tool-svg-page {
@@ -3404,7 +3427,7 @@ img {
   }
 
   .file-tool-image-page {
-    padding-inline: 14px;
+    padding-bottom: 20px;
   }
 
   .file-tool-html-case {

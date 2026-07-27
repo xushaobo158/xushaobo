@@ -1357,6 +1357,10 @@ const socialAppCaseImages = [
   '/assets/social-app/08-results-summary.webp',
 ];
 
+const fileToolCaseImages = [
+  '/assets/file-tool/01-cover.webp',
+];
+
 function ProjectDetail({ t, lang, slug }) {
   const project = projectPageContent[slug]?.[lang] ?? projectPageContent[slug]?.zh;
   const card = t.cards.find((item) => item.href === `/projects/${slug}`);
@@ -1391,9 +1395,21 @@ function ProjectDetail({ t, lang, slug }) {
 
   if (slug === 'file-tool') {
     return (
-      <section className="file-tool-svg-page is-empty" id="project-detail">
+      <section className="file-tool-image-page" id="project-detail">
         <div className="file-tool-return-rail">
           <DetailBackLink />
+        </div>
+        <div className="file-tool-image-stack">
+          {fileToolCaseImages.map((src, index) => (
+            <img
+              src={src}
+              alt={`文件生成后台工具系统项目展示 ${index + 1}`}
+              decoding="async"
+              fetchPriority={index === 0 ? 'high' : 'auto'}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              key={src}
+            />
+          ))}
         </div>
       </section>
     );
