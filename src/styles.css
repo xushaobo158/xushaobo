@@ -1503,10 +1503,23 @@ img {
   gap: 0;
 }
 
-.social-app-image-stack picture,
-.file-tool-image-stack picture {
+.case-study-image-frame {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  content-visibility: auto;
+}
+
+.case-study-image-frame picture {
   display: block;
   width: 100%;
+  height: 100%;
+}
+
+.case-study-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .social-app-image-stack img {

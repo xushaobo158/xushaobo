@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useId, useMemo, useState } from 'react';
+﻿import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { AlertTriangle, ArrowDown, ArrowLeft, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, Phone, Search, SlidersHorizontal } from 'lucide-react';
 import './styles.css';
@@ -1377,6 +1377,58 @@ const fileToolCaseImages = [
 
 const getMobileCaseImage = (src) => src.replace(/\/([^/]+)$/, '/mobile/$1');
 
+function DeferredCaseImage({ image, index, alt }) {
+  const frameRef = useRef(null);
+  const isFirstImage = index === 0;
+  const [shouldLoad, setShouldLoad] = useState(isFirstImage);
+
+  useEffect(() => {
+    if (shouldLoad) return undefined;
+
+    const frame = frameRef.current;
+    if (!frame || !('IntersectionObserver' in window)) {
+      setShouldLoad(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px 0px' },
+    );
+
+    observer.observe(frame);
+    return () => observer.disconnect();
+  }, [shouldLoad]);
+
+  return (
+    <div
+      className="case-study-image-frame"
+      ref={frameRef}
+      style={{ aspectRatio: `${image.width} / ${image.height}` }}
+    >
+      {shouldLoad ? (
+        <picture>
+          <source media="(max-width: 700px)" srcSet={getMobileCaseImage(image.src)} />
+          <img
+            src={image.src}
+            alt={alt}
+            width={image.width}
+            height={image.height}
+            decoding="async"
+            fetchPriority={isFirstImage ? 'high' : 'auto'}
+            loading="eager"
+          />
+        </picture>
+      ) : null}
+    </div>
+  );
+}
+
 function ProjectDetail({ t, lang, slug }) {
   const project = projectPageContent[slug]?.[lang] ?? projectPageContent[slug]?.zh;
   const card = t.cards.find((item) => item.href === `/projects/${slug}`);
@@ -1390,19 +1442,13 @@ function ProjectDetail({ t, lang, slug }) {
           <DetailBackLink />
         </div>
         <div className="social-app-image-stack">
-          {socialAppCaseImages.map(({ src, width, height }, index) => (
-            <picture key={src}>
-              <source media="(max-width: 700px)" srcSet={getMobileCaseImage(src)} />
-              <img
-                src={src}
-                alt={`不夜星球社交 APP 项目展示 ${index + 1}`}
-                width={width}
-                height={height}
-                decoding="async"
-                fetchPriority={index === 0 ? 'high' : 'auto'}
-                loading={index === 0 ? 'eager' : 'lazy'}
-              />
-            </picture>
+          {socialAppCaseImages.map((image, index) => (
+            <DeferredCaseImage
+              image={image}
+              index={index}
+              alt={`不夜星球社交 APP 项目展示 ${index + 1}`}
+              key={image.src}
+            />
           ))}
         </div>
       </section>
@@ -1420,19 +1466,13 @@ function ProjectDetail({ t, lang, slug }) {
           <DetailBackLink />
         </div>
         <div className="file-tool-image-stack">
-          {fileToolCaseImages.map(({ src, width, height }, index) => (
-            <picture key={src}>
-              <source media="(max-width: 700px)" srcSet={getMobileCaseImage(src)} />
-              <img
-                src={src}
-                alt={`文件生成后台工具系统项目展示 ${index + 1}`}
-                width={width}
-                height={height}
-                decoding="async"
-                fetchPriority={index === 0 ? 'high' : 'auto'}
-                loading={index === 0 ? 'eager' : 'lazy'}
-              />
-            </picture>
+          {fileToolCaseImages.map((image, index) => (
+            <DeferredCaseImage
+              image={image}
+              index={index}
+              alt={`文件生成后台工具系统项目展示 ${index + 1}`}
+              key={image.src}
+            />
           ))}
         </div>
       </section>

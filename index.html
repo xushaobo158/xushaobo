@@ -8,12 +8,26 @@
       content="徐少柏 / Xushaobo 的 UI/UX 设计作品集，展示产品体验、交互设计与视觉设计项目。"
     />
     <title>徐少柏 / Xushaobo - UI/UX Designer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <script>
+      (() => {
+        const route = window.location.pathname.replace(/\/$/, '');
+        const projectCover = {
+          '/projects/social-app': 'social-app/01-cover.webp',
+          '/projects/file-tool': 'file-tool/01-cover.webp',
+        }[route];
+
+        if (!projectCover) return;
+
+        const mobile = window.matchMedia('(max-width: 700px)').matches;
+        const asset = mobile ? projectCover.replace(/\/([^/]+)$/, '/mobile/$1') : projectCover;
+        const preload = document.createElement('link');
+        preload.rel = 'preload';
+        preload.as = 'image';
+        preload.href = `/assets/${asset}`;
+        preload.fetchPriority = 'high';
+        document.head.appendChild(preload);
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
