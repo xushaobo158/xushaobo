@@ -1359,6 +1359,8 @@ const socialAppCaseImages = [
 
 const fileToolCaseImages = [
   '/assets/file-tool/01-cover.webp',
+  '/assets/file-tool/02-background.webp',
+  '/assets/file-tool/03-audience-goals.webp',
 ];
 
 function ProjectDetail({ t, lang, slug }) {
