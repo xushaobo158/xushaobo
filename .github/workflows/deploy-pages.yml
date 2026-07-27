@@ -37,6 +37,13 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Add project entry pages
+        run: |
+          for route in social-app file-tool web-redesign in-progress; do
+            mkdir -p "dist/projects/$route"
+            cp dist/index.html "dist/projects/$route/index.html"
+          done
+
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
 
