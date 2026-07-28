@@ -1549,14 +1549,14 @@ img {
 }
 
 .file-tool-image-page .file-tool-return-rail {
-  width: 100%;
+  width: min(88vw, 1500px);
   padding-inline: clamp(16px, 2vw, 28px);
 }
 
 .file-tool-image-stack {
   display: grid;
-  width: 100%;
-  margin: 0;
+  width: min(88vw, 1500px);
+  margin: 0 auto;
   gap: 0;
 }
 
@@ -3453,6 +3453,11 @@ img {
 
   .file-tool-image-page {
     padding-bottom: 20px;
+  }
+
+  .file-tool-image-page .file-tool-return-rail,
+  .file-tool-image-stack {
+    width: calc(100% - 24px);
   }
 
   .file-tool-html-case {
