@@ -778,10 +778,6 @@ function HomeResumeModule({ t }) {
   return (
     <section className="home-resume section-shell" id="resume-preview">
       <div className="home-resume-sheet">
-        <div className="home-resume-folio" aria-hidden="true">
-          <span>CURRICULUM VITAE</span>
-          <span>XSB / 2026</span>
-        </div>
         <div className="home-resume-copy">
           <p className="home-resume-eyebrow">{t.homeResumeEyebrow}</p>
           <div className="home-resume-heading">
