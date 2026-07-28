@@ -1366,13 +1366,13 @@ const fileToolCaseImages = [
   { src: '/assets/file-tool/01-cover.webp', width: 1920, height: 1711 },
   { src: '/assets/file-tool/02-background.webp', width: 1920, height: 1180 },
   { src: '/assets/file-tool/03-audience-goals.webp', width: 1920, height: 1005 },
-  { src: '/assets/file-tool/04-interface-problems.webp', width: 1920, height: 1810 },
+  { src: '/assets/file-tool/04-interface-problems.webp', width: 1920, height: 1808 },
   { src: '/assets/file-tool/05-home-visual.webp', width: 1920, height: 1216 },
   { src: '/assets/file-tool/06-interaction-flow.webp', width: 1920, height: 2316 },
-  { src: '/assets/file-tool/07-file-configuration.webp', width: 1920, height: 1898 },
-  { src: '/assets/file-tool/08-generation-progress.webp', width: 1920, height: 1573 },
-  { src: '/assets/file-tool/09-project-showcase.webp', width: 1920, height: 1311 },
-  { src: '/assets/file-tool/10-usability-results.webp', width: 1920, height: 1313 },
+  { src: '/assets/file-tool/07-file-configuration.webp', width: 1920, height: 1897 },
+  { src: '/assets/file-tool/08-generation-progress.webp', width: 1920, height: 1572 },
+  { src: '/assets/file-tool/09-project-showcase.webp', width: 1920, height: 1309 },
+  { src: '/assets/file-tool/10-usability-results.webp', width: 1920, height: 1287 },
 ];
 
 const getMobileCaseImage = (src) => src.replace(/\/([^/]+)$/, '/mobile/$1');
