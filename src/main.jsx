@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { AlertTriangle, AppWindow, ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Cog, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, MousePointer2, Pencil, Phone, Search, SlidersHorizontal, Sparkles, TrendingUp } from 'lucide-react';
+import { AlertTriangle, ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, MousePointer2, Phone, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const copy = {
@@ -648,20 +648,6 @@ function Hero({ t }) {
       <Sparkles className="hero-spark hero-spark-one" size={34} strokeWidth={1.8} aria-hidden="true" />
       <Sparkles className="hero-spark hero-spark-two" size={30} strokeWidth={1.8} aria-hidden="true" />
       <Sparkles className="hero-spark hero-spark-three" size={28} strokeWidth={1.8} aria-hidden="true" />
-      <div className="hero-doodles" aria-hidden="true">
-        <span className="hero-doodle hero-doodle-window">
-          <AppWindow strokeWidth={2.2} />
-        </span>
-        <span className="hero-doodle hero-doodle-pencil">
-          <Pencil strokeWidth={2.2} />
-        </span>
-        <span className="hero-doodle hero-doodle-growth">
-          <TrendingUp strokeWidth={2.4} />
-        </span>
-        <span className="hero-doodle hero-doodle-gear">
-          <Cog strokeWidth={2.2} />
-        </span>
-      </div>
       <div className="hero-text">
         <h1>
           <span className="hero-title-row hero-title-row-top">
