@@ -645,8 +645,6 @@ function Hero({ t }) {
 
   return (
     <section className="hero section-shell" id="top">
-      <span className="hero-path hero-path-left" aria-hidden="true" />
-      <span className="hero-path hero-path-right" aria-hidden="true" />
       <Sparkles className="hero-spark hero-spark-one" size={34} strokeWidth={1.8} aria-hidden="true" />
       <Sparkles className="hero-spark hero-spark-two" size={30} strokeWidth={1.8} aria-hidden="true" />
       <Sparkles className="hero-spark hero-spark-three" size={28} strokeWidth={1.8} aria-hidden="true" />
