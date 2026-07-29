@@ -667,12 +667,6 @@ function Hero({ t }) {
             </span>
           </span>
           <span className="hero-title-row hero-title-row-bottom">
-            <span className="hero-sun-control" aria-hidden="true">
-              <span className="hero-sun-node" />
-              <span className="hero-slider-control">
-                <SlidersHorizontal strokeWidth={1.8} />
-              </span>
-            </span>
             <span className="title-line">
               <CharacterTitle text="UX DESIGNER" />
             </span>
