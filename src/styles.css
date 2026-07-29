@@ -1421,19 +1421,6 @@ img {
   line-height: 0.9;
 }
 
-.section-heading h2 span {
-  display: block;
-  color: var(--accent);
-  font-family: inherit;
-  font-size: 1.45rem;
-  font-style: normal;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  position: relative;
-  top: -40px;
-  margin-bottom: -34px;
-}
-
 .section-heading p {
   margin: 0 0 8px;
   color: var(--muted);
@@ -4179,10 +4166,6 @@ img {
     font-size: 3rem;
   }
 
-  .section-heading h2 span {
-    font-size: 1.7rem;
-  }
-
   .section-heading p {
     margin-top: 12px;
   }
@@ -4751,10 +4734,6 @@ main:not(.page-main) {
 
 .work .section-heading {
   margin-bottom: 28px;
-}
-
-.work .section-heading h2 span {
-  color: #3f71e8;
 }
 
 .work-grid {
@@ -5342,12 +5321,6 @@ main:not(.page-main) {
 
   .work .section-heading h2 {
     font-size: clamp(2.8rem, 15vw, 4rem);
-  }
-
-  .work .section-heading h2 span {
-    top: -28px;
-    margin-bottom: -24px;
-    font-size: 1.2rem;
   }
 
   .work .section-heading p {

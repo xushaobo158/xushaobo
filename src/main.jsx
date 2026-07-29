@@ -1603,10 +1603,7 @@ function WorkGrid({ t }) {
   return (
     <section className="work section-shell" id="work">
       <div className="section-heading">
-        <h2>
-          <span>{t.selected}</span>
-          {t.workTitle}
-        </h2>
+        <h2>{t.workTitle}</h2>
         <p>{t.workHint}</p>
       </div>
       <div className="work-grid">
