@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { AlertTriangle, ArrowDown, ArrowLeft, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, Phone, Search, SlidersHorizontal } from 'lucide-react';
+import { AlertTriangle, ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, MousePointer2, Phone, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const copy = {
@@ -643,11 +643,32 @@ function Hero({ t }) {
     <section className="hero section-shell" id="top">
       <div className="hero-text">
         <h1>
-          <span className="title-line">
-            <CharacterTitle text="PRODUCT /" />
+          <span className="hero-title-row hero-title-row-top">
+            <span className="title-line">
+              <CharacterTitle text="PRODUCT /" />
+            </span>
+            <span className="hero-action-orb" aria-hidden="true">
+              <ArrowRight strokeWidth={1.8} />
+            </span>
+            <span className="hero-mode-switch" aria-hidden="true">
+              <span className="hero-mode-spark">
+                <Sparkles strokeWidth={1.8} />
+              </span>
+              <span className="hero-mode-knob">
+                <MousePointer2 strokeWidth={1.8} />
+              </span>
+            </span>
           </span>
-          <span className="title-line">
-            <CharacterTitle text="UX DESIGNER" />
+          <span className="hero-title-row hero-title-row-bottom">
+            <span className="hero-slider-control" aria-hidden="true">
+              <SlidersHorizontal strokeWidth={1.8} />
+            </span>
+            <span className="title-line">
+              <CharacterTitle text="UX DESIGNER" />
+            </span>
+            <span className="hero-pointer-control" aria-hidden="true">
+              <MousePointer2 strokeWidth={1.8} />
+            </span>
           </span>
         </h1>
         <p className="hero-name">{t.heroName}</p>
@@ -708,7 +729,17 @@ function HomeResumeModule({ t }) {
         <div className="home-resume-copy">
           <p className="home-resume-eyebrow">{t.homeResumeEyebrow}</p>
           <div className="home-resume-heading">
-            <h2>{t.homeResumeTitle}</h2>
+            <div className="home-resume-title-line">
+              <h2>{t.homeResumeTitle}</h2>
+              <div className="home-resume-title-controls" aria-hidden="true">
+                <span>
+                  <SlidersHorizontal size={22} strokeWidth={1.8} />
+                </span>
+                <span>
+                  <Sparkles size={22} strokeWidth={1.8} />
+                </span>
+              </div>
+            </div>
             {t.homeResumeLead ? <p>{t.homeResumeLead}</p> : null}
           </div>
           <div className="home-resume-tag-list" aria-label="Resume tags">
@@ -762,6 +793,9 @@ function HomeResumeModule({ t }) {
           </div>
         </div>
         <aside className="home-resume-side">
+          <span className="home-resume-side-icon" aria-hidden="true">
+            <ArrowRight size={30} strokeWidth={1.8} />
+          </span>
           <p className="home-resume-side-kicker">{t.homeResumeEyebrow}</p>
           <a
             className="resume-download home-resume-download"
