@@ -4712,6 +4712,140 @@ main:not(.page-main) {
   display: none;
 }
 
+.work {
+  padding: 54px 28px 34px;
+}
+
+.work .section-heading {
+  margin-bottom: 28px;
+}
+
+.work .section-heading h2 span {
+  color: #3f71e8;
+}
+
+.work-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.work-card,
+.work-card.is-image-right {
+  --work-surface: #efedff;
+  --work-image-bg: #f7f7fb;
+  --work-ink: #17171d;
+  --work-muted: #62626d;
+  --work-line: rgba(17, 17, 23, 0.82);
+  --work-hover-border: #17171d;
+  height: 520px;
+  min-height: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(0, 1.18fr) minmax(0, 0.92fr);
+  border: 2px solid var(--work-line);
+  border-radius: 24px;
+  background: var(--work-surface);
+  box-shadow: 0 9px 0 rgba(17, 17, 23, 0.06);
+  color: var(--work-ink);
+  contain-intrinsic-size: 520px;
+}
+
+.work-grid > .work-card:nth-child(1) {
+  --work-surface: #efedff;
+  --work-image-bg: #f8f7ff;
+  --work-hover-border: #6b61d9;
+}
+
+.work-grid > .work-card:nth-child(2) {
+  --work-surface: #e5f3ef;
+  --work-image-bg: #f4faf8;
+  --work-hover-border: #438d72;
+}
+
+.work-grid > .work-card:nth-child(3) {
+  --work-surface: #fff1cd;
+  --work-image-bg: #fffaf0;
+  --work-hover-border: #b07626;
+}
+
+.work-card::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 32%);
+}
+
+.work-card:hover,
+.work-card:focus-visible {
+  box-shadow: 0 14px 0 rgba(17, 17, 23, 0.08);
+  transform: translateY(-4px);
+}
+
+.work-image,
+.work-card.is-image-right .work-image {
+  order: 0;
+  min-height: 0;
+  border-bottom: 2px solid var(--work-line);
+}
+
+.work-content {
+  min-height: 0;
+  gap: 12px;
+  padding: 18px 20px 17px;
+  background: transparent;
+}
+
+.work-copy-top {
+  gap: 8px;
+}
+
+.work-index {
+  min-height: 24px;
+  padding: 0 9px;
+  border-color: rgba(17, 17, 23, 0.22);
+  color: var(--work-ink);
+  font-size: 0.7rem;
+}
+
+.work-summary {
+  color: var(--work-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.work-title-block {
+  align-content: start;
+}
+
+.work-content h3 {
+  max-width: 14ch;
+  color: var(--work-ink);
+  font-size: clamp(1.55rem, 2.25vw, 2.1rem);
+  line-height: 1.08;
+}
+
+.work-footer {
+  gap: 10px;
+  padding-top: 11px;
+  border-top-color: rgba(17, 17, 23, 0.14);
+}
+
+.work-meta-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.work-meta-item {
+  color: #50505a;
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+.work-open {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  border-color: #17171d;
+  background: #17171d;
+  color: #fff;
+}
+
 .contact {
   min-height: 690px;
   grid-template-columns: 1fr;
@@ -4931,6 +5065,22 @@ main:not(.page-main) {
     height: 108px;
   }
 
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work-grid > .work-card:last-child {
+    height: 360px;
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+    grid-template-rows: 1fr;
+  }
+
+  .work-grid > .work-card:last-child .work-image {
+    border-right: 2px solid var(--work-line);
+    border-bottom: 0;
+  }
+
   .contact {
     grid-template-columns: 1fr;
   }
@@ -5132,6 +5282,64 @@ main:not(.page-main) {
     border: 0;
     background: #f0eeff;
     color: #111117;
+  }
+
+  .work {
+    padding: 40px 14px 22px;
+  }
+
+  .work .section-heading {
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding: 0 8px;
+  }
+
+  .work .section-heading h2 {
+    font-size: clamp(2.8rem, 15vw, 4rem);
+  }
+
+  .work .section-heading h2 span {
+    top: -28px;
+    margin-bottom: -24px;
+    font-size: 1.65rem;
+  }
+
+  .work .section-heading p {
+    max-width: 8rem;
+    text-align: right;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .work-card,
+  .work-card.is-image-right,
+  .work-grid > .work-card:last-child {
+    height: auto;
+    min-height: 0;
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 220px minmax(220px, auto);
+    border-radius: 20px;
+  }
+
+  .work-image,
+  .work-card.is-image-right .work-image,
+  .work-grid > .work-card:last-child .work-image {
+    min-height: 220px;
+    border-right: 0;
+    border-bottom: 2px solid var(--work-line);
+  }
+
+  .work-content {
+    min-height: 220px;
+    padding: 18px;
+  }
+
+  .work-content h3 {
+    font-size: 1.8rem;
   }
 
   .contact {
