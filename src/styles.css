@@ -1425,9 +1425,10 @@ img {
   display: block;
   color: var(--accent);
   font-family: inherit;
-  font-size: 2.2rem;
+  font-size: 1.45rem;
   font-style: normal;
   font-weight: 900;
+  letter-spacing: 0.04em;
   position: relative;
   top: -40px;
   margin-bottom: -34px;
@@ -5346,7 +5347,7 @@ main:not(.page-main) {
   .work .section-heading h2 span {
     top: -28px;
     margin-bottom: -24px;
-    font-size: 1.65rem;
+    font-size: 1.2rem;
   }
 
   .work .section-heading p {
