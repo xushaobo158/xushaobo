@@ -12,7 +12,7 @@ const copy = {
     heroCta: '查看我的作品',
     scroll: 'SCROLL',
     selected: 'Selected',
-    workTitle: 'PROJECTS',
+    workTitle: '项目精选',
     workHint: '点击卡片查看项目',
     role: 'PRODUCT / UX DESIGNER',
     homeResumeEyebrow: 'RESUME SNAPSHOT',
@@ -119,7 +119,7 @@ const copy = {
     heroCta: 'View selected work',
     scroll: 'SCROLL',
     selected: 'Selected',
-    workTitle: 'PROJECTS',
+    workTitle: 'Selected Projects',
     workHint: 'Click cards to view case studies',
     role: 'PRODUCT / UX DESIGNER',
     homeResumeEyebrow: 'RESUME SNAPSHOT',
@@ -1663,7 +1663,17 @@ function WorkGrid({ t }) {
   return (
     <section className="work section-shell" id="work">
       <div className="section-heading">
-        <h2>{t.workTitle}</h2>
+        <div className="work-title-line">
+          <h2>{t.workTitle}</h2>
+          <div className="work-title-controls" aria-hidden="true">
+            <span>
+              <AppWindow size={22} strokeWidth={2.2} />
+            </span>
+            <span>
+              <MousePointer2 size={22} strokeWidth={2.2} />
+            </span>
+          </div>
+        </div>
         <p>{t.workHint}</p>
       </div>
       <div className="work-grid">
