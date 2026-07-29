@@ -4422,6 +4422,27 @@ main:not(.page-main) {
   transform: none;
 }
 
+.hero-ux-sticker {
+  display: inline-grid;
+  width: clamp(68px, 6.2vw, 92px);
+  height: clamp(54px, 4.8vw, 72px);
+  flex: 0 0 auto;
+  place-items: center;
+  border: 3px solid #17171d;
+  border-radius: 14px;
+  background: #8ce7df;
+  box-shadow:
+    0 0 0 6px #d3faf6,
+    0 9px 0 rgba(17, 17, 23, 0.08);
+  color: #17171d;
+  transform: rotate(-5deg);
+}
+
+.hero-ux-sticker svg {
+  width: 58%;
+  height: 58%;
+}
+
 .hero-action-orb,
 .hero-mode-switch,
 .hero-slider-control,
@@ -5065,6 +5086,15 @@ main:not(.page-main) {
     height: 108px;
   }
 
+  .hero-ux-sticker {
+    width: 60px;
+    height: 48px;
+    border-width: 2px;
+    box-shadow:
+      0 0 0 4px #d3faf6,
+      0 7px 0 rgba(17, 17, 23, 0.08);
+  }
+
   .work-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -5163,6 +5193,10 @@ main:not(.page-main) {
   }
 
   .hero-mode-switch {
+    display: none;
+  }
+
+  .hero-ux-sticker {
     display: none;
   }
 

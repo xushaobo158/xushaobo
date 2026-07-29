@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { AlertTriangle, ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, MousePointer2, Phone, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { AlertTriangle, AppWindow, ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, MousePointer2, Phone, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const copy = {
@@ -667,6 +667,9 @@ function Hero({ t }) {
             </span>
           </span>
           <span className="hero-title-row hero-title-row-bottom">
+            <span className="hero-ux-sticker" aria-hidden="true">
+              <AppWindow strokeWidth={2.2} />
+            </span>
             <span className="title-line">
               <CharacterTitle text="UX DESIGNER" />
             </span>
