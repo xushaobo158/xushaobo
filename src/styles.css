@@ -1424,10 +1424,10 @@ img {
 .section-heading h2 span {
   display: block;
   color: var(--accent);
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: inherit;
   font-size: 2.2rem;
-  font-style: italic;
-  font-weight: 500;
+  font-style: normal;
+  font-weight: 900;
   position: relative;
   top: -40px;
   margin-bottom: -34px;
