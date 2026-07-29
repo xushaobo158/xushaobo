@@ -648,17 +648,6 @@ function Hero({ t }) {
       <Sparkles className="hero-spark hero-spark-one" size={34} strokeWidth={1.8} aria-hidden="true" />
       <Sparkles className="hero-spark hero-spark-two" size={30} strokeWidth={1.8} aria-hidden="true" />
       <Sparkles className="hero-spark hero-spark-three" size={28} strokeWidth={1.8} aria-hidden="true" />
-      <div className="hero-left-icons" aria-hidden="true">
-        <span className="hero-left-icon hero-left-icon-cursor">
-          <MousePointer2 size={22} strokeWidth={1.8} />
-        </span>
-        <span className="hero-left-icon hero-left-icon-message">
-          <MessageCircle size={21} strokeWidth={1.8} />
-        </span>
-        <span className="hero-left-icon hero-left-icon-idea">
-          <Lightbulb size={21} strokeWidth={1.8} />
-        </span>
-      </div>
       <div className="hero-text">
         <h1>
           <span className="hero-title-row hero-title-row-top">
