@@ -3232,6 +3232,11 @@ img {
   margin: 0;
 }
 
+.in-progress-page.is-website .in-progress-visual {
+  justify-self: center;
+  width: min(82%, 620px);
+}
+
 .in-progress-browser {
   overflow: hidden;
   border: 2px solid #17171d;
@@ -4142,6 +4147,10 @@ img {
 
   .in-progress-visual {
     width: min(100%, 520px);
+  }
+
+  .in-progress-page.is-website .in-progress-visual {
+    width: min(94%, 520px);
   }
 
   .in-progress-browser {
