@@ -4659,7 +4659,8 @@ main:not(.page-main) {
 
 .hero > .circle-badge {
   top: 112px;
-  right: 52px;
+  right: auto;
+  left: 52px;
   width: 84px;
   height: 84px;
   color: #3f71e8;
