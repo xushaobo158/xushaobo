@@ -4770,7 +4770,7 @@ main:not(.page-main) {
   --work-muted: #62626d;
   --work-line: rgba(17, 17, 23, 0.82);
   --work-hover-border: #17171d;
-  height: 520px;
+  height: 480px;
   min-height: 0;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(0, 1.18fr) minmax(0, 0.92fr);
@@ -4779,7 +4779,7 @@ main:not(.page-main) {
   background: var(--work-surface);
   box-shadow: 0 9px 0 rgba(17, 17, 23, 0.06);
   color: var(--work-ink);
-  contain-intrinsic-size: 520px;
+  contain-intrinsic-size: 480px;
 }
 
 .work-grid > .work-card:nth-child(1) {
