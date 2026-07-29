@@ -83,14 +83,14 @@ const copy = {
         title: '不夜星球社交APP产品体验设计优化',
         subtitle: '围绕用户核心路径，优化产品结构与社交互动细节',
         meta: 'APP / UX / 产品设计',
-        image: '/assets/cover-social-app.webp',
+        image: '/assets/social-app/01-cover.webp',
         href: '/projects/social-app',
       },
       {
         title: '文件生成后台工具系统设计',
         subtitle: '从业务流程出发，重构信息架构与操作流程',
         meta: 'B端系统 / UX / 界面设计',
-        image: '/assets/cover-backend-tool.webp',
+        image: '/assets/file-tool/01-cover.webp',
         href: '/projects/file-tool',
       },
       {
@@ -99,14 +99,6 @@ const copy = {
         meta: '网页 / 视觉设计 / UI设计',
         image: '/assets/cover-web-redesign.webp',
         href: '/projects/web-redesign',
-      },
-      {
-        title: '作品开发中',
-        subtitle: '更多项目正在整理与完善，保持更新',
-        meta: 'More works / 敬请期待',
-        image: '/assets/cover-wip.webp',
-        href: '/projects/in-progress',
-        muted: true,
       },
     ],
     contactTitle: '期待与你合作',
@@ -210,14 +202,14 @@ const copy = {
         title: 'Sleepless Planet Social App Experience Optimization',
         subtitle: 'Optimizing core user paths, product structure, and social interaction details.',
         meta: 'App / UX / Product Design',
-        image: '/assets/cover-social-app.webp',
+        image: '/assets/social-app/01-cover.webp',
         href: '/projects/social-app',
       },
       {
         title: 'File Generation Back-office Tool System Design',
         subtitle: 'Restructuring information architecture and workflows from business processes.',
         meta: 'B2B System / UX / UI Design',
-        image: '/assets/cover-backend-tool.webp',
+        image: '/assets/file-tool/01-cover.webp',
         href: '/projects/file-tool',
       },
       {
@@ -226,14 +218,6 @@ const copy = {
         meta: 'Website / Visual Design / UI',
         image: '/assets/cover-web-redesign.webp',
         href: '/projects/web-redesign',
-      },
-      {
-        title: 'Works in Development',
-        subtitle: 'More projects are being organized and refined for publication.',
-        meta: 'More works / Coming soon',
-        image: '/assets/cover-wip.webp',
-        href: '/projects/in-progress',
-        muted: true,
       },
     ],
     contactTitle: 'Let us collaborate',
@@ -649,60 +633,6 @@ function CircularBadge({ label, onMouseEnter, onMouseMove, onMouseLeave, onClick
   );
 }
 
-function PhotoWall({ className = '', eager = false, single = false }) {
-  return (
-    <div className={className} aria-hidden="true">
-      {single ? (
-        <figure className="about-photo about-photo-3 about-photo-placeholder hero-profile-photo">
-          <picture>
-            <source media="(max-width: 700px)" srcSet="/assets/hero-profile-photo-mobile.webp" />
-            <img
-              src="/assets/hero-profile-photo.webp"
-              alt=""
-              width="1600"
-              height="1045"
-              loading={eager ? 'eager' : 'lazy'}
-              fetchPriority={eager ? 'high' : 'auto'}
-              decoding="async"
-            />
-          </picture>
-        </figure>
-      ) : null}
-      {!single ? (
-        <figure className="about-photo about-photo-1">
-          <img
-            src="/assets/about-photo-main.webp"
-            alt=""
-            loading={eager ? 'eager' : 'lazy'}
-            fetchPriority={eager ? 'high' : 'auto'}
-            decoding="async"
-          />
-        </figure>
-      ) : null}
-      {!single ? (
-        <figure className="about-photo about-photo-2">
-          <img
-            src="/assets/about-photo-2-newer.webp"
-            alt=""
-            loading={eager ? 'eager' : 'lazy'}
-            decoding="async"
-          />
-        </figure>
-      ) : null}
-      {!single ? (
-        <figure className="about-photo about-photo-3">
-          <img
-            src="/assets/about-photo-3-new.webp"
-            alt=""
-            loading={eager ? 'eager' : 'lazy'}
-            decoding="async"
-          />
-        </figure>
-      ) : null}
-    </div>
-  );
-}
-
 function Hero({ t }) {
   const [cursorNote, setCursorNote] = useState({ active: false, x: 0, y: 0, text: '', icon: 'none' });
   const [ideaCardOpen, setIdeaCardOpen] = useState(false);
@@ -726,9 +656,6 @@ function Hero({ t }) {
           {t.heroCta}
           <ArrowUpRight size={18} strokeWidth={1.75} />
         </a>
-      </div>
-      <div className="hero-visual" aria-hidden="true">
-        <PhotoWall className="about-gallery hero-photo-wall is-single" eager single />
       </div>
       <div
         aria-hidden="true"
@@ -1587,17 +1514,24 @@ function WorkCard({ card, index }) {
     .map((item) => item.trim())
     .filter(Boolean);
   const imageRight = index >= 2;
+  const mobileImage =
+    card.image.includes('/social-app/') || card.image.includes('/file-tool/')
+      ? card.image.replace(/\/([^/]+)$/, '/mobile/$1')
+      : card.image;
 
   return (
     <a className={`work-card ${card.muted ? 'is-muted' : ''} ${imageRight ? 'is-image-right' : ''}`} href={card.href}>
       <div className="work-image">
-        <img
-          src={card.image}
-          alt=""
-          loading={index === 0 ? 'eager' : 'lazy'}
-          fetchPriority={index === 0 ? 'high' : 'auto'}
-          decoding="async"
-        />
+        <picture>
+          <source media="(max-width: 720px)" srcSet={mobileImage} />
+          <img
+            src={card.image}
+            alt=""
+            loading={index === 0 ? 'eager' : 'lazy'}
+            fetchPriority={index === 0 ? 'high' : 'auto'}
+            decoding="async"
+          />
+        </picture>
       </div>
       <div className="work-content">
         <div className="work-copy-top">
