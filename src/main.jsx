@@ -554,8 +554,12 @@ function Header({ lang, setLang, t }) {
   return (
     <header className="site-header" aria-label="Primary navigation">
       <a className="brand" href={homeTarget} aria-label="Xushaobo home">
-        Xushaobo
+        <span className="brand-mark" aria-hidden="true">
+          <MessageCircle size={20} strokeWidth={2.2} />
+        </span>
+        <span>Xushaobo</span>
       </a>
+      <span className="nav-divider" aria-hidden="true" />
       <nav className="nav-links">
         {t.nav.map((item, index) => (
           <a key={item} href={navTargets[index]}>
@@ -641,6 +645,11 @@ function Hero({ t }) {
 
   return (
     <section className="hero section-shell" id="top">
+      <span className="hero-path hero-path-left" aria-hidden="true" />
+      <span className="hero-path hero-path-right" aria-hidden="true" />
+      <Sparkles className="hero-spark hero-spark-one" size={34} strokeWidth={1.8} aria-hidden="true" />
+      <Sparkles className="hero-spark hero-spark-two" size={30} strokeWidth={1.8} aria-hidden="true" />
+      <Sparkles className="hero-spark hero-spark-three" size={28} strokeWidth={1.8} aria-hidden="true" />
       <div className="hero-text">
         <h1>
           <span className="hero-title-row hero-title-row-top">
@@ -660,8 +669,11 @@ function Hero({ t }) {
             </span>
           </span>
           <span className="hero-title-row hero-title-row-bottom">
-            <span className="hero-slider-control" aria-hidden="true">
-              <SlidersHorizontal strokeWidth={1.8} />
+            <span className="hero-sun-control" aria-hidden="true">
+              <span className="hero-sun-node" />
+              <span className="hero-slider-control">
+                <SlidersHorizontal strokeWidth={1.8} />
+              </span>
             </span>
             <span className="title-line">
               <CharacterTitle text="UX DESIGNER" />
@@ -1645,8 +1657,15 @@ function Contact({ t }) {
   return (
     <section className="contact section-shell" id="contact">
       <div className="contact-illustration" aria-hidden="true">
-        <Mail size={112} strokeWidth={1.15} />
-        <span />
+        <span className="contact-illustration-disc">
+          <Mail size={42} strokeWidth={1.6} />
+        </span>
+        <span className="contact-illustration-switch">
+          <span>
+            <MessageCircle size={28} strokeWidth={1.8} />
+          </span>
+        </span>
+        <span className="contact-illustration-path" />
       </div>
       <div className="contact-copy">
         <h2 className="contact-title-effect">
