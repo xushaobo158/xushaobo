@@ -4436,11 +4436,21 @@ main:not(.page-main) {
     0 9px 0 rgba(17, 17, 23, 0.08);
   color: #17171d;
   transform: rotate(-5deg);
+  transition:
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 240ms ease;
 }
 
 .hero-ux-sticker svg {
   width: 58%;
   height: 58%;
+}
+
+.hero-title-row:hover .hero-ux-sticker {
+  box-shadow:
+    0 0 0 6px #d3faf6,
+    0 5px 0 rgba(17, 17, 23, 0.08);
+  transform: rotate(8deg) translateY(-3px);
 }
 
 .hero-action-orb,
