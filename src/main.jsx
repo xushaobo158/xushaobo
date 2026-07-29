@@ -831,57 +831,117 @@ function InProgressPage({ variant = 'works' }) {
   const content =
     variant === 'website'
       ? {
-          eyebrow: 'WEBSITE PROJECT / IN PROGRESS',
-          title: '网站项目正在整理中',
-          description: '项目内容与设计过程正在重新梳理，完整案例将在整理完成后上线。',
-          tags: ['网站改版', '内容整理中', '后续上线'],
-          status: '案例内容整理中',
-          update: '整理完成后上线',
-          caption: '网站项目整理中',
+          eyebrow: 'WEBSITE PROJECT / BUILDING',
+          title: '网站项目\n正在整理中',
+          description: '页面框架已经搭好，项目内容与设计过程正在重新梳理。完整案例整理完成后，会在这里正式展出。',
+          tags: ['网站改版', '视觉设计', '案例整理中'],
+          status: '视觉与内容整理中',
+          next: '补充设计过程与改版说明',
+          preview: '/assets/cover-web-redesign-real.webp',
+          caption: '真实页面预览',
+          steps: [
+            { label: '页面框架', state: 'done' },
+            { label: '视觉与内容', state: 'active' },
+            { label: '上线检查', state: 'todo' },
+          ],
         }
       : {
-          eyebrow: 'MORE WORKS / IN PROGRESS',
-          title: '作品开发中',
+          eyebrow: 'MORE WORKS / BUILDING',
+          title: '作品\n开发中',
           description: '这里会继续补充更多项目案例。当前先放一个默认展示页，用来承接后续的新项目内容与开发进度。',
           tags: ['项目开发中', '内容持续补充', '默认展示页'],
           status: '正在开发 / 整理内容',
-          update: '后续逐步上线',
-          caption: '项目开发中',
+          next: '后续逐步上线',
+          preview: '/assets/cover-web-redesign-real.webp',
+          caption: '项目预览',
+          steps: [
+            { label: '项目框架', state: 'done' },
+            { label: '内容整理', state: 'active' },
+            { label: '发布检查', state: 'todo' },
+          ],
         };
 
   return (
-    <section className="in-progress-page section-shell" id="in-progress">
+    <section className={`in-progress-page section-shell ${variant === 'website' ? 'is-website' : ''}`} id="in-progress">
       <div className="detail-rail">
         <DetailBackLink />
       </div>
       <div className="in-progress-shell">
         <div className="in-progress-copy">
-          <p className="in-progress-eyebrow">{content.eyebrow}</p>
-          <h1>{content.title}</h1>
-          <p>{content.description}</p>
+          <p className="in-progress-eyebrow">
+            <AppWindow size={17} strokeWidth={2.2} />
+            {content.eyebrow}
+          </p>
+          <h1>
+            {content.title.split('\n').map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </h1>
+          <p className="in-progress-description">{content.description}</p>
           <div className="in-progress-tags">
             {content.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
-          <div className="in-progress-status">
-            <div>
-              <span>当前状态</span>
+          <div className="in-progress-progress" aria-label="项目整理进度">
+            <div className="in-progress-progress-head">
+              <span>BUILD STATUS</span>
               <strong>{content.status}</strong>
             </div>
+            <div className="in-progress-track">
+              {content.steps.map((step) => (
+                <div className={`in-progress-step is-${step.state}`} key={step.label}>
+                  <span className="in-progress-step-dot">
+                    {step.state === 'done' ? <CheckCircle2 size={15} strokeWidth={2.4} /> : null}
+                  </span>
+                  <strong>{step.label}</strong>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="in-progress-next">
+            <Sparkles size={18} strokeWidth={2} />
             <div>
-              <span>预计更新</span>
-              <strong>{content.update}</strong>
+              <span>下一步</span>
+              <strong>{content.next}</strong>
             </div>
           </div>
         </div>
 
-        <div className="in-progress-visual" aria-hidden="true">
-          <div className="in-progress-miner-wrap">
-            <img src="/assets/in-progress-miner.webp" alt="" className="in-progress-scene" loading="lazy" decoding="async" />
+        <figure className="in-progress-visual">
+          <div className="in-progress-browser">
+            <div className="in-progress-browser-bar">
+              <span className="browser-dots" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+              </span>
+              <span className="browser-address">shaobo-xu.com / website-redesign</span>
+              <AppWindow size={17} strokeWidth={2} aria-hidden="true" />
+            </div>
+            <div className="in-progress-preview">
+              <img src={content.preview} alt={`${content.caption}，项目内容正在整理中`} decoding="async" />
+              <div className="in-progress-preview-note">
+                <span>NOW BUILDING</span>
+                <strong>内容与视觉系统</strong>
+              </div>
+              <span className="in-progress-preview-cursor" aria-hidden="true">
+                <MousePointer2 size={30} strokeWidth={1.8} />
+              </span>
+            </div>
+            <div className="in-progress-browser-footer">
+              <span>
+                <i />
+                正在整理
+              </span>
+              <strong>CASE STUDY</strong>
+            </div>
           </div>
-          <p className="in-progress-caption">{content.caption}</p>
-        </div>
+          <figcaption className="in-progress-caption">
+            <span>{content.caption}</span>
+            <span>完整内容即将上线</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
