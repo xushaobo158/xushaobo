@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { AlertTriangle, AppWindow, ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, MousePointer2, Phone, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { AlertTriangle, AppWindow, ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, MousePointer2, Phone, Search, Send, SlidersHorizontal, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const copy = {
@@ -556,7 +556,7 @@ function Header({ lang, setLang, t }) {
   const homeTarget = onDetailPage ? '/' : '#top';
 
   return (
-    <header className="site-header" aria-label="Primary navigation">
+    <header className={`site-header ${onDetailPage ? 'site-header-detail' : 'site-header-home'}`} aria-label="Primary navigation">
       <a className="brand" href={homeTarget} aria-label="Xushaobo home">
         <span className="brand-mark" aria-hidden="true">
           <MessageCircle size={20} strokeWidth={2.2} />
@@ -642,93 +642,43 @@ function CircularBadge({ label, onMouseEnter, onMouseMove, onMouseLeave, onClick
 }
 
 function Hero({ t }) {
-  const [cursorNote, setCursorNote] = useState({ active: false, x: 0, y: 0, text: '', icon: 'none' });
-  const [ideaCardOpen, setIdeaCardOpen] = useState(false);
-  const showCursorNote = (event, text, icon = 'none') =>
-    setCursorNote({ active: true, x: event.clientX, y: event.clientY, text, icon });
-
   return (
-    <section className="hero section-shell" id="top">
-      <Sparkles className="hero-spark hero-spark-one" size={34} strokeWidth={1.8} aria-hidden="true" />
-      <Sparkles className="hero-spark hero-spark-two" size={30} strokeWidth={1.8} aria-hidden="true" />
-      <Sparkles className="hero-spark hero-spark-three" size={28} strokeWidth={1.8} aria-hidden="true" />
+    <section className="hero hero-image-stage section-shell" id="top">
+      <picture className="hero-background-picture" aria-hidden="true">
+        <img
+          src="/assets/hero-rock-architecture.webp"
+          alt=""
+          decoding="async"
+          fetchPriority="high"
+        />
+      </picture>
+      <div className="hero-intro-marker" aria-hidden="true">
+        <span>01</span>
+        <i />
+        <strong>INTRO</strong>
+      </div>
       <div className="hero-text">
-        <h1>
-          <span className="hero-title-row hero-title-row-top">
-            <span className="title-line">
-              <CharacterTitle text="PRODUCT /" />
-            </span>
-            <span className="hero-action-orb" aria-hidden="true">
-              <ArrowRight strokeWidth={1.8} />
-            </span>
-            <span className="hero-mode-switch" aria-hidden="true">
-              <span className="hero-mode-spark">
-                <Sparkles strokeWidth={1.8} />
-              </span>
-              <span className="hero-mode-knob">
-                <MousePointer2 strokeWidth={1.8} />
-              </span>
-            </span>
-          </span>
-          <span className="hero-title-row hero-title-row-bottom">
-            <span className="hero-ux-sticker" aria-hidden="true">
-              <AppWindow strokeWidth={2.2} />
-            </span>
-            <span className="title-line">
-              <CharacterTitle text="UX DESIGNER" />
-            </span>
-            <span className="hero-pointer-control" aria-hidden="true">
-              <MousePointer2 strokeWidth={1.8} />
-            </span>
-          </span>
-        </h1>
+        <div className="hero-title-stage">
+          <h1>
+            <span>PRODUCT /</span>
+            <span>UX DESIGNER</span>
+          </h1>
+          <div className="hero-visual-actions">
+            <a className="hero-visual-action hero-visual-action-work" href="#work" aria-label={t.heroCta}>
+              <ArrowRight strokeWidth={1.45} />
+            </a>
+            <a className="hero-visual-action hero-visual-action-contact" href="#contact" aria-label={t.nav[3]}>
+              <Send strokeWidth={1.45} />
+            </a>
+          </div>
+        </div>
         <p className="hero-name">{t.heroName}</p>
         <p className="hero-intro">{t.heroIntro}</p>
         <a className="hero-link" href="#work">
           {t.heroCta}
-          <ArrowUpRight size={18} strokeWidth={1.75} />
+          <ArrowRight size={19} strokeWidth={1.65} />
         </a>
       </div>
-      <div
-        aria-hidden="true"
-        className={`hero-cursor-note ${cursorNote.active ? 'is-visible' : ''}`}
-        style={{ left: `${cursorNote.x + 18}px`, top: `${cursorNote.y - 18}px` }}
-      >
-        {cursorNote.icon === 'lightbulb' ? <Lightbulb size={14} strokeWidth={2} /> : null}
-        <span>{cursorNote.text}</span>
-      </div>
-      <CircularBadge
-        label="PRODUCT"
-        onMouseEnter={(event) => showCursorNote(event, '头脑风暴一下', 'lightbulb')}
-        onMouseMove={(event) => showCursorNote(event, '头脑风暴一下', 'lightbulb')}
-        onMouseLeave={() => setCursorNote((current) => ({ ...current, active: false }))}
-        onClick={() => setIdeaCardOpen((current) => !current)}
-        isPressed={ideaCardOpen}
-      />
-      {ideaCardOpen ? (
-        <div className="idea-card-layer" role="presentation" onClick={() => setIdeaCardOpen(false)}>
-          <div
-            className="idea-card"
-            role="dialog"
-            aria-modal="false"
-            aria-label="想法生成中"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="idea-card-visual" aria-hidden="true">
-        <img src="/assets/hero-illustration.webp" alt="" loading="lazy" decoding="async" />
-              <div className="idea-card-laptop">
-                <span className="idea-card-screen" />
-                <span className="idea-card-base" />
-                <span className="idea-card-key key-1" />
-                <span className="idea-card-key key-2" />
-                <span className="idea-card-key key-3" />
-              </div>
-            </div>
-            <p>想法生成中.....</p>
-            <span className="idea-card-close-tip">点任意位置关闭</span>
-          </div>
-        </div>
-      ) : null}
     </section>
   );
 }
