@@ -6921,16 +6921,16 @@ main:not(.page-main) {
 .file-tool-image-stack {
   display: grid;
   width: min(1160px, calc(100% - 48px));
-  gap: 28px;
+  gap: 0;
   margin: 0 auto;
 }
 
 .case-study-image-frame {
   overflow: hidden;
-  border: 1px solid rgba(240, 236, 227, 0.14);
-  border-radius: 8px;
+  border: 0;
+  border-radius: 0;
   background: #141616;
-  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.28);
+  box-shadow: none;
   content-visibility: auto;
   contain-intrinsic-size: auto 900px;
 }
@@ -7540,12 +7540,12 @@ main:not(.page-main) {
   .social-app-image-stack,
   .file-tool-image-stack {
     width: calc(100% - 24px);
-    gap: 14px;
+    gap: 0;
   }
 
   .case-study-image-frame {
-    border-radius: 4px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .in-progress-page.section-shell {
@@ -7934,9 +7934,9 @@ body {
 }
 
 .case-study-image-frame {
-  border-color: rgba(247, 242, 232, 0.18);
+  border-color: transparent;
   background: #0f1111;
-  box-shadow: 0 30px 82px rgba(0, 0, 0, 0.36);
+  box-shadow: none;
 }
 
 .in-progress-shell {
