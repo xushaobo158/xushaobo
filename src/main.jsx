@@ -110,6 +110,7 @@ const copy = {
       { label: 'Phone', value: '15930186021', href: 'tel:15930186021' },
     ],
     copyAction: '复制',
+    copiedAction: '已复制',
     marquee: 'LET US BUILD SOMETHING GREAT TOGETHER',
   },
   en: {
@@ -231,6 +232,7 @@ const copy = {
       { label: 'Phone', value: '15930186021', href: 'tel:15930186021' },
     ],
     copyAction: 'Copy',
+    copiedAction: 'Copied',
     marquee: 'LET US BUILD SOMETHING GREAT TOGETHER',
   },
 };
@@ -1682,7 +1684,7 @@ function WorkGrid({ t }) {
   );
 }
 
-function ContactCard({ item, icon: Icon, copyAction }) {
+function ContactCard({ item, icon: Icon, copyAction, copiedAction }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async (event) => {
@@ -1700,7 +1702,7 @@ function ContactCard({ item, icon: Icon, copyAction }) {
       <strong>{item.value}</strong>
       <button type="button" onClick={handleCopy}>
         <Copy size={14} strokeWidth={1.7} />
-        {copied ? 'Copied' : copyAction}
+        {copied ? copiedAction : copyAction}
       </button>
     </a>
   );
@@ -1715,17 +1717,6 @@ function Contact({ t }) {
 
   return (
     <section className="contact section-shell" id="contact">
-      <div className="contact-illustration" aria-hidden="true">
-        <span className="contact-illustration-disc">
-          <Mail size={42} strokeWidth={1.6} />
-        </span>
-        <span className="contact-illustration-switch">
-          <span>
-            <MessageCircle size={28} strokeWidth={1.8} />
-          </span>
-        </span>
-        <span className="contact-illustration-path" />
-      </div>
       <div className="contact-copy">
         <h2 className="contact-title-effect">
           <CharacterTitle text={t.contactTitle} />
@@ -1734,7 +1725,13 @@ function Contact({ t }) {
       </div>
       <div className="contact-list">
         {t.contactItems.map((item, index) => (
-          <ContactCard key={item.label} item={item} icon={icons[index]} copyAction={t.copyAction} />
+          <ContactCard
+            key={item.label}
+            item={item}
+            icon={icons[index]}
+            copyAction={t.copyAction}
+            copiedAction={t.copiedAction}
+          />
         ))}
       </div>
       <div className="marquee" aria-hidden="true">
