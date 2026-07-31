@@ -358,12 +358,13 @@ img {
 .hero h1 em {
   display: inline-block;
   margin-right: 0.08em;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.08em;
-  font-weight: 400;
-  line-height: 0;
+  font-family: inherit;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: inherit;
+  line-height: inherit;
   text-transform: uppercase;
-  transform: translateY(0.015em);
+  transform: none;
 }
 
 .hero h1.is-visible span {
@@ -398,7 +399,7 @@ img {
 }
 
 .hero-link {
-  grid-column: 7 / span 3;
+  grid-column: 3 / span 3;
   grid-row: 4;
   display: inline-flex;
   align-items: center;
@@ -1673,9 +1674,12 @@ img {
     grid-column: 2 / 6;
   }
 
-  .hero-intro,
-  .hero-link {
+  .hero-intro {
     grid-column: 6 / 12;
+  }
+
+  .hero-link {
+    grid-column: 2 / span 3;
   }
 
   .home-resume-sheet {
@@ -1809,9 +1813,12 @@ img {
     grid-column: 2 / 7;
   }
 
-  .hero-intro,
-  .hero-link {
+  .hero-intro {
     grid-column: 7 / 13;
+  }
+
+  .hero-link {
+    grid-column: 2 / span 4;
   }
 
   .home-resume-sheet {
