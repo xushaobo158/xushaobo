@@ -1738,6 +1738,57 @@ function App() {
     return () => observer.disconnect();
   }, [lang, isProjectPage]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove('detail-chrome-hidden');
+
+    if (!isProjectPage) return undefined;
+
+    let lastScrollY = window.scrollY;
+    let travel = 0;
+    let lastDirection = 0;
+    let frameId = 0;
+
+    const updateDetailChrome = () => {
+      const currentScrollY = Math.max(window.scrollY, 0);
+      const delta = currentScrollY - lastScrollY;
+      const direction = Math.sign(delta);
+
+      if (direction && direction !== lastDirection) {
+        travel = 0;
+        lastDirection = direction;
+      }
+
+      travel += Math.abs(delta);
+
+      if (currentScrollY <= 120) {
+        root.classList.remove('detail-chrome-hidden');
+        travel = 0;
+      } else if (direction > 0 && travel >= 28) {
+        root.classList.add('detail-chrome-hidden');
+        travel = 0;
+      } else if (direction < 0 && travel >= 14) {
+        root.classList.remove('detail-chrome-hidden');
+        travel = 0;
+      }
+
+      lastScrollY = currentScrollY;
+      frameId = 0;
+    };
+
+    const handleScroll = () => {
+      if (!frameId) frameId = window.requestAnimationFrame(updateDetailChrome);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (frameId) window.cancelAnimationFrame(frameId);
+      root.classList.remove('detail-chrome-hidden');
+    };
+  }, [isProjectPage]);
+
   return (
     <>
       <div className="grid-background" aria-hidden="true" />
