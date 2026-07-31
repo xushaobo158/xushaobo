@@ -677,11 +677,6 @@ function Hero({ t }) {
           fetchPriority="high"
         />
       </picture>
-      <div className="hero-intro-marker" aria-hidden="true" data-reveal>
-        <span>01</span>
-        <i />
-        <strong>INTRO</strong>
-      </div>
       <div className="hero-text">
         <div className="hero-title-stage">
           <h1 data-reveal>
