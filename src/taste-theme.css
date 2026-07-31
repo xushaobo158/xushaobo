@@ -469,8 +469,8 @@ img {
 
 .home-resume-sheet {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(270px, 310px);
-  gap: clamp(44px, 5.5vw, 84px);
+  grid-template-columns: 1fr;
+  gap: clamp(58px, 7vw, 96px);
   width: 100%;
   padding: 0;
   overflow: visible;
@@ -550,17 +550,18 @@ img {
 
 .home-resume-section {
   display: grid;
-  grid-template-columns: minmax(126px, 0.22fr) minmax(0, 1fr);
-  gap: clamp(26px, 3.4vw, 54px);
-  padding-block: 36px 44px;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding-block: 42px 52px;
   border-top: 1px solid var(--line);
 }
 
 .home-resume-section.is-about {
-  grid-template-columns: minmax(190px, 0.34fr) minmax(0, 1fr);
+  grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
   grid-template-rows: auto 1fr;
-  column-gap: clamp(36px, 4vw, 64px);
-  row-gap: 22px;
+  column-gap: clamp(42px, 6vw, 88px);
+  row-gap: 24px;
+  align-items: start;
 }
 
 .home-resume-section.is-about > .home-resume-section-heading {
@@ -573,9 +574,9 @@ img {
 }
 
 .home-resume-section-heading {
-  display: grid;
-  align-content: start;
-  gap: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
 }
 
 .home-resume-section-heading > span {
@@ -607,6 +608,8 @@ img {
 .home-resume-section.is-about .home-resume-section-copy {
   grid-column: 2;
   grid-row: 2;
+  width: min(100%, 760px);
+  margin-inline: 0;
 }
 
 .home-resume-section-copy p {
@@ -628,6 +631,7 @@ img {
 .home-resume-photo {
   grid-column: 1;
   grid-row: 1 / span 2;
+  width: 100%;
   min-width: 0;
   margin: 0;
 }
@@ -635,7 +639,7 @@ img {
 .home-resume-photo-field {
   position: relative;
   display: grid;
-  min-height: 300px;
+  min-height: 0;
   aspect-ratio: 3 / 4;
   align-content: space-between;
   overflow: hidden;
@@ -759,21 +763,22 @@ img {
 }
 
 .home-resume-side {
-  position: sticky;
-  top: 108px;
-  align-self: start;
+  position: static;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
   min-height: 0;
-  padding: 4px 0 0 26px;
+  padding: 48px 0 0;
   overflow: visible;
   border: 0;
-  border-left: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   border-radius: 0;
   background: transparent;
   box-shadow: none;
 }
 
 .home-resume-side-kicker {
-  margin: 0 0 22px;
+  margin: 0;
   color: var(--accent-bright);
   font-size: 0.68rem;
   font-weight: 720;
@@ -782,7 +787,7 @@ img {
 
 .resume-download.home-resume-download {
   display: inline-flex;
-  width: 100%;
+  width: min(100%, 360px);
   min-height: 50px;
   align-items: center;
   justify-content: center;
@@ -808,21 +813,36 @@ img {
 }
 
 .home-resume-side-note {
-  margin: 24px 0 30px;
+  width: min(100%, 700px);
+  margin: 0;
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.7;
 }
 
 .home-resume-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .home-resume-fact {
   display: grid;
   gap: 6px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line-soft);
+  min-width: 0;
+  padding: 20px 22px 22px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 0;
+}
+
+.home-resume-fact:first-child {
+  padding-left: 0;
+}
+
+.home-resume-fact:last-child {
+  padding-right: 0;
+  border-right: 0;
 }
 
 .home-resume-fact span {
@@ -1886,8 +1906,8 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 
   .home-resume-sheet {
-    grid-template-columns: minmax(0, 1fr) 270px;
-    gap: 48px;
+    grid-template-columns: 1fr;
+    gap: 64px;
   }
 
   .work-card:nth-child(1),
@@ -2037,17 +2057,15 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 
   .home-resume-side {
-    position: static;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr);
-    gap: 16px 28px;
-    padding: 28px 0 0;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 40px 0 0;
     border-top: 1px solid var(--line);
     border-left: 0;
   }
 
   .home-resume-side-kicker {
-    grid-column: 1 / -1;
+    grid-column: 1;
   }
 
   .home-resume-side-note {
@@ -2055,7 +2073,16 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 
   .home-resume-facts {
-    grid-column: 1 / -1;
+    grid-column: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-resume-fact:nth-child(2) {
+    border-right: 0;
+  }
+
+  .home-resume-fact:nth-child(n + 3) {
+    border-top: 1px solid var(--line-soft);
   }
 
   .work-card:nth-child(1),
@@ -2249,7 +2276,7 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
 
   .home-resume-section.is-about > .home-resume-section-heading {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
   }
 
   .home-resume-section.is-about .home-resume-section-copy {
@@ -2259,8 +2286,9 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
 
   .home-resume-section.is-about .home-resume-photo {
     grid-column: 1;
-    grid-row: 1;
-    width: min(100%, 260px);
+    grid-row: 2;
+    width: min(100%, 280px);
+    margin-inline: auto;
   }
 
   .home-resume-section h3 {
@@ -2292,6 +2320,22 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   .home-resume-side-note,
   .home-resume-facts {
     grid-column: auto;
+  }
+
+  .home-resume-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .home-resume-fact,
+  .home-resume-fact:first-child,
+  .home-resume-fact:last-child {
+    padding-inline: 0;
+    border-top: 1px solid var(--line-soft);
+    border-right: 0;
+  }
+
+  .home-resume-fact:first-child {
+    border-top: 0;
   }
 
   .work .section-heading {
