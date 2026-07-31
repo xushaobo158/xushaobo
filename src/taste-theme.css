@@ -664,7 +664,7 @@ img {
   min-height: 0;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 2px solid rgb(238 235 226 / 28%);
   background: #101110;
   isolation: isolate;
 }
@@ -694,44 +694,6 @@ img {
   z-index: 1;
   inset: 0;
   border: 12px solid rgb(7 8 8 / 12%);
-}
-
-.home-resume-photo-code,
-.home-resume-photo-label {
-  position: absolute;
-  z-index: 3;
-  top: 14px;
-  left: 14px;
-  color: var(--muted);
-  font-size: 0.58rem;
-  font-weight: 680;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.home-resume-photo-code {
-  padding: 5px 7px;
-  border: 1px solid rgb(238 235 226 / 16%);
-  background: rgb(7 8 8 / 72%);
-  color: var(--ink-strong);
-}
-
-.home-resume-photo-monogram {
-  position: absolute;
-  right: -0.08em;
-  bottom: -0.17em;
-  color: rgb(238 235 226 / 7%);
-  font-family: 'Geist Variable', sans-serif;
-  font-size: clamp(6rem, 9vw, 9rem);
-  font-variation-settings: 'wght' 760;
-  font-weight: 760;
-  line-height: 1;
-  letter-spacing: -0.08em;
-}
-
-.home-resume-photo-label {
-  align-self: end;
-  color: var(--ink);
 }
 
 .home-resume-photo figcaption {

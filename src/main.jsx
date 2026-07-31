@@ -760,7 +760,6 @@ function HomeResumeModule({ t }) {
                           loading="lazy"
                           decoding="async"
                         />
-                        <span className="home-resume-photo-code">PORTRAIT / 01</span>
                       </div>
                       <figcaption>{t.heroName}</figcaption>
                     </figure>
