@@ -587,7 +587,7 @@ img {
 }
 
 .home-resume-section:last-child {
-  border-bottom: 1px solid var(--line);
+  border-bottom: 0;
 }
 
 .home-resume-section-heading {
@@ -661,48 +661,59 @@ img {
 
 .home-resume-photo-field {
   position: relative;
-  display: grid;
   min-height: 0;
   aspect-ratio: 3 / 4;
-  align-content: space-between;
   overflow: hidden;
-  padding: 16px;
   border: 1px solid var(--line);
   background: #101110;
   isolation: isolate;
 }
 
+.home-resume-photo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 34%;
+  filter: saturate(0.82) contrast(1.05) brightness(0.9);
+}
+
 .home-resume-photo-field::before,
 .home-resume-photo-field::after {
   position: absolute;
-  z-index: -1;
   content: '';
 }
 
 .home-resume-photo-field::before {
-  inset: 16px;
+  z-index: 2;
+  inset: 10px;
   border: 1px solid rgb(238 235 226 / 10%);
 }
 
 .home-resume-photo-field::after {
-  top: 50%;
-  left: -8%;
-  width: 116%;
-  height: 1px;
-  background: rgb(238 235 226 / 12%);
-  transform: rotate(-34deg);
-  transform-origin: center;
+  z-index: 1;
+  inset: 0;
+  border: 12px solid rgb(7 8 8 / 12%);
 }
 
 .home-resume-photo-code,
 .home-resume-photo-label {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  left: 14px;
   color: var(--muted);
   font-size: 0.58rem;
   font-weight: 680;
   letter-spacing: 0.13em;
   text-transform: uppercase;
+}
+
+.home-resume-photo-code {
+  padding: 5px 7px;
+  border: 1px solid rgb(238 235 226 / 16%);
+  background: rgb(7 8 8 / 72%);
+  color: var(--ink-strong);
 }
 
 .home-resume-photo-monogram {
@@ -1004,6 +1015,103 @@ img {
 
 .work-card:hover .work-image img {
   transform: scale(1.018);
+}
+
+.work-image.is-status {
+  background: #0b0c0c;
+}
+
+.work-status-cover {
+  position: relative;
+  display: grid;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+  min-height: 0;
+  grid-template-rows: auto 1fr auto;
+  padding: 26px 28px;
+  overflow: hidden;
+  border: 1px solid rgba(247, 242, 232, 0.2);
+  background: #111313;
+  color: var(--ink-strong);
+  transition: border-color 360ms ease, transform 760ms var(--ease-spring);
+}
+
+.work-status-cover::before,
+.work-status-cover::after {
+  position: absolute;
+  pointer-events: none;
+  content: '';
+}
+
+.work-status-cover::before {
+  top: 0;
+  bottom: 0;
+  left: 29%;
+  border-left: 1px solid rgba(247, 242, 232, 0.08);
+}
+
+.work-status-cover::after {
+  right: 0;
+  bottom: 28%;
+  left: 0;
+  border-top: 1px solid rgba(247, 242, 232, 0.08);
+}
+
+.work-card:hover .work-status-cover {
+  border-color: rgba(198, 90, 60, 0.72);
+  transform: scale(1.012);
+}
+
+.work-status-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+}
+
+.work-status-header span:first-child {
+  color: var(--accent-bright);
+}
+
+.work-status-cover strong {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  max-width: 9ch;
+  font-family: 'Geist Variable', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 3.9rem;
+  font-variation-settings: 'wght' 680;
+  font-weight: 680;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.work-status-track {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.work-status-track i {
+  display: block;
+  height: 3px;
+  background: rgba(247, 242, 232, 0.16);
+}
+
+.work-status-track i.is-complete {
+  background: var(--muted-strong);
+}
+
+.work-status-track i.is-active {
+  background: var(--accent);
 }
 
 .work-content {
@@ -2439,6 +2547,20 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     aspect-ratio: 16 / 10;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .work-status-cover {
+    width: calc(100% - 28px);
+    height: calc(100% - 28px);
+    padding: 18px;
+  }
+
+  .work-status-cover strong {
+    font-size: 2.45rem;
+  }
+
+  .work-status-cover.is-english strong {
+    font-size: 2.2rem;
   }
 
   .work-content,

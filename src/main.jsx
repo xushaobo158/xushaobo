@@ -21,7 +21,7 @@ const copy = {
     homeResumeEyebrow: 'RESUME SNAPSHOT',
     homeResumeTitle: '简历速览',
     homeResumeLead: '',
-    homeResumePhotoLabel: '照片占位符',
+    homeResumePhotoLabel: '徐少柏个人照片',
     homeResumeSideNote: '点击上方的下载按钮，即可获取我的完整 PDF 简历，进一步了解我的项目经历、设计能力与实践经验。',
     homeResumeTags: ['产品思维', 'Vibe coding', '体验设计', 'AI工具'],
     homeResumeSections: [
@@ -102,6 +102,7 @@ const copy = {
         subtitle: '强化信息层级与视觉一致性，提升品牌展示和用户感知',
         meta: '网页 / 视觉设计 / UI设计',
         image: '/assets/cover-web-redesign-interface.webp',
+        statusCover: '项目整理中....',
         href: '/projects/web-redesign',
       },
     ],
@@ -131,7 +132,7 @@ const copy = {
     homeResumeEyebrow: 'RESUME SNAPSHOT',
     homeResumeTitle: 'Resume Snapshot',
     homeResumeLead: '',
-    homeResumePhotoLabel: 'Portrait placeholder',
+    homeResumePhotoLabel: 'Portrait of Xu Shaobo',
     homeResumeSideNote: 'Click the download button above to get my full PDF resume and learn more about my project experience, design capabilities, and hands-on practice.',
     homeResumeTags: ['Product Thinking', 'Vibe Coding', 'Experience Design', 'AI Tools'],
     homeResumeSections: [
@@ -224,6 +225,7 @@ const copy = {
         subtitle: 'Improving information hierarchy, visual consistency, and brand perception.',
         meta: 'Website / Visual Design / UI',
         image: '/assets/cover-web-redesign-interface.webp',
+        statusCover: 'Project in progress....',
         href: '/projects/web-redesign',
       },
     ],
@@ -750,10 +752,15 @@ function HomeResumeModule({ t }) {
                       </a>
                     </div>
                     <figure className="home-resume-photo" aria-label={t.homeResumePhotoLabel}>
-                      <div className="home-resume-photo-field" role="img" aria-label={t.homeResumePhotoLabel}>
+                      <div className="home-resume-photo-field">
+                        <img
+                          className="home-resume-photo-image"
+                          src="/assets/resume-portrait.webp"
+                          alt={t.homeResumePhotoLabel}
+                          loading="lazy"
+                          decoding="async"
+                        />
                         <span className="home-resume-photo-code">PORTRAIT / 01</span>
-                        <span className="home-resume-photo-monogram" aria-hidden="true">XS</span>
-                        <span className="home-resume-photo-label">{t.homeResumePhotoLabel}</span>
                       </div>
                       <figcaption>{t.heroName}</figcaption>
                     </figure>
@@ -1592,17 +1599,36 @@ function WorkCard({ card, index }) {
       href={card.href}
       data-reveal
     >
-      <div className="work-image">
-        <picture>
-          <source media="(max-width: 720px)" srcSet={mobileImage} />
-          <img
-            src={card.image}
-            alt=""
-            loading={index === 0 ? 'eager' : 'lazy'}
-            fetchPriority={index === 0 ? 'high' : 'auto'}
-            decoding="async"
-          />
-        </picture>
+      <div className={`work-image ${card.statusCover ? 'is-status' : ''}`}>
+        {card.statusCover ? (
+          <div
+            className={`work-status-cover ${card.statusCover.startsWith('Project') ? 'is-english' : ''}`}
+            role="img"
+            aria-label={card.statusCover}
+          >
+            <div className="work-status-header" aria-hidden="true">
+              <span>03</span>
+              <span>CASE STUDY</span>
+            </div>
+            <strong>{card.statusCover}</strong>
+            <div className="work-status-track" aria-hidden="true">
+              <i className="is-complete" />
+              <i className="is-active" />
+              <i />
+            </div>
+          </div>
+        ) : (
+          <picture>
+            <source media="(max-width: 720px)" srcSet={mobileImage} />
+            <img
+              src={card.image}
+              alt=""
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchPriority={index === 0 ? 'high' : 'auto'}
+              decoding="async"
+            />
+          </picture>
+        )}
       </div>
       <div className="work-content">
         <div className="work-copy-top">
