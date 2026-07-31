@@ -470,7 +470,7 @@ img {
 .home-resume-sheet {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(58px, 7vw, 96px);
+  gap: 0;
   width: 100%;
   padding: 0;
   overflow: visible;
@@ -481,6 +481,17 @@ img {
 }
 
 .home-resume-copy {
+  min-width: 0;
+}
+
+.home-resume-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(36px, 6vw, 96px);
+  align-items: end;
+}
+
+.home-resume-intro-copy {
   min-width: 0;
 }
 
@@ -527,8 +538,10 @@ img {
 .home-resume-tag-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 8px;
-  margin-top: 34px;
+  max-width: 420px;
+  margin: 0 0 4px;
 }
 
 .home-resume-tag {
@@ -545,7 +558,7 @@ img {
 }
 
 .home-resume-sections {
-  margin-top: clamp(68px, 7.5vw, 106px);
+  margin-top: clamp(52px, 5.8vw, 82px);
 }
 
 .home-resume-section {
@@ -557,9 +570,9 @@ img {
 }
 
 .home-resume-section.is-about {
-  grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+  grid-template-columns: 180px minmax(0, 1fr);
   grid-template-rows: auto 1fr;
-  column-gap: clamp(42px, 6vw, 88px);
+  column-gap: clamp(40px, 5vw, 72px);
   row-gap: 24px;
   align-items: start;
 }
@@ -623,6 +636,11 @@ img {
   margin-bottom: 0;
 }
 
+.home-resume-about-download {
+  width: min(100%, 260px) !important;
+  margin-top: 30px;
+}
+
 .home-resume-section-copy strong {
   color: var(--ink);
   font-weight: 630;
@@ -631,7 +649,8 @@ img {
 .home-resume-photo {
   grid-column: 1;
   grid-row: 1 / span 2;
-  width: 100%;
+  width: 180px;
+  max-width: 100%;
   min-width: 0;
   margin: 0;
 }
@@ -2262,6 +2281,17 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     font-size: clamp(3rem, 15vw, 4.8rem);
   }
 
+  .home-resume-intro {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .home-resume-tag-list {
+    justify-content: flex-start;
+    max-width: none;
+    margin-bottom: 0;
+  }
+
   .home-resume-section {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -2287,8 +2317,8 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   .home-resume-section.is-about .home-resume-photo {
     grid-column: 1;
     grid-row: 2;
-    width: min(100%, 280px);
-    margin-inline: auto;
+    width: min(100%, 156px);
+    margin-inline: 0;
   }
 
   .home-resume-section h3 {

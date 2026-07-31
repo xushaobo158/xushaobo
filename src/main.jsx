@@ -702,19 +702,23 @@ function HomeResumeModule({ t }) {
     <section className="home-resume section-shell" id="resume-preview">
       <div className="home-resume-sheet" data-reveal>
         <div className="home-resume-copy">
-          <p className="home-resume-eyebrow">{t.homeResumeEyebrow}</p>
-          <div className="home-resume-heading">
-            <div className="home-resume-title-line">
-              <h2>{t.homeResumeTitle}</h2>
+          <div className="home-resume-intro">
+            <div className="home-resume-intro-copy">
+              <p className="home-resume-eyebrow">{t.homeResumeEyebrow}</p>
+              <div className="home-resume-heading">
+                <div className="home-resume-title-line">
+                  <h2>{t.homeResumeTitle}</h2>
+                </div>
+                {t.homeResumeLead ? <p>{t.homeResumeLead}</p> : null}
+              </div>
             </div>
-            {t.homeResumeLead ? <p>{t.homeResumeLead}</p> : null}
-          </div>
-          <div className="home-resume-tag-list" aria-label="Resume tags">
-            {t.homeResumeTags.map((tag) => (
-              <span key={tag} className="home-resume-tag">
-                {tag}
-              </span>
-            ))}
+            <div className="home-resume-tag-list" aria-label="Resume tags">
+              {t.homeResumeTags.map((tag) => (
+                <span key={tag} className="home-resume-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
           <div className="home-resume-sections">
             {t.homeResumeSections.map((section, sectionIndex) => (
@@ -736,6 +740,14 @@ function HomeResumeModule({ t }) {
                           <span>{item.text}</span>
                         </p>
                       ))}
+                      <a
+                        className="resume-download home-resume-download home-resume-about-download"
+                        href="/assets/xushaobo-resume.pdf"
+                        download="徐少柏-简历.pdf"
+                      >
+                        <Download size={16} strokeWidth={1.9} />
+                        {t.homeResumeDownload}
+                      </a>
                     </div>
                     <figure className="home-resume-photo" aria-label={t.homeResumePhotoLabel}>
                       <div className="home-resume-photo-field" role="img" aria-label={t.homeResumePhotoLabel}>
@@ -776,26 +788,6 @@ function HomeResumeModule({ t }) {
             ))}
           </div>
         </div>
-        <aside className="home-resume-side" data-reveal>
-          <p className="home-resume-side-kicker">{t.homeResumeEyebrow}</p>
-          <a
-            className="resume-download home-resume-download"
-            href="/assets/xushaobo-resume.pdf"
-            download="徐少柏-简历.pdf"
-          >
-            <Download size={16} strokeWidth={1.9} />
-            {t.homeResumeDownload}
-          </a>
-          <p className="home-resume-side-note">{t.homeResumeSideNote}</p>
-          <div className="home-resume-facts">
-            {t.resumeProfile.map((item) => (
-              <div key={item.label} className="home-resume-fact">
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-              </div>
-            ))}
-          </div>
-        </aside>
       </div>
     </section>
   );
