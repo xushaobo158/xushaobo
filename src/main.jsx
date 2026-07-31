@@ -1665,16 +1665,15 @@ function ContactCard({ item, icon: Icon, copyAction, copiedAction }) {
 
 function Contact({ t }) {
   const icons = [Mail, MessageCircle, Phone];
-  const marqueeText = useMemo(
-    () => Array.from({ length: 8 }, (_, index) => <span key={index}>{t.marquee}</span>),
-    [t.marquee],
-  );
 
   return (
     <section className="contact section-shell" id="contact">
+      <span className="contact-backdrop" aria-hidden="true">
+        LET&apos;S TALK
+      </span>
       <div className="contact-copy" data-reveal>
-        <h2 className="contact-title-effect">
-          <CharacterTitle text={t.contactTitle} />
+        <h2 className={`contact-title-effect${t.contactTitle.length > 10 ? ' is-long' : ''}`}>
+          {t.contactTitle}
         </h2>
         <p>{t.contactLead}</p>
       </div>
@@ -1688,10 +1687,6 @@ function Contact({ t }) {
             copiedAction={t.copiedAction}
           />
         ))}
-      </div>
-      <div className="marquee" aria-hidden="true">
-        <div>{marqueeText}</div>
-        <div>{marqueeText}</div>
       </div>
     </section>
   );
