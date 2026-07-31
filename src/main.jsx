@@ -1,7 +1,9 @@
 ﻿import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { AlertTriangle, AppWindow, ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, MessageCircle, MousePointer2, Phone, Search, Send, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { AlertTriangle, AppWindow, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, Menu, MessageCircle, MousePointer2, Phone, Search, Sparkles, X } from 'lucide-react';
+import '@fontsource-variable/geist';
 import './styles.css';
+import './taste-theme.css';
 
 const copy = {
   zh: {
@@ -549,14 +551,27 @@ const projectPageContent = {
 };
 
 function Header({ lang, setLang, t }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const rawPathname = window.location.pathname;
   const pathname = rawPathname.startsWith('/about') || rawPathname.startsWith('/resume') ? '/' : rawPathname;
   const onDetailPage = pathname.startsWith('/projects/');
   const navTargets = onDetailPage ? ['/', '/#resume-preview', '/#work', '/#contact'] : ['#top', '#resume-preview', '#work', '#contact'];
   const homeTarget = onDetailPage ? '/' : '#top';
 
+  useEffect(() => {
+    const closeMenu = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+
+    window.addEventListener('keydown', closeMenu);
+    return () => window.removeEventListener('keydown', closeMenu);
+  }, []);
+
   return (
-    <header className={`site-header ${onDetailPage ? 'site-header-detail' : 'site-header-home'}`} aria-label="Primary navigation">
+    <header
+      className={`site-header ${onDetailPage ? 'site-header-detail' : 'site-header-home'} ${menuOpen ? 'is-menu-open' : ''}`}
+      aria-label="Primary navigation"
+    >
       <a className="brand" href={homeTarget} aria-label="Xushaobo home">
         <span className="brand-mark" aria-hidden="true">
           <MessageCircle size={20} strokeWidth={2.2} />
@@ -564,9 +579,9 @@ function Header({ lang, setLang, t }) {
         <span>Xushaobo</span>
       </a>
       <span className="nav-divider" aria-hidden="true" />
-      <nav className="nav-links">
+      <nav className="nav-links" id="primary-navigation">
         {t.nav.map((item, index) => (
-          <a key={item} href={navTargets[index]}>
+          <a key={item} href={navTargets[index]} onClick={() => setMenuOpen(false)}>
             {item}
           </a>
         ))}
@@ -580,6 +595,16 @@ function Header({ lang, setLang, t }) {
         <span className={lang === 'zh' ? 'active' : ''}>中</span>
         <span aria-hidden="true">|</span>
         <span className={lang === 'en' ? 'active' : ''}>EN</span>
+      </button>
+      <button
+        className="nav-menu-toggle"
+        type="button"
+        aria-controls="primary-navigation"
+        aria-expanded={menuOpen}
+        aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+        onClick={() => setMenuOpen((current) => !current)}
+      >
+        {menuOpen ? <X size={21} strokeWidth={1.8} /> : <Menu size={21} strokeWidth={1.8} />}
       </button>
     </header>
   );
@@ -646,35 +671,27 @@ function Hero({ t }) {
     <section className="hero hero-image-stage section-shell" id="top">
       <picture className="hero-background-picture" aria-hidden="true">
         <img
-          src="/assets/hero-rock-architecture.webp"
+          src="/assets/hero-botanical-installation.webp"
           alt=""
           decoding="async"
           fetchPriority="high"
         />
       </picture>
-      <div className="hero-intro-marker" aria-hidden="true">
+      <div className="hero-intro-marker" aria-hidden="true" data-reveal>
         <span>01</span>
         <i />
         <strong>INTRO</strong>
       </div>
       <div className="hero-text">
         <div className="hero-title-stage">
-          <h1>
+          <h1 data-reveal>
             <span>PRODUCT /</span>
-            <span>UX DESIGNER</span>
+            <span><em>UX</em> DESIGNER</span>
           </h1>
-          <div className="hero-visual-actions">
-            <a className="hero-visual-action hero-visual-action-work" href="#work" aria-label={t.heroCta}>
-              <ArrowRight strokeWidth={1.45} />
-            </a>
-            <a className="hero-visual-action hero-visual-action-contact" href="#contact" aria-label={t.nav[3]}>
-              <Send strokeWidth={1.45} />
-            </a>
-          </div>
         </div>
-        <p className="hero-name">{t.heroName}</p>
-        <p className="hero-intro">{t.heroIntro}</p>
-        <a className="hero-link" href="#work">
+        <p className="hero-name" data-reveal>{t.heroName}</p>
+        <p className="hero-intro" data-reveal>{t.heroIntro}</p>
+        <a className="hero-link" href="#work" data-reveal>
           {t.heroCta}
           <ArrowRight size={19} strokeWidth={1.65} />
         </a>
@@ -686,20 +703,12 @@ function Hero({ t }) {
 function HomeResumeModule({ t }) {
   return (
     <section className="home-resume section-shell" id="resume-preview">
-      <div className="home-resume-sheet">
+      <div className="home-resume-sheet" data-reveal>
         <div className="home-resume-copy">
           <p className="home-resume-eyebrow">{t.homeResumeEyebrow}</p>
           <div className="home-resume-heading">
             <div className="home-resume-title-line">
               <h2>{t.homeResumeTitle}</h2>
-              <div className="home-resume-title-controls" aria-hidden="true">
-                <span>
-                  <SlidersHorizontal size={22} strokeWidth={1.8} />
-                </span>
-                <span>
-                  <Sparkles size={22} strokeWidth={1.8} />
-                </span>
-              </div>
             </div>
             {t.homeResumeLead ? <p>{t.homeResumeLead}</p> : null}
           </div>
@@ -712,7 +721,7 @@ function HomeResumeModule({ t }) {
           </div>
           <div className="home-resume-sections">
             {t.homeResumeSections.map((section) => (
-              <section key={section.title} className="home-resume-section">
+              <section key={section.title} className="home-resume-section" data-reveal>
                 <h3>{section.title}</h3>
                 {section.paragraphs ? (
                   <div className="home-resume-section-copy">
@@ -753,10 +762,7 @@ function HomeResumeModule({ t }) {
             ))}
           </div>
         </div>
-        <aside className="home-resume-side">
-          <span className="home-resume-side-icon" aria-hidden="true">
-            <ArrowRight size={30} strokeWidth={1.8} />
-          </span>
+        <aside className="home-resume-side" data-reveal>
           <p className="home-resume-side-kicker">{t.homeResumeEyebrow}</p>
           <a
             className="resume-download home-resume-download"
@@ -1575,7 +1581,11 @@ function WorkCard({ card, index }) {
       : card.image;
 
   return (
-    <a className={`work-card ${card.muted ? 'is-muted' : ''} ${imageRight ? 'is-image-right' : ''}`} href={card.href}>
+    <a
+      className={`work-card ${card.muted ? 'is-muted' : ''} ${imageRight ? 'is-image-right' : ''}`}
+      href={card.href}
+      data-reveal
+    >
       <div className="work-image">
         <picture>
           <source media="(max-width: 720px)" srcSet={mobileImage} />
@@ -1616,7 +1626,7 @@ function WorkCard({ card, index }) {
 function WorkGrid({ t }) {
   return (
     <section className="work section-shell" id="work">
-      <div className="section-heading">
+      <div className="section-heading" data-reveal>
         <div className="work-heading-copy">
           <p className="work-eyebrow">{t.workEyebrow}</p>
           <div className="work-title-line">
@@ -1667,13 +1677,13 @@ function Contact({ t }) {
 
   return (
     <section className="contact section-shell" id="contact">
-      <div className="contact-copy">
+      <div className="contact-copy" data-reveal>
         <h2 className="contact-title-effect">
           <CharacterTitle text={t.contactTitle} />
         </h2>
         <p>{t.contactLead}</p>
       </div>
-      <div className="contact-list">
+      <div className="contact-list" data-reveal>
         {t.contactItems.map((item, index) => (
           <ContactCard
             key={item.label}
@@ -1708,6 +1718,35 @@ function App() {
       window.history.replaceState({}, '', '/#resume-preview');
     }
   }, [rawPathname]);
+
+  useEffect(() => {
+    const revealItems = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!revealItems.length) return undefined;
+
+    revealItems.forEach((item, index) => {
+      item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, [lang, isProjectPage]);
 
   return (
     <>
