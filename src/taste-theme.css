@@ -942,6 +942,9 @@ img {
 .contact.section-shell {
   position: relative;
   isolation: isolate;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
   min-height: 0;
   overflow: hidden;
   display: grid;
@@ -1009,10 +1012,10 @@ img {
 }
 
 .contact-copy > p {
-  grid-column: 9 / 13;
+  grid-column: 8 / 13;
   justify-self: end;
   width: 100%;
-  max-width: 390px;
+  max-width: 430px;
   margin: 12px 0 0;
   padding-left: 30px;
   border-left: 1px solid var(--line);
@@ -1027,7 +1030,7 @@ img {
   grid-column: 1 / -1;
   min-width: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.12fr) repeat(2, minmax(0, 0.94fr));
   border-left: 1px solid var(--line);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
