@@ -1728,6 +1728,16 @@ function Contact({ t }) {
   );
 }
 
+function SiteEnding() {
+  return (
+    <footer className="site-ending" aria-hidden="true">
+      <picture className="site-ending-picture" aria-hidden="true">
+        <img src="/assets/hero-botanical-installation.webp" alt="" loading="lazy" decoding="async" />
+      </picture>
+    </footer>
+  );
+}
+
 function App() {
   const [lang, setLang] = useState('zh');
   const t = copy[lang];
@@ -1840,6 +1850,7 @@ function App() {
             <HomeResumeModule t={t} />
             <WorkGrid t={t} />
             <Contact t={t} />
+            <SiteEnding />
           </>
         )}
       </main>
