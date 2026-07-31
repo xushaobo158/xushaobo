@@ -21,6 +21,7 @@ const copy = {
     homeResumeEyebrow: 'RESUME SNAPSHOT',
     homeResumeTitle: '简历速览',
     homeResumeLead: '',
+    homeResumePhotoLabel: '照片占位符',
     homeResumeSideNote: '点击上方的下载按钮，即可获取我的完整 PDF 简历，进一步了解我的项目经历、设计能力与实践经验。',
     homeResumeTags: ['产品思维', 'Vibe coding', '体验设计', 'AI工具'],
     homeResumeSections: [
@@ -130,6 +131,7 @@ const copy = {
     homeResumeEyebrow: 'RESUME SNAPSHOT',
     homeResumeTitle: 'Resume Snapshot',
     homeResumeLead: '',
+    homeResumePhotoLabel: 'Portrait placeholder',
     homeResumeSideNote: 'Click the download button above to get my full PDF resume and learn more about my project experience, design capabilities, and hands-on practice.',
     homeResumeTags: ['Product Thinking', 'Vibe Coding', 'Experience Design', 'AI Tools'],
     homeResumeSections: [
@@ -715,17 +717,34 @@ function HomeResumeModule({ t }) {
             ))}
           </div>
           <div className="home-resume-sections">
-            {t.homeResumeSections.map((section) => (
-              <section key={section.title} className="home-resume-section" data-reveal>
-                <h3>{section.title}</h3>
+            {t.homeResumeSections.map((section, sectionIndex) => (
+              <section
+                key={section.title}
+                className={`home-resume-section ${section.paragraphs ? 'is-about' : ''}`}
+                data-reveal
+              >
+                <div className="home-resume-section-heading">
+                  <span aria-hidden="true">{String(sectionIndex + 1).padStart(2, '0')}</span>
+                  <h3>{section.title}</h3>
+                </div>
                 {section.paragraphs ? (
-                  <div className="home-resume-section-copy">
-                    {section.paragraphs.map((item) => (
-                      <p key={item.label}>
-                        <strong>{item.label}：</strong>
-                        <span>{item.text}</span>
-                      </p>
-                    ))}
+                  <div className="home-resume-about-layout">
+                    <div className="home-resume-section-copy">
+                      {section.paragraphs.map((item) => (
+                        <p key={item.label}>
+                          <strong>{item.label}：</strong>
+                          <span>{item.text}</span>
+                        </p>
+                      ))}
+                    </div>
+                    <figure className="home-resume-photo" aria-label={t.homeResumePhotoLabel}>
+                      <div className="home-resume-photo-field" role="img" aria-label={t.homeResumePhotoLabel}>
+                        <span className="home-resume-photo-code">PORTRAIT / 01</span>
+                        <span className="home-resume-photo-monogram" aria-hidden="true">XS</span>
+                        <span className="home-resume-photo-label">{t.homeResumePhotoLabel}</span>
+                      </div>
+                      <figcaption>{t.heroName}</figcaption>
+                    </figure>
                   </div>
                 ) : null}
                 {section.entries ? (
