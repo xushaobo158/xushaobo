@@ -452,6 +452,10 @@ img {
   background: var(--bg);
 }
 
+.home-resume.section-shell {
+  padding-bottom: clamp(56px, 5.4vw, 72px);
+}
+
 .home-resume::before,
 .home-resume::after,
 .work::before,
@@ -885,6 +889,15 @@ img {
   align-items: end;
   margin: 0 0 clamp(64px, 7vw, 108px);
   padding: 0;
+}
+
+.work .section-heading .work-heading-copy {
+  display: grid;
+  row-gap: clamp(24px, 2.1vw, 30px);
+}
+
+.work .section-heading .work-eyebrow {
+  margin: 0;
 }
 
 .work .section-heading > p {
@@ -2276,6 +2289,10 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     padding-block: 84px;
   }
 
+  .home-resume.section-shell {
+    padding-bottom: 56px;
+  }
+
   .home-resume-heading h2,
   .work .section-heading h2 {
     font-size: clamp(3rem, 15vw, 4.8rem);
@@ -2371,6 +2388,10 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   .work .section-heading {
     grid-template-columns: 1fr;
     margin-bottom: 48px;
+  }
+
+  .work .section-heading .work-heading-copy {
+    row-gap: 18px;
   }
 
   .work .section-heading > p {
