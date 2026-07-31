@@ -313,6 +313,11 @@ img {
   min-width: 0;
 }
 
+.hero.hero-image-stage .hero-text {
+  width: 100%;
+  margin-inline: 0;
+}
+
 .hero-title-stage {
   display: contents;
 }
