@@ -9,6 +9,8 @@
   --surface: #0e1010;
   --surface-raised: #141616;
   --surface-soft: #1a1c1b;
+  --work-surface: #202523;
+  --work-surface-deep: #1a1e1d;
   --canvas: #f0efeb;
   --ink: #f2efe7;
   --ink-strong: #fffdf7;
@@ -891,6 +893,8 @@ img {
 .work-card:nth-child(1),
 .work-card:nth-child(2),
 .work-card:nth-child(3) {
+  --work-surface: #202523 !important;
+  --work-surface-deep: #1a1e1d !important;
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(360px, 1fr);
@@ -899,16 +903,14 @@ img {
   min-height: clamp(400px, 36vw, 520px);
   min-width: 0;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px !important;
-  background: var(--surface);
+  border: 0 !important;
+  border-radius: 24px !important;
+  background: var(--work-surface) !important;
   box-shadow: none;
   color: var(--ink);
   text-decoration: none;
   transform: translateZ(0);
-  transition:
-    border-color 260ms ease,
-    transform 680ms var(--ease-spring);
+  transition: transform 680ms var(--ease-spring);
 }
 
 .work-card.is-image-right .work-image {
@@ -935,15 +937,6 @@ img {
   outline: 0;
   box-shadow: none !important;
   transform: translateZ(0) scale(1.008) !important;
-}
-
-.work-grid > .work-card:nth-child(1),
-.work-grid > .work-card:nth-child(2),
-.work-grid > .work-card:nth-child(3),
-.work-grid > .work-card:nth-child(1):hover,
-.work-grid > .work-card:nth-child(2):hover,
-.work-grid > .work-card:nth-child(3):hover {
-  border-color: var(--line) !important;
 }
 
 .work-card.is-coming-soon {
@@ -996,7 +989,7 @@ img {
 }
 
 .work-image.is-status {
-  background: #0b0c0c;
+  background: var(--work-surface-deep) !important;
 }
 
 .work-status-cover {
@@ -1009,7 +1002,7 @@ img {
   padding: 26px 28px;
   overflow: hidden;
   border: 0;
-  background: #101111;
+  background: var(--work-surface) !important;
   color: var(--ink-strong);
   transition: border-color 360ms ease, transform 760ms var(--ease-spring);
 }
@@ -1079,7 +1072,7 @@ img {
   min-width: 0;
   min-height: 100%;
   padding: clamp(28px, 3.2vw, 48px);
-  background: var(--surface);
+  background: var(--work-surface) !important;
   color: var(--ink);
 }
 
