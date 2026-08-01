@@ -1711,7 +1711,6 @@ function Contact({ t }) {
         <h2 className={`contact-title-effect${t.contactTitle.length > 10 ? ' is-long' : ''}`}>
           {t.contactTitle}
         </h2>
-        <p>{t.contactLead}</p>
       </div>
       <div className="contact-list" data-reveal>
         {t.contactItems.map((item, index) => (
