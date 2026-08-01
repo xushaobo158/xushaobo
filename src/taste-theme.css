@@ -9,8 +9,8 @@
   --surface: #0e1010;
   --surface-raised: #141616;
   --surface-soft: #1a1c1b;
-  --work-surface: #202523;
-  --work-surface-deep: #1a1e1d;
+  --work-surface: linear-gradient(145deg, #0d0f10 0%, #15181b 100%);
+  --work-surface-deep: linear-gradient(145deg, #0a0c0d 0%, #121518 100%);
   --canvas: #f0efeb;
   --ink: #f2efe7;
   --ink-strong: #fffdf7;
@@ -893,8 +893,8 @@ img {
 .work-card:nth-child(1),
 .work-card:nth-child(2),
 .work-card:nth-child(3) {
-  --work-surface: #202523 !important;
-  --work-surface-deep: #1a1e1d !important;
+  --work-surface: linear-gradient(145deg, #0d0f10 0%, #15181b 100%) !important;
+  --work-surface-deep: linear-gradient(145deg, #0a0c0d 0%, #121518 100%) !important;
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(360px, 1fr);
@@ -989,7 +989,7 @@ img {
 }
 
 .work-image.is-status {
-  background: var(--work-surface-deep) !important;
+  background: transparent !important;
 }
 
 .work-status-cover {
@@ -1002,7 +1002,7 @@ img {
   padding: 26px 28px;
   overflow: hidden;
   border: 0;
-  background: var(--work-surface) !important;
+  background: transparent !important;
   color: var(--ink-strong);
   transition: border-color 360ms ease, transform 760ms var(--ease-spring);
 }
@@ -1072,7 +1072,7 @@ img {
   min-width: 0;
   min-height: 100%;
   padding: clamp(28px, 3.2vw, 48px);
-  background: var(--work-surface) !important;
+  background: transparent !important;
   color: var(--ink);
 }
 
