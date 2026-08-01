@@ -12,12 +12,13 @@
   --work-surface: linear-gradient(145deg, #0d0f10 0%, #15181b 100%);
   --work-surface-deep: linear-gradient(145deg, #0a0c0d 0%, #121518 100%);
   --canvas: #f0efeb;
-  --ink: #f2efe7;
-  --ink-strong: #fffdf7;
-  --muted: #9a9b96;
-  --muted-strong: #b8b8b1;
-  --line: rgba(242, 239, 231, 0.18);
-  --line-soft: rgba(242, 239, 231, 0.09);
+  --ink: #f2f3f4;
+  --ink-strong: #ffffff;
+  --muted: #92969c;
+  --muted-strong: #b8bbc0;
+  --type-accent: #d4d7db;
+  --line: rgba(255, 255, 255, 0.18);
+  --line-soft: rgba(255, 255, 255, 0.09);
   --accent: #c65a3c;
   --accent-bright: #dc6846;
   --accent-soft: rgba(198, 90, 60, 0.16);
@@ -134,15 +135,22 @@ img {
   text-decoration: none;
 }
 
-.brand-mark {
+.site-header .brand-mark {
   display: grid;
   width: 32px;
   height: 32px;
   place-items: center;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  color: var(--accent-bright);
+  flex: 0 0 32px;
+  border: 0;
+  border-radius: 0;
   background: transparent;
+}
+
+.brand-mark img {
+  display: block;
+  width: auto;
+  height: 70%;
+  object-fit: contain;
 }
 
 .nav-divider {
@@ -224,7 +232,7 @@ img {
 }
 
 .language-toggle .active {
-  color: var(--accent-bright);
+  color: var(--type-accent);
 }
 
 .language-toggle:hover {
@@ -394,7 +402,7 @@ img {
   grid-row: 3;
   align-self: end;
   margin: 0;
-  color: rgba(255, 253, 247, 0.88);
+  color: rgba(255, 255, 255, 0.88);
   font-size: clamp(0.92rem, 1.18vw, 1.08rem);
   font-weight: 520;
   line-height: 1.85;
@@ -504,7 +512,7 @@ img {
 .home-resume-eyebrow,
 .work-eyebrow {
   margin: 0 0 18px;
-  color: var(--accent-bright);
+  color: var(--type-accent);
   font-size: 0.7rem;
   font-weight: 720;
   letter-spacing: 0.14em;
@@ -599,7 +607,7 @@ img {
 }
 
 .home-resume-section-heading > span {
-  color: var(--accent-bright);
+  color: var(--type-accent);
   font-size: 0.64rem;
   font-variant-numeric: tabular-nums;
   font-weight: 720;
@@ -777,7 +785,7 @@ img {
 
 .home-resume-side-kicker {
   margin: 0;
-  color: var(--accent-bright);
+  color: var(--type-accent);
   font-size: 0.68rem;
   font-weight: 720;
   letter-spacing: 0.14em;
@@ -844,7 +852,7 @@ img {
 }
 
 .home-resume-fact span {
-  color: var(--accent-bright);
+  color: var(--type-accent);
   font-size: 0.67rem;
   font-weight: 650;
 }
@@ -1030,7 +1038,7 @@ img {
 }
 
 .work-status-header span:first-child {
-  color: var(--accent-bright);
+  color: var(--type-accent);
 }
 
 .work-status-cover strong {
@@ -1099,7 +1107,7 @@ img {
   border-radius: 2px;
   background: transparent;
   box-shadow: none !important;
-  color: var(--accent-bright);
+  color: var(--type-accent);
   font-size: 0.67rem;
   font-variant-numeric: tabular-nums;
   font-weight: 720;
@@ -1183,7 +1191,7 @@ img {
 .work-card:nth-child(3):hover .work-index {
   border-color: var(--accent) !important;
   background: transparent !important;
-  color: var(--accent-bright) !important;
+  color: var(--type-accent) !important;
   box-shadow: none !important;
   transform: none !important;
 }
@@ -1209,7 +1217,7 @@ img {
   z-index: -1;
   top: 64px;
   right: var(--page-gutter);
-  color: rgba(244, 240, 231, 0.035);
+  color: rgba(255, 255, 255, 0.035);
   font-family: 'Geist Variable', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 10.5rem;
   font-variation-settings: 'wght' 760;
@@ -1551,7 +1559,7 @@ img {
   align-items: center;
   gap: 9px;
   margin: 0 0 28px;
-  color: var(--accent-bright);
+  color: var(--type-accent);
   font-size: 0.7rem;
   font-weight: 720;
   letter-spacing: 0.12em;
@@ -1573,7 +1581,7 @@ img {
 }
 
 .in-progress-copy h1 span:last-child {
-  color: var(--accent-bright);
+  color: var(--type-accent);
 }
 
 .in-progress-description {
@@ -1694,7 +1702,7 @@ img {
   margin-top: 14px;
   padding: 16px 0;
   border-top: 1px solid var(--line-soft);
-  color: var(--accent-bright);
+  color: var(--type-accent);
 }
 
 .in-progress-next > div {
@@ -1803,7 +1811,7 @@ img {
 }
 
 .in-progress-preview-note span {
-  color: var(--accent);
+  color: #555a60;
   font-size: 0.57rem;
   font-weight: 720;
   letter-spacing: 0.1em;
@@ -1867,7 +1875,7 @@ img {
 }
 
 .in-progress-caption span:first-child {
-  color: var(--accent-bright);
+  color: var(--type-accent);
 }
 
 .project-page.section-shell {
@@ -2282,9 +2290,10 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     font-size: 0.8rem;
   }
 
-  .brand-mark {
+  .site-header .brand-mark {
     width: 30px;
     height: 30px;
+    flex-basis: 30px;
   }
 
   .language-toggle {
@@ -2423,7 +2432,7 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 
   .home-resume-section h3 {
-    color: var(--accent-bright);
+    color: var(--type-accent);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
   }

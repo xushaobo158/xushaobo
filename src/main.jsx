@@ -576,7 +576,7 @@ function Header({ lang, setLang, t }) {
     >
       <a className="brand" href={homeTarget} aria-label="Xushaobo home">
         <span className="brand-mark" aria-hidden="true">
-          <MessageCircle size={20} strokeWidth={2.2} />
+          <img src="/brand-x.png" alt="" />
         </span>
         <span>Xushaobo</span>
       </a>
