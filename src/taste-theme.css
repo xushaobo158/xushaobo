@@ -932,8 +932,21 @@ img {
 }
 
 .work-card:hover {
-  border-color: rgba(198, 90, 60, 0.72);
-  transform: translateY(-8px);
+  outline: 0;
+  box-shadow: none !important;
+  transform: translateZ(0) !important;
+}
+
+.work-grid > .work-card:nth-child(1):hover {
+  border-color: var(--line) var(--line) rgba(201, 89, 55, 0.7) !important;
+}
+
+.work-grid > .work-card:nth-child(2):hover {
+  border-color: var(--line) var(--line) rgba(125, 154, 126, 0.72) !important;
+}
+
+.work-grid > .work-card:nth-child(3):hover {
+  border-color: var(--line) var(--line) rgba(198, 163, 83, 0.7) !important;
 }
 
 .work-image {
@@ -976,7 +989,9 @@ img {
 }
 
 .work-card:hover .work-image img {
-  transform: scale(1.018);
+  filter: none !important;
+  opacity: 0.9 !important;
+  transform: scale(1) !important;
 }
 
 .work-image.is-status {
@@ -1020,8 +1035,8 @@ img {
 }
 
 .work-card:hover .work-status-cover {
-  border-color: rgba(198, 90, 60, 0.72);
-  transform: scale(1.012);
+  border-color: rgba(247, 242, 232, 0.2) !important;
+  transform: none !important;
 }
 
 .work-status-header {
@@ -1107,6 +1122,7 @@ img {
   border: 1px solid var(--accent);
   border-radius: 2px;
   background: transparent;
+  box-shadow: none !important;
   color: var(--accent-bright);
   font-size: 0.67rem;
   font-variant-numeric: tabular-nums;
@@ -1174,10 +1190,26 @@ img {
 }
 
 .work-card:hover .work-open {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: var(--ink-strong);
-  transform: rotate(10deg) scale(1.04);
+  border-color: var(--line) !important;
+  background: transparent !important;
+  color: var(--ink) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.work-card:hover .work-open svg {
+  color: inherit !important;
+  transform: none !important;
+}
+
+.work-card:hover .work-index,
+.work-card:nth-child(2):hover .work-index,
+.work-card:nth-child(3):hover .work-index {
+  border-color: var(--accent) !important;
+  background: transparent !important;
+  color: var(--accent-bright) !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 .contact.section-shell {
