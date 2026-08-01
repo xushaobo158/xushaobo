@@ -421,41 +421,37 @@ img {
   min-height: 52px;
   margin-top: 30px;
   padding: 0 18px;
-  border: 1px solid rgba(245, 242, 235, 0.28);
-  border-radius: 2px;
-  background: rgba(5, 6, 6, 0.72);
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
   color: var(--ink-strong);
   font-size: 0.84rem;
   font-weight: 660;
   text-decoration: none;
   transition:
     background-color 240ms ease,
-    border-color 240ms ease,
     color 240ms ease,
-    transform 480ms var(--ease-spring);
+    opacity 240ms ease;
 }
 
 .hero-link svg {
-  color: var(--accent-bright);
-  transition: transform 480ms var(--ease-spring);
+  color: var(--ink-strong);
 }
 
 .hero-link:hover {
-  border-color: var(--accent);
-  background: var(--accent);
+  background: rgba(255, 255, 255, 0.14);
   color: var(--ink-strong);
-  transform: translateY(-4px);
 }
 
 .hero-link:hover svg {
   color: var(--ink-strong);
-  transform: translateX(7px);
 }
 
 .home-resume.section-shell,
 .work.section-shell,
 .contact.section-shell {
-  padding-block: clamp(94px, 12vw, 164px);
+  padding-block: clamp(68px, 8vw, 112px);
   border: 0;
   border-bottom: 1px solid var(--line);
   border-radius: 0;
@@ -463,7 +459,11 @@ img {
 }
 
 .home-resume.section-shell {
-  padding-bottom: clamp(56px, 5.4vw, 72px);
+  padding-bottom: clamp(44px, 4.5vw, 60px);
+}
+
+.work.section-shell {
+  border-bottom: 0 !important;
 }
 
 .home-resume::before,
@@ -501,7 +501,7 @@ img {
 .home-resume-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(36px, 6vw, 96px);
+  gap: clamp(28px, 4vw, 64px);
   align-items: end;
 }
 
@@ -563,16 +563,16 @@ img {
   min-height: 30px;
   align-items: center;
   padding: 0 11px;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #0d0f10 0%, #15181b 100%);
   color: var(--muted-strong);
   font-size: 0.69rem;
   font-weight: 620;
 }
 
 .home-resume-sections {
-  margin-top: clamp(52px, 5.8vw, 82px);
+  margin-top: clamp(38px, 4.2vw, 58px);
 }
 
 .home-resume-section {
@@ -675,6 +675,7 @@ img {
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border: 2px solid rgb(238 235 226 / 28%);
+  border-radius: 8px;
   background: #101110;
   isolation: isolate;
 }
@@ -800,22 +801,21 @@ img {
   gap: 12px;
   padding: 0 14px;
   text-align: center;
-  border: 1px solid var(--accent);
-  border-radius: 2px;
-  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #0d0f10 0%, #15181b 100%);
   color: var(--ink-strong);
   font-size: 0.8rem;
   font-weight: 660;
   text-decoration: none;
   transition:
     background-color 240ms ease,
-    color 240ms ease,
-    transform 480ms var(--ease-spring);
+    color 240ms ease;
 }
 
 .resume-download.home-resume-download:hover {
-  background: var(--accent);
-  transform: translateY(-3px);
+  background: linear-gradient(145deg, #0d0f10 0%, #15181b 100%);
+  color: var(--ink-strong);
 }
 
 .home-resume-side-note {
@@ -1208,8 +1208,8 @@ img {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 0;
   padding-inline: clamp(22px, 4vw, 56px);
-  padding-top: 104px;
-  padding-bottom: 82px;
+  padding-top: 72px;
+  padding-bottom: 62px;
 }
 
 .contact-backdrop {
@@ -1236,8 +1236,8 @@ img {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   align-items: start;
-  padding: 30px 0 62px;
-  border-top: 1px solid var(--line);
+  padding: 0 0 44px;
+  border-top: 0;
 }
 
 .contact-copy h2 {
@@ -1260,12 +1260,8 @@ img {
 }
 
 .contact-copy h2::after {
-  content: '' !important;
-  display: block;
-  width: 92px;
-  height: 6px;
-  margin-top: 24px;
-  background: var(--accent);
+  content: none !important;
+  display: none;
 }
 
 .contact-copy > p {
@@ -2217,13 +2213,13 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
 
   .contact.section-shell {
     min-height: 0;
-    padding-top: 88px;
-    padding-bottom: 68px;
+    padding-top: 66px;
+    padding-bottom: 52px;
   }
 
   .contact-copy {
     grid-column: 1 / -1;
-    padding-bottom: 54px;
+    padding-bottom: 40px;
   }
 
   .contact-copy h2 {
@@ -2379,11 +2375,11 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   .home-resume.section-shell,
   .work.section-shell,
   .contact.section-shell {
-    padding-block: 84px;
+    padding-block: 60px;
   }
 
   .home-resume.section-shell {
-    padding-bottom: 56px;
+    padding-bottom: 44px;
   }
 
   .home-resume-heading h2,
@@ -2562,8 +2558,8 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     grid-template-columns: 1fr;
     min-height: 0;
     gap: 0;
-    padding-top: 72px;
-    padding-bottom: 56px;
+    padding-top: 56px;
+    padding-bottom: 44px;
   }
 
   .contact-backdrop {
@@ -2578,7 +2574,7 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     min-width: 0;
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 24px 0 40px;
+    padding: 0 0 32px;
   }
 
   .contact-list {
