@@ -1388,10 +1388,9 @@ img {
 }
 
 .contact-card:hover {
-  border-color: rgba(203, 79, 48, 0.56);
-  background: rgba(255, 255, 255, 0.024);
-  color: var(--accent-bright);
-  transform: translateY(-3px);
+  background: transparent;
+  color: var(--ink);
+  transform: none;
 }
 
 .contact-card button:hover {
