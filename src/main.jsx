@@ -102,8 +102,7 @@ const copy = {
         subtitle: '强化信息层级与视觉一致性，提升品牌展示和用户感知',
         meta: '网页 / 视觉设计 / UI设计',
         image: '/assets/cover-web-redesign-interface.webp',
-        statusCover: '项目整理中....',
-        href: '/projects/web-redesign',
+        statusCover: '敬请期待',
       },
     ],
     contactTitle: '期待与你合作',
@@ -225,8 +224,7 @@ const copy = {
         subtitle: 'Improving information hierarchy, visual consistency, and brand perception.',
         meta: 'Website / Visual Design / UI',
         image: '/assets/cover-web-redesign-interface.webp',
-        statusCover: 'Project in progress....',
-        href: '/projects/web-redesign',
+        statusCover: 'Coming soon',
       },
     ],
     contactTitle: 'Let us collaborate',
@@ -1455,10 +1453,6 @@ function ProjectDetail({ t, lang, slug }) {
     );
   }
 
-  if (slug === 'web-redesign') {
-    return <InProgressPage variant="website" />;
-  }
-
   if (slug === 'file-tool') {
     return (
       <section className="file-tool-image-page" id="project-detail">
@@ -1479,7 +1473,7 @@ function ProjectDetail({ t, lang, slug }) {
     );
   }
 
-  const projectSlugs = ['social-app', 'file-tool', 'web-redesign'];
+  const projectSlugs = ['social-app', 'file-tool'];
   const currentIndex = projectSlugs.indexOf(slug);
   const nextSlug = currentIndex >= 0 ? projectSlugs[(currentIndex + 1) % projectSlugs.length] : projectSlugs[0];
   const nextCard = t.cards.find((item) => item.href === `/projects/${nextSlug}`);
@@ -1587,15 +1581,16 @@ function WorkCard({ card, index }) {
     .map((item) => item.trim())
     .filter(Boolean);
   const imageRight = index >= 2;
+  const CardElement = card.href ? 'a' : 'article';
   const mobileImage =
     card.image.includes('/social-app/') || card.image.includes('/file-tool/')
       ? card.image.replace(/\/([^/]+)$/, '/mobile/$1')
       : card.image;
 
   return (
-    <a
-      className={`work-card ${card.muted ? 'is-muted' : ''} ${imageRight ? 'is-image-right' : ''}`}
-      href={card.href}
+    <CardElement
+      className={`work-card ${card.muted ? 'is-muted' : ''} ${imageRight ? 'is-image-right' : ''} ${card.href ? '' : 'is-coming-soon'}`}
+      {...(card.href ? { href: card.href } : { 'aria-label': card.statusCover })}
       data-reveal
     >
       <div className={`work-image ${card.statusCover ? 'is-status' : ''}`}>
@@ -1610,9 +1605,9 @@ function WorkCard({ card, index }) {
               <span>CASE STUDY</span>
             </div>
             <strong>{card.statusCover}</strong>
-            <div className="work-status-track" aria-hidden="true">
-              <i className="is-complete" />
-              <i className="is-active" />
+            <div className="work-status-signal" aria-hidden="true">
+              <i />
+              <i />
               <i />
             </div>
           </div>
@@ -1650,7 +1645,7 @@ function WorkCard({ card, index }) {
           </span>
         </div>
       </div>
-    </a>
+    </CardElement>
   );
 }
 
@@ -1733,7 +1728,7 @@ function App() {
   const rawPathname = window.location.pathname;
   const pathname = rawPathname.startsWith('/about') || rawPathname.startsWith('/resume') ? '/' : rawPathname;
   const projectSlug = pathname.startsWith('/projects/') ? pathname.replace('/projects/', '').split('/')[0] : '';
-  const isProjectPage = Boolean(projectSlug);
+  const isProjectPage = ['social-app', 'file-tool', 'in-progress'].includes(projectSlug);
 
   useEffect(() => {
     if (rawPathname.startsWith('/about')) {
@@ -1741,6 +1736,9 @@ function App() {
     }
     if (rawPathname.startsWith('/resume')) {
       window.history.replaceState({}, '', '/#resume-preview');
+    }
+    if (rawPathname.startsWith('/projects/web-redesign')) {
+      window.history.replaceState({}, '', '/#work');
     }
   }, [rawPathname]);
 
