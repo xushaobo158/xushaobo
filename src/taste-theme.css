@@ -1310,6 +1310,7 @@ img {
 }
 
 .contact-card {
+  --contact-card-padding: 30px 32px 28px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: auto auto 1fr auto;
@@ -1317,7 +1318,7 @@ img {
   align-items: start;
   min-width: 0;
   min-height: 232px;
-  padding: 30px 32px 28px;
+  padding: var(--contact-card-padding);
   border: 0;
   border-right: 1px solid var(--line);
   border-radius: 0;
@@ -1388,16 +1389,21 @@ img {
 }
 
 .contact-card:hover {
+  padding: var(--contact-card-padding);
   background: transparent;
   color: var(--ink);
   transform: none;
 }
 
+.contact-card:nth-child(n):hover {
+  box-shadow: none;
+}
+
 .contact-card button:hover {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: var(--ink-strong);
-  transform: translateY(-2px);
+  border-color: var(--line);
+  background: transparent;
+  color: var(--muted);
+  transform: none;
 }
 
 .marquee {
@@ -2254,8 +2260,9 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 
   .contact-card {
+    --contact-card-padding: 24px 20px 22px;
     min-height: 204px;
-    padding: 24px 20px 22px;
+    padding: var(--contact-card-padding);
   }
 
   .contact-card button {
@@ -2618,12 +2625,13 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 
   .contact-card {
+    --contact-card-padding: 20px 18px;
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-rows: auto auto auto;
     gap: 6px 12px;
     min-width: 0;
     min-height: 0;
-    padding: 20px 18px;
+    padding: var(--contact-card-padding);
   }
 
   .contact-card:not(:last-child) {
@@ -2741,7 +2749,8 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 
   .contact-card {
-    padding-inline: 16px;
+    --contact-card-padding: 20px 16px;
+    padding: var(--contact-card-padding);
   }
 
   .contact-card > strong {
