@@ -2823,3 +2823,32 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     animation: none !important;
   }
 }
+
+/* Keep the hero introduction aligned after the legacy copy animation runs. */
+.hero-image-stage .hero-intro {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+@media (min-width: 901px) {
+  .hero-image-stage .hero-intro {
+    animation: hero-copy-enter-align 980ms 380ms var(--spring-out) both;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-image-stage .hero-intro {
+    animation: hero-copy-enter 980ms 380ms var(--spring-out) both;
+  }
+}
+
+@keyframes hero-copy-enter-align {
+  from {
+    opacity: 0;
+    transform: translateY(calc(24px + clamp(52px, 6vh, 72px)));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(clamp(52px, 6vh, 72px));
+  }
+}
