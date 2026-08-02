@@ -1539,10 +1539,19 @@ img {
 }
 
 .contact-card button:hover {
-  border-color: var(--line);
-  background: transparent;
-  color: var(--muted);
-  transform: none;
+  border-color: var(--accent-bright);
+  background: var(--accent-bright);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(220, 104, 70, 0.28);
+  transform: translateY(-1px);
+}
+
+.contact-card button:focus-visible {
+  border-color: var(--accent-bright);
+  background: var(--accent-bright);
+  color: #fff;
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 3px;
 }
 
 .marquee {
