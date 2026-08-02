@@ -2909,3 +2909,17 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     transform: translateY(clamp(52px, 6vh, 72px));
   }
 }
+
+/* Keep project artwork flush with the viewport on compact screens too. */
+@media (max-width: 700px) {
+  .social-app-image-page,
+  .file-tool-image-page {
+    padding-top: 0;
+  }
+
+  .social-app-return-rail,
+  .file-tool-return-rail {
+    top: 10px;
+    left: 10px;
+  }
+}
