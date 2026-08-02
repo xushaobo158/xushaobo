@@ -2938,7 +2938,7 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   left: auto;
   z-index: 15;
   display: flex;
-  width: min(1040px, calc(100% - 48px));
+  width: min(1120px, calc(100% - 40px));
   min-height: 44px;
   align-items: center;
   margin: 0 auto;
@@ -2953,7 +2953,7 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
 
 .social-app-image-stack,
 .file-tool-image-stack {
-  width: min(1040px, calc(100% - 48px));
+  width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
   box-shadow: none !important;
 }
