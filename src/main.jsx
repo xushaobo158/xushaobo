@@ -102,6 +102,7 @@ const copy = {
         subtitle: '强化信息层级与视觉一致性，提升品牌展示和用户感知',
         meta: '网页 / 视觉设计 / UI设计',
         image: '/assets/cover-web-placeholder.png',
+        statusLabel: 'coming soon',
       },
     ],
     contactTitle: '期待与你合作',
@@ -223,6 +224,7 @@ const copy = {
         subtitle: 'Improving information hierarchy, visual consistency, and brand perception.',
         meta: 'Website / Visual Design / UI',
         image: '/assets/cover-web-placeholder.png',
+        statusLabel: 'coming soon',
       },
     ],
     contactTitle: 'Let us collaborate',
@@ -1596,16 +1598,23 @@ function WorkCard({ card, index }) {
             <strong className="work-status-label">{card.statusCover}</strong>
           </div>
         ) : (
-          <picture>
-            <source media="(max-width: 720px)" srcSet={mobileImage} />
-            <img
-              src={card.image}
-              alt=""
-              loading={index === 0 ? 'eager' : 'lazy'}
-              fetchPriority={index === 0 ? 'high' : 'auto'}
-              decoding="async"
-            />
-          </picture>
+          <>
+            <picture>
+              <source media="(max-width: 720px)" srcSet={mobileImage} />
+              <img
+                src={card.image}
+                alt=""
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                decoding="async"
+              />
+            </picture>
+            {card.statusLabel ? (
+              <span className="work-coming-label" aria-hidden="true">
+                {card.statusLabel}
+              </span>
+            ) : null}
+          </>
         )}
       </div>
       <div className="work-content">
