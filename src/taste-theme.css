@@ -768,6 +768,10 @@ img {
   line-height: 1.5;
 }
 
+.home-resume-entry-role {
+  text-align: left !important;
+}
+
 .home-resume-entry-date {
   min-width: 112px;
   text-align: right;

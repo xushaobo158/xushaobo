@@ -55,19 +55,19 @@ body {
   overflow-x: hidden;
   background: var(--ambient-bg);
   background-attachment: fixed;
-  cursor: url('/cursor-arrow.svg') 6 5, auto;
+  cursor: auto;
   transition: background 240ms ease, color 240ms ease;
 }
 
 a {
   color: inherit;
-  cursor: url('/cursor-arrow.svg') 6 5, pointer;
+  cursor: pointer;
   text-decoration: none;
 }
 
 button {
   font: inherit;
-  cursor: url('/cursor-arrow.svg') 6 5, pointer;
+  cursor: pointer;
 }
 
 img {
@@ -1221,7 +1221,7 @@ img {
   height: 146px;
   place-items: center;
   color: var(--accent);
-  cursor: url('/cursor-arrow.svg') 6 5, pointer;
+  cursor: pointer;
 }
 
 .circle-badge svg:first-child {
