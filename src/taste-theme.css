@@ -1172,14 +1172,11 @@ img {
   border: 1px solid var(--line);
   border-radius: 50%;
   color: var(--ink);
-  transition:
-    background-color 240ms ease,
-    border-color 240ms ease,
-    color 240ms ease,
-    transform 520ms var(--ease-spring);
+  transition: transform 520ms var(--ease-spring);
 }
 
-.work-card:hover .work-open {
+.work-card:hover .work-open,
+.work-card:focus-visible .work-open {
   border-color: var(--line) !important;
   background: transparent !important;
   color: var(--ink) !important;
