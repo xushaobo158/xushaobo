@@ -692,8 +692,39 @@ img {
 }
 
 .home-resume-about-download {
-  width: min(100%, 260px) !important;
+  display: inline-flex;
+  grid-column: auto;
+  grid-row: auto;
+  width: min(100%, 246px);
+  min-height: 52px;
   margin-top: 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--ink-strong);
+  font-size: 0.84rem;
+  font-weight: 660;
+  text-decoration: none;
+  transition:
+    background-color 240ms ease,
+    color 240ms ease,
+    opacity 240ms ease;
+}
+
+.home-resume-about-download svg {
+  flex: 0 0 auto;
+  color: currentColor;
+}
+
+.home-resume-about-download:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--ink-strong);
 }
 
 .home-resume-section-copy strong {
@@ -785,6 +816,8 @@ img {
   grid-template-columns: minmax(0, 1fr) minmax(150px, 0.6fr);
   gap: 24px;
   min-width: 0;
+  justify-items: start;
+  text-align: left;
 }
 
 .home-resume-entry-org {
@@ -3062,7 +3095,7 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
 }
 
 .work-status-image-cover::after {
-  background: rgba(242, 243, 242, 0.88);
+  background: rgba(220, 222, 222, 0.94);
 }
 
 .work-status-image-cover .work-status-label {

@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { AlertTriangle, AppWindow, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, Menu, MessageCircle, MousePointer2, Phone, Search, Sparkles, X } from 'lucide-react';
+import { AlertTriangle, AppWindow, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, FileText, FolderInput, Globe, Lightbulb, Mail, Menu, MessageCircle, MousePointer2, Phone, Search, Sparkles, X } from 'lucide-react';
 import '@fontsource-variable/geist';
 import './styles.css';
 import './taste-theme.css';
@@ -741,12 +741,12 @@ function HomeResumeModule({ t }) {
                         </p>
                       ))}
                       <a
-                        className="resume-download home-resume-download home-resume-about-download"
+                        className="home-resume-about-download"
                         href="/assets/xushaobo-resume.pdf"
                         download="徐少柏-简历.pdf"
                       >
-                        <Download size={16} strokeWidth={1.9} />
-                        {t.homeResumeDownload}
+                        <span>{t.homeResumeDownload}</span>
+                        <ArrowRight size={19} strokeWidth={1.65} />
                       </a>
                     </div>
                     <figure className="home-resume-photo" aria-label={t.homeResumePhotoLabel}>
@@ -1685,9 +1685,6 @@ function Contact({ t }) {
 
   return (
     <section className="contact section-shell" id="contact">
-      <span className="contact-backdrop" aria-hidden="true">
-        LET&apos;S TALK
-      </span>
       <div className="contact-copy" data-reveal>
         <h2 className={`contact-title-effect${t.contactTitle.length > 10 ? ' is-long' : ''}`}>
           {t.contactTitle}
