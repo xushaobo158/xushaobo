@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
+﻿import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { AlertTriangle, AppWindow, ArrowLeft, ArrowRight, ArrowUpRight, Bell, CheckCircle2, ChevronDown, ClipboardList, Copy, Download, FileText, FolderInput, Globe, Lightbulb, Mail, Menu, MessageCircle, MousePointer2, Phone, Search, Sparkles, X } from 'lucide-react';
 import '@fontsource-variable/geist';
@@ -1350,7 +1350,10 @@ function FileToolDashboard() {
 }
 
 const socialAppCaseImages = [
-  { src: '/assets/social-app/01-cover.webp', width: 1220, height: 16377 },
+  { src: '/assets/social-app/01-cover-01.webp', width: 1800, height: 6041 },
+  { src: '/assets/social-app/01-cover-02.webp', width: 1800, height: 6041 },
+  { src: '/assets/social-app/01-cover-03.webp', width: 1800, height: 6041 },
+  { src: '/assets/social-app/01-cover-04.webp', width: 1800, height: 6040 },
 ];
 
 const fileToolCaseImages = [
