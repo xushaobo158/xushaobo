@@ -911,8 +911,8 @@ img {
   min-height: clamp(400px, 36vw, 520px);
   min-width: 0;
   overflow: hidden;
-  border: 0 !important;
-  border-radius: 24px !important;
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
   background: var(--work-surface) !important;
   box-shadow: none;
   color: var(--ink);
@@ -941,7 +941,9 @@ img {
   content: none !important;
 }
 
-.work-card:hover {
+.work-card:hover,
+.work-card:focus-visible {
+  border-color: var(--accent-bright) !important;
   outline: 0;
   box-shadow: none !important;
   transform: translateZ(0) scale(1.008) !important;
