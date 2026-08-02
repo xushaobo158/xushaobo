@@ -1087,7 +1087,9 @@ img {
 
 .work-coming-label {
   position: absolute;
-  inset: 50% auto auto 50%;
+  top: auto;
+  bottom: 28px;
+  left: 50%;
   z-index: 2;
   color: #f7fafc;
   font-size: clamp(2.25rem, 4.8vw, 4rem);
@@ -1096,7 +1098,7 @@ img {
   line-height: 1;
   text-shadow: 0 2px 12px rgba(18, 36, 55, 0.48);
   text-transform: lowercase;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   white-space: nowrap;
 }
 
