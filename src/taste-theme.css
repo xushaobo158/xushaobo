@@ -3034,3 +3034,29 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     padding: 0;
   }
 }
+
+/* The third card uses a calm, light placeholder treatment over its preview image. */
+.work-status-image-cover::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(231, 244, 255, 0.82);
+  content: '';
+}
+
+.work-status-image-cover .work-status-label {
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #2f5068;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 720;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: lowercase;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
