@@ -519,6 +519,10 @@ img {
   text-transform: uppercase;
 }
 
+.home-resume-eyebrow {
+  color: var(--accent) !important;
+}
+
 .home-resume-heading,
 .home-resume-title-line,
 .work-title-line {
@@ -1109,7 +1113,7 @@ img {
   border-radius: 2px;
   background: transparent;
   box-shadow: none !important;
-  color: var(--type-accent);
+  color: var(--accent) !important;
   font-size: 0.67rem;
   font-variant-numeric: tabular-nums;
   font-weight: 720;
@@ -1193,7 +1197,7 @@ img {
 .work-card:nth-child(3):hover .work-index {
   border-color: var(--accent) !important;
   background: transparent !important;
-  color: var(--type-accent) !important;
+  color: var(--accent) !important;
   box-shadow: none !important;
   transform: none !important;
 }
@@ -1324,6 +1328,10 @@ img {
   grid-column: 1;
   grid-row: 1;
   color: var(--accent-bright);
+}
+
+.contact-card:nth-child(n) > svg {
+  color: var(--accent-bright) !important;
 }
 
 .contact-card > span {
