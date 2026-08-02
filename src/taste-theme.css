@@ -2928,7 +2928,7 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
 .social-app-image-page,
 .file-tool-image-page {
   padding-top: 0;
-  background: #f3f2ef;
+  background: #fff;
 }
 
 .social-app-return-rail,
@@ -2943,6 +2943,12 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   align-items: center;
   margin: 0 auto;
   padding: 6px 0;
+}
+
+.social-app-return-rail .detail-back,
+.file-tool-return-rail .detail-back {
+  margin: 0;
+  align-self: center;
 }
 
 .social-app-image-stack,
