@@ -1105,9 +1105,9 @@ img {
   inset: 0;
   z-index: 1;
   border: 1px solid rgba(255, 255, 255, 0.32);
-  background: rgba(18, 28, 40, 0.46);
-  -webkit-backdrop-filter: blur(72px) saturate(125%) contrast(1.04);
-  backdrop-filter: blur(72px) saturate(125%) contrast(1.04);
+  background: rgba(10, 16, 20, 0.38);
+  -webkit-backdrop-filter: blur(26px) saturate(112%) contrast(1.03);
+  backdrop-filter: blur(26px) saturate(112%) contrast(1.03);
   content: '' !important;
   pointer-events: none;
 }
@@ -1118,9 +1118,9 @@ img {
   z-index: 1;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.24),
-    rgba(255, 255, 255, 0) 44%,
-    rgba(255, 255, 255, 0.1)
+    rgba(8, 14, 17, 0.24),
+    rgba(8, 14, 17, 0) 44%,
+    rgba(255, 255, 255, 0.06)
   );
   content: '' !important;
   pointer-events: none;
