@@ -3060,3 +3060,14 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   transform: translate(-50%, -50%);
   white-space: nowrap;
 }
+
+.work-status-image-cover::after {
+  background: rgba(242, 243, 242, 0.88);
+}
+
+.work-status-image-cover .work-status-label {
+  color: #3f4c53;
+  font-size: clamp(2.15rem, 4.4vw, 3.8rem);
+  font-weight: 680;
+  letter-spacing: 0.01em;
+}
