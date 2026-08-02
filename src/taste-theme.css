@@ -1963,6 +1963,63 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   transform: translateY(-24px);
 }
 
+/* Project image pages use the artwork as the first viewport signal. */
+.social-app-image-page,
+.file-tool-image-page {
+  position: relative;
+  padding-top: 0;
+  background: #fff;
+}
+
+.social-app-return-rail,
+.file-tool-return-rail {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 15;
+  width: auto;
+  min-height: 0;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.social-app-return-rail .detail-back,
+.file-tool-return-rail .detail-back {
+  min-height: 30px;
+  gap: 5px;
+  padding: 0 9px;
+  border: 1px solid rgba(20, 20, 20, 0.26);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 2px 10px rgba(20, 20, 20, 0.12);
+  color: #1a1a1a;
+  font-size: 0.68rem;
+}
+
+.social-app-return-rail .detail-back svg,
+.file-tool-return-rail .detail-back svg {
+  width: 13px;
+  height: 13px;
+}
+
+.social-app-return-rail .detail-back:hover,
+.social-app-return-rail .detail-back:focus-visible,
+.file-tool-return-rail .detail-back:hover,
+.file-tool-return-rail .detail-back:focus-visible {
+  border-color: #1a1a1a;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .social-app-return-rail,
+  .file-tool-return-rail {
+    top: 10px;
+    left: 10px;
+  }
+}
+
 .project-shell,
 .project-story,
 .project-content {
@@ -1990,96 +2047,6 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
 .project-media-card img {
   filter: none;
   object-fit: contain;
-}
-
-/* Project pages use a quiet white reading canvas without the site navigation. */
-.page-main {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --surface-raised: #f7f7f5;
-  --surface-soft: #f1f2f0;
-  --canvas: #ffffff;
-  --ink: #17171d;
-  --ink-strong: #0b0c0c;
-  --muted: #64686d;
-  --muted-strong: #4c5056;
-  --line: rgba(23, 23, 29, 0.16);
-  --line-soft: rgba(23, 23, 29, 0.09);
-  background: #ffffff;
-  color: #17171d;
-}
-
-.page-main .project-page,
-.page-main .social-app-image-page,
-.page-main .file-tool-image-page,
-.page-main .in-progress-page {
-  background: #ffffff;
-  color: #17171d;
-}
-
-.page-main .project-shell,
-.page-main .project-story,
-.page-main .project-content,
-.page-main .project-section-block {
-  border-color: var(--line);
-  background: #ffffff;
-  color: #17171d;
-}
-
-.page-main .project-outline-card {
-  border-color: var(--line);
-  background: #f7f7f5;
-  color: #17171d;
-}
-
-.page-main .project-page h1,
-.page-main .project-page h2,
-.page-main .project-page h3,
-.page-main .project-page strong {
-  color: #17171d;
-}
-
-.page-main .project-page p,
-.page-main .project-page li,
-.page-main .project-page span {
-  color: #4c5056;
-}
-
-.page-main .social-app-image-stack,
-.page-main .file-tool-image-stack {
-  border-color: rgba(23, 23, 29, 0.12);
-  background: #ffffff;
-  box-shadow: 0 24px 60px rgba(23, 23, 29, 0.08);
-}
-
-.page-main .detail-back {
-  border-color: rgba(23, 23, 29, 0.22);
-  background: #ffffff;
-  box-shadow: 0 10px 28px rgba(23, 23, 29, 0.1);
-  color: #17171d;
-}
-
-.page-main .detail-back:hover,
-.page-main .detail-back:focus-visible {
-  border-color: #17171d;
-  background: #17171d;
-  color: #ffffff;
-}
-
-.page-main .social-app-return-rail,
-.page-main .file-tool-return-rail,
-.page-main .in-progress-page .detail-rail,
-.page-main .project-page .detail-rail {
-  top: max(24px, env(safe-area-inset-top));
-}
-
-html.detail-chrome-hidden .page-main .social-app-return-rail,
-html.detail-chrome-hidden .page-main .file-tool-return-rail,
-html.detail-chrome-hidden .page-main .in-progress-page .detail-rail,
-html.detail-chrome-hidden .page-main .project-page .detail-rail {
-  opacity: 1;
-  pointer-events: auto;
-  transform: none;
 }
 
 @keyframes hero-rule-in {

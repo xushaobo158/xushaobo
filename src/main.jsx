@@ -1823,7 +1823,7 @@ function App() {
   return (
     <>
       <div className="grid-background" aria-hidden="true" />
-      <Header lang={lang} setLang={setLang} t={t} />
+      {!isProjectPage ? <Header lang={lang} setLang={setLang} t={t} /> : null}
       <main className={isProjectPage ? 'page-main' : ''}>
         {projectSlug === 'in-progress' ? (
           <InProgressPage />
