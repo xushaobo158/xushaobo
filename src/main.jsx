@@ -1350,7 +1350,7 @@ function FileToolDashboard() {
 }
 
 const socialAppCaseImages = [
-  { src: '/assets/social-app/01-cover.svg', width: 1924, height: 25828 },
+  { src: '/assets/social-app/01-cover.webp', width: 1220, height: 16377 },
 ];
 
 const fileToolCaseImages = [
@@ -1366,7 +1366,7 @@ const fileToolCaseImages = [
   { src: '/assets/file-tool/10-usability-results.webp', width: 1920, height: 1287 },
 ];
 
-const getMobileCaseImage = (src) => (src.endsWith('.svg') ? src : src.replace(/\/([^/]+)$/, '/mobile/$1'));
+const getMobileCaseImage = (src) => src.replace(/\/([^/]+)$/, '/mobile/$1');
 
 function DeferredCaseImage({ image, index, alt }) {
   const frameRef = useRef(null);
