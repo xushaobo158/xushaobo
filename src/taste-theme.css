@@ -811,6 +811,19 @@ img {
   align-items: start;
 }
 
+.home-resume-entry-head.is-compact-head {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.home-resume-entry-head.is-compact-head > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 0.6fr);
+  gap: 24px;
+  min-width: 0;
+  justify-items: stretch;
+  text-align: left;
+}
+
 .home-resume-entry-head > div {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(150px, 0.6fr);
@@ -1076,11 +1089,12 @@ img {
   position: absolute;
   inset: 50% auto auto 50%;
   z-index: 2;
-  color: #3f4c5b;
-  font-size: clamp(1.9rem, 3.6vw, 3.1rem);
-  font-weight: 680;
+  color: #1f2b3a;
+  font-size: clamp(2.25rem, 4.8vw, 4rem);
+  font-weight: 760;
   letter-spacing: 0.01em;
   line-height: 1;
+  text-shadow: 0 2px 14px rgba(255, 255, 255, 0.7);
   text-transform: lowercase;
   transform: translate(-50%, -50%);
   white-space: nowrap;
@@ -1091,9 +1105,9 @@ img {
   inset: 0;
   z-index: 1;
   border: 1px solid rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.16);
-  -webkit-backdrop-filter: blur(12px) saturate(135%);
-  backdrop-filter: blur(12px) saturate(135%);
+  background: rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(24px) saturate(145%);
+  backdrop-filter: blur(24px) saturate(145%);
   content: '';
   pointer-events: none;
 }
@@ -2644,6 +2658,10 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   .home-resume-entry-head > div {
     grid-template-columns: 1fr;
     gap: 5px;
+  }
+
+  .home-resume-entry-head.is-compact-head > div {
+    grid-template-columns: 1fr;
   }
 
   .home-resume-entry-date {
