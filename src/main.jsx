@@ -87,14 +87,14 @@ const copy = {
         title: '不夜星球社交APP产品体验设计优化',
         subtitle: '围绕用户核心路径，优化产品结构与社交互动细节',
         meta: 'APP / UX / 产品设计',
-        image: '/assets/social-app/mobile/01-cover.webp',
+        image: '/assets/social-app/home-cover.webp',
         href: '/projects/social-app',
       },
       {
         title: '文件生成后台工具系统设计',
         subtitle: '从业务流程出发，重构信息架构与操作流程',
         meta: 'B端系统 / UX / 界面设计',
-        image: '/assets/file-tool/01-cover.webp',
+        image: '/assets/file-tool/home-cover.webp',
         href: '/projects/file-tool',
       },
       {
@@ -102,7 +102,7 @@ const copy = {
         subtitle: '强化信息层级与视觉一致性，提升品牌展示和用户感知',
         meta: '网页 / 视觉设计 / UI设计',
         image: '/assets/cover-web-redesign-interface.webp',
-        statusCover: '敬请期待',
+        statusCover: 'coming soon',
       },
     ],
     contactTitle: '期待与你合作',
@@ -209,14 +209,14 @@ const copy = {
         title: 'Sleepless Planet Social App Experience Optimization',
         subtitle: 'Optimizing core user paths, product structure, and social interaction details.',
         meta: 'App / UX / Product Design',
-        image: '/assets/social-app/mobile/01-cover.webp',
+        image: '/assets/social-app/home-cover.webp',
         href: '/projects/social-app',
       },
       {
         title: 'File Generation Back-office Tool System Design',
         subtitle: 'Restructuring information architecture and workflows from business processes.',
         meta: 'B2B System / UX / UI Design',
-        image: '/assets/file-tool/01-cover.webp',
+        image: '/assets/file-tool/home-cover.webp',
         href: '/projects/file-tool',
       },
       {
@@ -224,7 +224,7 @@ const copy = {
         subtitle: 'Improving information hierarchy, visual consistency, and brand perception.',
         meta: 'Website / Visual Design / UI',
         image: '/assets/cover-web-redesign-interface.webp',
-        statusCover: 'Coming soon',
+        statusCover: 'coming soon',
       },
     ],
     contactTitle: 'Let us collaborate',
@@ -1587,20 +1587,15 @@ function WorkCard({ card, index }) {
       <div className={`work-image ${card.statusCover ? 'is-status' : ''}`}>
         {card.statusCover ? (
           <div
-            className={`work-status-cover ${card.statusCover.startsWith('Project') ? 'is-english' : ''}`}
+            className="work-status-cover work-status-image-cover"
             role="img"
             aria-label={card.statusCover}
           >
-            <div className="work-status-header" aria-hidden="true">
-              <span>03</span>
-              <span>CASE STUDY</span>
-            </div>
-            <strong>{card.statusCover}</strong>
-            <div className="work-status-signal" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-            </div>
+            <picture className="work-status-media">
+              <source media="(max-width: 720px)" srcSet={mobileImage} />
+              <img src={card.image} alt="" loading="lazy" decoding="async" />
+            </picture>
+            <strong className="work-status-label">{card.statusCover}</strong>
           </div>
         ) : (
           <picture>
