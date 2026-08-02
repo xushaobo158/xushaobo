@@ -2978,3 +2978,16 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     padding: 6px 0;
   }
 }
+
+@media (min-width: 701px) {
+  .social-app-return-rail,
+  .file-tool-return-rail {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
