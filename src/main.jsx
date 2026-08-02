@@ -1351,13 +1351,6 @@ function FileToolDashboard() {
 
 const socialAppCaseImages = [
   { src: '/assets/social-app/01-cover.svg', width: 1924, height: 25828 },
-  { src: '/assets/social-app/02-overview.webp', width: 1924, height: 4064 },
-  { src: '/assets/social-app/03-user-strategy.webp', width: 1924, height: 2394 },
-  { src: '/assets/social-app/04-research-dimensions.webp', width: 1924, height: 777 },
-  { src: '/assets/social-app/05-user-flow-strategy.webp', width: 1924, height: 10552 },
-  { src: '/assets/social-app/06-user-flow.webp', width: 1924, height: 2824 },
-  { src: '/assets/social-app/07-project-showcase.webp', width: 1924, height: 2393 },
-  { src: '/assets/social-app/08-results-summary.webp', width: 1924, height: 1276 },
 ];
 
 const fileToolCaseImages = [
