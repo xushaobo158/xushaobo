@@ -2923,3 +2923,52 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
     left: 10px;
   }
 }
+
+/* Keep the return control outside the artwork and let the page canvas breathe. */
+.social-app-image-page,
+.file-tool-image-page {
+  padding-top: 0;
+  background: #f3f2ef;
+}
+
+.social-app-return-rail,
+.file-tool-return-rail {
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: 15;
+  display: flex;
+  width: min(1040px, calc(100% - 48px));
+  min-height: 44px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 6px 0;
+}
+
+.social-app-image-stack,
+.file-tool-image-stack {
+  width: min(1040px, calc(100% - 48px));
+  margin: 0 auto;
+  box-shadow: none !important;
+}
+
+.case-study-image-frame,
+.case-study-image-frame img {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+@media (max-width: 700px) {
+  .social-app-return-rail,
+  .file-tool-return-rail,
+  .social-app-image-stack,
+  .file-tool-image-stack {
+    width: calc(100% - 20px);
+  }
+
+  .social-app-return-rail,
+  .file-tool-return-rail {
+    min-height: 42px;
+    padding: 6px 0;
+  }
+}
