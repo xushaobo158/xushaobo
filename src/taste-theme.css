@@ -840,6 +840,7 @@ img {
 
 .home-resume-entry-role {
   justify-self: stretch;
+  width: 100%;
   text-align: left !important;
 }
 
