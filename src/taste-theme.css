@@ -1087,8 +1087,8 @@ img {
 
 .work-coming-label {
   position: absolute;
-  top: auto;
-  bottom: 28px;
+  top: 50%;
+  bottom: auto;
   left: 50%;
   z-index: 2;
   color: #f7fafc;
@@ -1098,7 +1098,7 @@ img {
   line-height: 1;
   text-shadow: 0 2px 12px rgba(18, 36, 55, 0.48);
   text-transform: lowercase;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   white-space: nowrap;
 }
 
@@ -1107,9 +1107,9 @@ img {
   inset: 0;
   z-index: 1;
   border: 1px solid rgba(255, 255, 255, 0.32);
-  background: rgba(10, 16, 20, 0.52);
-  -webkit-backdrop-filter: blur(14px) saturate(112%) contrast(1.03);
-  backdrop-filter: blur(14px) saturate(112%) contrast(1.03);
+  background: rgba(10, 16, 20, 0.28);
+  -webkit-backdrop-filter: blur(8px) saturate(112%) contrast(1.03);
+  backdrop-filter: blur(8px) saturate(112%) contrast(1.03);
   content: '' !important;
   pointer-events: none;
 }
