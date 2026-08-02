@@ -1584,7 +1584,7 @@ function WorkCard({ card, index }) {
       {...(card.href ? { href: card.href } : { 'aria-label': card.statusCover })}
       data-reveal
     >
-      <div className={`work-image ${card.statusCover ? 'is-status' : ''}`}>
+      <div className={`work-image ${card.statusCover ? 'is-status' : ''} ${card.statusLabel ? 'is-placeholder-image' : ''}`}>
         {card.statusCover ? (
           <div
             className="work-status-cover work-status-image-cover"
