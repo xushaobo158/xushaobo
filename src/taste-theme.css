@@ -3021,14 +3021,6 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 }
 
-/* Brighten only the image area of the two live project cards. */
-@media (hover: hover) and (pointer: fine) {
-  .work-grid > .work-card:nth-child(-n + 2):hover .work-image img,
-  .work-grid > .work-card:nth-child(-n + 2):focus-visible .work-image img {
-    filter: brightness(1.18) saturate(1.06) contrast(1.02) !important;
-  }
-}
-
 /* Keep the hero introduction aligned after the legacy copy animation runs. */
 .hero-image-stage .hero-intro {
   color: rgba(255, 255, 255, 0.94) !important;
