@@ -4,7 +4,6 @@ import { AlertTriangle, AppWindow, ArrowLeft, ArrowRight, ArrowUpRight, Bell, Ch
 import '@fontsource-variable/geist';
 import './styles.css';
 import './taste-theme.css';
-import './reference-theme.css';
 
 const copy = {
   zh: {
