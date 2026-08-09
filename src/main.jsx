@@ -682,8 +682,8 @@ function Hero({ t }) {
       <div className="hero-text">
         <div className="hero-title-stage">
           <h1 data-reveal>
-            <span>PRODUCT /</span>
-            <span><em>UX</em> DESIGNER</span>
+            <span>WELCOME TO</span>
+            <span><em>MY</em> PORFOLIO</span>
           </h1>
         </div>
         <p className="hero-name" data-reveal>{t.heroName}</p>
