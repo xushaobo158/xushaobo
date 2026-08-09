@@ -1578,25 +1578,10 @@ function WorkCard({ card, index }) {
         : card.image.replace(/\/([^/]+)$/, '/mobile/$1')
       : card.image;
 
-  const handlePointerMove = (event) => {
-    if (index > 1 || event.pointerType === 'touch') return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    event.currentTarget.style.setProperty('--card-x', `${event.clientX - bounds.left}px`);
-    event.currentTarget.style.setProperty('--card-y', `${event.clientY - bounds.top}px`);
-  };
-
-  const handlePointerLeave = (event) => {
-    if (index > 1) return;
-    event.currentTarget.style.removeProperty('--card-x');
-    event.currentTarget.style.removeProperty('--card-y');
-  };
-
   return (
     <CardElement
       className={`work-card ${card.muted ? 'is-muted' : ''} ${imageRight ? 'is-image-right' : ''} ${card.href ? '' : 'is-coming-soon'}`}
       {...(card.href ? { href: card.href } : { 'aria-label': card.statusCover })}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
       data-reveal
     >
       <div className={`work-image ${card.statusCover ? 'is-status' : ''} ${card.statusLabel ? 'is-placeholder-image' : ''}`}>

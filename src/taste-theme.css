@@ -3021,59 +3021,6 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   }
 }
 
-/* Cursor-following light for the two live project cards. */
-@media (hover: hover) and (pointer: fine) {
-  .work-grid > .work-card:nth-child(1) {
-    --card-glow: rgba(167, 143, 255, 0.24);
-    --card-glow-soft: rgba(118, 91, 226, 0.2);
-  }
-
-  .work-grid > .work-card:nth-child(2) {
-    --card-glow: rgba(105, 186, 255, 0.24);
-    --card-glow-soft: rgba(57, 137, 220, 0.2);
-  }
-
-  .work-grid > .work-card:nth-child(-n + 2) {
-    isolation: isolate;
-  }
-
-  .work-grid > .work-card:nth-child(-n + 2)::after {
-    position: absolute;
-    z-index: 4;
-    inset: -1px;
-    display: block !important;
-    border: 1px solid transparent;
-    border-radius: inherit;
-    background: radial-gradient(
-      420px circle at var(--card-x, 50%) var(--card-y, 50%),
-      var(--card-glow),
-      transparent 62%
-    );
-    content: '' !important;
-    mix-blend-mode: screen;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 260ms ease;
-  }
-
-  .work-grid > .work-card:nth-child(-n + 2):hover,
-  .work-grid > .work-card:nth-child(-n + 2):focus-visible {
-    box-shadow:
-      0 0 0 1px var(--card-glow),
-      0 24px 72px var(--card-glow-soft) !important;
-  }
-
-  .work-grid > .work-card:nth-child(-n + 2):hover::after,
-  .work-grid > .work-card:nth-child(-n + 2):focus-visible::after {
-    opacity: 1;
-  }
-
-  .work-grid > .work-card:nth-child(-n + 2):hover .work-image img,
-  .work-grid > .work-card:nth-child(-n + 2):focus-visible .work-image img {
-    filter: brightness(1.08) saturate(1.06) !important;
-  }
-}
-
 /* Keep the hero introduction aligned after the legacy copy animation runs. */
 .hero-image-stage .hero-intro {
   color: rgba(255, 255, 255, 0.94) !important;
