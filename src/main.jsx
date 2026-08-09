@@ -87,7 +87,7 @@ const copy = {
         title: '不夜星球社交APP产品体验设计优化',
         subtitle: '围绕用户核心路径，优化产品结构与社交互动细节',
         meta: 'APP / UX / 产品设计',
-        image: '/assets/social-app/home-cover.webp',
+        image: '/assets/social-app/home-cover-v2.webp',
         href: '/projects/social-app',
       },
       {
@@ -209,7 +209,7 @@ const copy = {
         title: 'Sleepless Planet Social App Experience Optimization',
         subtitle: 'Optimizing core user paths, product structure, and social interaction details.',
         meta: 'App / UX / Product Design',
-        image: '/assets/social-app/home-cover.webp',
+        image: '/assets/social-app/home-cover-v2.webp',
         href: '/projects/social-app',
       },
       {
@@ -1350,10 +1350,10 @@ function FileToolDashboard() {
 }
 
 const socialAppCaseImages = [
-  { src: '/assets/social-app/01-cover-01.webp', width: 1800, height: 6041 },
-  { src: '/assets/social-app/01-cover-02.webp', width: 1800, height: 6041 },
-  { src: '/assets/social-app/01-cover-03.webp', width: 1800, height: 6041 },
-  { src: '/assets/social-app/01-cover-04.webp', width: 1800, height: 6040 },
+  { src: '/assets/social-app/case-v2-01.webp', width: 1800, height: 6042 },
+  { src: '/assets/social-app/case-v2-02.webp', width: 1800, height: 6042 },
+  { src: '/assets/social-app/case-v2-03.webp', width: 1800, height: 6042 },
+  { src: '/assets/social-app/case-v2-04.webp', width: 1800, height: 6037 },
 ];
 
 const fileToolCaseImages = [
