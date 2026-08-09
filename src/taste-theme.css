@@ -3175,3 +3175,26 @@ html.detail-chrome-hidden .project-page .detail-rail:not(:focus-within) {
   font-weight: 680;
   letter-spacing: 0.01em;
 }
+
+/* Give the file-tool cover more presence without changing the card layout. */
+.work-grid > .work-card:nth-child(2) .work-image img {
+  transform: scale(1.08);
+  transform-origin: center top;
+}
+
+.work-grid > .work-card:nth-child(2):hover .work-image img,
+.work-grid > .work-card:nth-child(2):focus-visible .work-image img {
+  opacity: 1 !important;
+  transform: scale(1.11) !important;
+}
+
+@media (max-width: 720px) {
+  .work-grid > .work-card:nth-child(2) .work-image img {
+    transform: scale(1.04);
+  }
+
+  .work-grid > .work-card:nth-child(2):hover .work-image img,
+  .work-grid > .work-card:nth-child(2):focus-visible .work-image img {
+    transform: scale(1.06) !important;
+  }
+}

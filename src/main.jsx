@@ -94,7 +94,7 @@ const copy = {
         title: '文件生成后台工具系统设计',
         subtitle: '从业务流程出发，重构信息架构与操作流程',
         meta: 'B端系统 / UX / 界面设计',
-        image: '/assets/file-tool/home-cover-v2.webp',
+        image: '/assets/file-tool/home-cover-v3.webp',
         href: '/projects/file-tool',
       },
       {
@@ -216,7 +216,7 @@ const copy = {
         title: 'File Generation Back-office Tool System Design',
         subtitle: 'Restructuring information architecture and workflows from business processes.',
         meta: 'B2B System / UX / UI Design',
-        image: '/assets/file-tool/home-cover-v2.webp',
+        image: '/assets/file-tool/home-cover-v3.webp',
         href: '/projects/file-tool',
       },
       {
